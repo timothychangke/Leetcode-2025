@@ -23,4 +23,6 @@ record this as the length
 repeat until all visited
 
 add an explored set so as to not waste time visiting them again as they are not the ends of the sequence we are looking for
+
+O(n)
 """

@@ -6,7 +6,7 @@ class Solution:
             for c in range(9):
                 ele = board[r][c]
                 if ele == '.': continue
-                if ele in row_dict[r] or ele in col_dict[c] or ele in sqaure_dict[(r // 3, c // 3)]:
+                if ele in row_dict[r] or ele in col_dict[c] or ele in square_dict[(r // 3, c // 3)]:
                     return False
                 row_dict[r].add(ele)
                 col_dict[c].add(ele)
@@ -22,4 +22,6 @@ sub sqaure key will be r // 3, c // 3
 for each square ill add to set
 if already in set return false
 if finish loop return True
+
+O(rc)
 """
