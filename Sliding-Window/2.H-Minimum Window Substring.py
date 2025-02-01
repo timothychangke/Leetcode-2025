@@ -4,7 +4,6 @@ class Solution:
         needmap, havemap = defaultdict(int), defaultdict(int)
         for let in t:
             needmap[let] += 1
-        print(needmap)
         need, have = len(needmap), 0
         l = 0
         res, resLen = [-1, -1], float('inf')

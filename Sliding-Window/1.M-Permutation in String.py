@@ -13,6 +13,5 @@ class Solution:
                 if not c[s2[i - l]]: m += 1
             if m == len(c):
                 return True
-            print(c)
         return False
                 
