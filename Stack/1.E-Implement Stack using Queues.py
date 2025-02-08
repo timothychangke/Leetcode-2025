@@ -13,7 +13,6 @@ class MyStack:
 
     def top(self) -> int:
         return self.q[-1]
-        
 
     def empty(self) -> bool:
        return not self.q 

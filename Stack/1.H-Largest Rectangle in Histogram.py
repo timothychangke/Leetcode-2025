@@ -4,10 +4,9 @@ class Solution:
         stack = [-1]
         area = 0
         for i in range(len(heights)):
-            print(stack, heights[i])
             while heights[i] < heights[stack[-1]]:
                 ele = stack.pop()
-                area = max(area, heights[ele] * (i - ele))
+                area = max(area, heights[ele] * (i - 1 - stack[-1]))
             stack.append(i)
         return area
 
