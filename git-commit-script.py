@@ -1,5 +1,24 @@
 import os
 import subprocess
+import re
+from datetime import datetime
+
+today_date = datetime.today().strftime("%Y-%m-%d")
+
+num_to_word = {
+    "1": "first",
+    "2": "second",
+    "3": "third",
+    "4": "fourth",
+    "5": "fifth",
+    "6": "sixth",
+    "7": "seventh",
+    "8": "eighth",
+    "9": "ninth",
+    "10": "tenth"
+}
+
+pattern = re.compile(r"^(?:.*/)?([EMH])\.(.*?)-(\d+)\.py$")
 
 files = subprocess.check_output(["git", "ls-files", "--modified", "--others", "--exclude-standard"]).decode().splitlines()
 
@@ -7,13 +26,21 @@ if not files:
     print("No modified or untracked files to commit.")
 else:
     for file in files:
-        print(f"Processing: {file}")
+        match = pattern.match(file)
+        if match:
+            difficulty = match.group(1)  
+            name = match.group(2)        
+            tries = match.group(3)      
 
-        subprocess.run(["git", "add", file])
+            tries_word = num_to_word.get(tries, f"{tries}th") 
+            
+            commit_message = f"feat({file}): {tries_word} completed {today_date}"
+            
+            print(f"Processing: {file}")
+            subprocess.run(["git", "add", file])
+            subprocess.run(["git", "commit", "-m", commit_message])
+            print(f"Committed: {file} with message: '{commit_message}'")
+        else:
+            print(f"Skipping {file} (does not match expected pattern)")
 
-        commit_message = f"fix({file}): file rename"
-        subprocess.run(["git", "commit", "-m", commit_message])
-
-        print(f"Committed: {file}")
-
-    print("All files committed separately!")
+    print("✅ All files committed separately!")
