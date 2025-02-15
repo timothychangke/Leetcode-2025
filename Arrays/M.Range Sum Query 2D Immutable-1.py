@@ -9,11 +9,6 @@ class NumMatrix:
             for c in range(1, cols + 1):
                 prefix += matrix[r - 1][c - 1]
                 self.sum_matrix[r][c] = prefix + self.sum_matrix[r - 1][c]
-        for row in matrix:
-            print(row)
-        print('=' * 80)
-        for row in self.sum_matrix:
-            print(row)
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
         return self.sum_matrix[row2 + 1][col2 + 1] - self.sum_matrix[row2 + 1][col1] - self.sum_matrix[row1][col2 + 1] + self.sum_matrix[row1][col1]
