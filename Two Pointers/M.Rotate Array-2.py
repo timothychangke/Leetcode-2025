@@ -3,14 +3,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        def rotate(start, end):
+        def rot(start, end):
             while start < end:
-                temp = nums[start]
-                nums[start] = nums[end]
-                nums[end] = temp
+                nums[start], nums[end] = nums[end], nums[start]
                 start += 1
                 end -= 1
         k = k % len(nums)
-        rotate(0, len(nums) - 1)
-        rotate(0, k - 1)
-        rotate(k, len(nums) - 1)
+        rot(0, len(nums) - 1)
+        rot(0, k - 1)
+        rot(k, len(nums) - 1)
+        
+""" 
+1 2 3 4 5 6 7
+7 6 5 4 3 2 1
+
+"""
