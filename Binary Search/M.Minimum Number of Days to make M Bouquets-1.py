@@ -1,22 +1,24 @@
 class Solution:
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
         if len(bloomDay) < m * k: return -1
-        def feasible(day):
-            res = 0
+        def feasible(x):
+            ans = 0
             c = 0
-            for bloom in bloomDay:
-                if bloom <= day:
+            for b in bloomDay:
+                if b <= x:
                     c += 1
                 else:
-                    res += c // k
+                    ans += c // k
                     c = 0
-            res += c // k    
-            return res >= m
+            ans += c // k
+            return ans >= m
+        res = -1
         l, r = min(bloomDay), max(bloomDay)
-        while l < r:
+        while l <= r:
             mid = l + (r - l) // 2
             if feasible(mid):
-                r = mid
+                res = mid
+                r = mid - 1
             else:
                 l = mid + 1
-        return l
+        return res
