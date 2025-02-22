@@ -11,3 +11,17 @@ class Solution:
             else:
                 l = mid + 1
         return l
+    
+    
+""" 
+n = 5, bad = 4
+
+0 1 2 3 4 5
+if while is l < r
+
+0 1 2 3 4 5
+if while is l <= r
+
+
+
+"""
