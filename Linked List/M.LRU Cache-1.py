@@ -9,7 +9,7 @@ class LRUCache:
         self.rightNode = (0, self.leftNode, None)
         self.leftNode.right = self.rightNode
         self.cache = {}
-        self.capacity = capacity
+        self.capacity = capacityk
 
     def get(self, key: int) -> int:
         
