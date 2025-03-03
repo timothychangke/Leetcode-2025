@@ -8,20 +8,19 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        slow, fast = head, head
+        slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         cur = slow.next
         prev = slow.next = None
         while cur:
-            next = cur.next
-            cur.next = prev
-            prev, cur = cur, next
+            cur.next, prev, cur = prev, cur, cur.next
         start, end = head, prev
         while end:
             startNext, endNext = start.next, end.next
             start.next = end
             end.next = startNext
-            start, end = startNext, endNext
+            start = startNext
+            end = endNext
         return head
