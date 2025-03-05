@@ -34,7 +34,7 @@ else:
 
             tries_word = num_to_word.get(tries, f"{tries}th") 
             
-            commit_message = f"feat({file}): {tries_word} completed {today_date}"
+            commit_message = f"feat({file}): {tries_word} attempt completed {today_date}"
             
             print(f"Processing: {file}")
             subprocess.run(["git", "add", file])
