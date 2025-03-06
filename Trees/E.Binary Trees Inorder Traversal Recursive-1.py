@@ -5,12 +5,14 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        res = []
-        def dfs(root):
-            if not root: return 
-            dfs(root.left)
-            res.append(root.val)
-            dfs(root.right)
+    def __init__(self):
+        self.res =[]
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        def dfs(node):
+            if not node: return 
+            dfs(node.left)
+            self.res.append(node.val)
+            dfs(node.right)
         dfs(root)
-        return res
+        return self.res[k - 1]
+        
