@@ -6,7 +6,6 @@ class Solution:
             travels.append([trips[i][1], trips[i][0]])
             travels.append([trips[i][2], -trips[i][0]])
         travels.sort()
-        print(travels)
         for t in travels:
            p += t[1]
            if p > capacity: return False
