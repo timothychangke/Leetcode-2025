@@ -6,7 +6,7 @@ class Solution:
     def reorganizeString(self, s: str) -> str:
         ctr = Counter(s)
         max_f = max(ctr.values())
-        if max_f > len(s) // 2:
+        if max_f > (len(s) + 1) // 2:
             return ""
         heap = [[-c, let] for let, c in ctr.items()]
         heapq.heapify(heap)
