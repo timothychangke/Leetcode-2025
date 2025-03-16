@@ -1,0 +1,19 @@
+from collections import deque
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        res = []
+        g = [[] for i in range(numCourses)]
+        degree = [0] * numCourses
+        for a, b in prerequisites:
+            g[b].append(a)
+            degree[a] += 1
+        q = deque([i for i, d in enumerate(degree) if not d])
+        while q:
+            for _ in range(len(q)):
+                course = q.popleft()
+                res.append(course)
+                for nei in g[course]:
+                    degree[nei] -= 1
+                    if not degree[nei]:
+                        q.append(nei)
+        return res if len(res) == numCourses else []
