@@ -1,0 +1,44 @@
+Arrays: 64 files, 27 unique problems
+  - Easy: 34 files, 13 unique
+  - Medium: 24 files, 10 unique
+  - Hard: 6 files, 4 unique
+Binary Search: 48 files, 16 unique problems
+  - Easy: 12 files, 4 unique
+  - Medium: 23 files, 9 unique
+  - Hard: 9 files, 3 unique
+Graphs: 40 files, 24 unique problems
+  - Easy: 3 files, 2 unique
+  - Medium: 32 files, 20 unique
+  - Hard: 4 files, 2 unique
+Heap: 24 files, 11 unique problems
+  - Easy: 4 files, 2 unique
+  - Medium: 14 files, 7 unique
+  - Hard: 4 files, 2 unique
+Linked List: 27 files, 15 unique problems
+  - Easy: 8 files, 4 unique
+  - Medium: 14 files, 8 unique
+  - Hard: 5 files, 3 unique
+Sliding Window: 27 files, 10 unique problems
+  - Easy: 6 files, 2 unique
+  - Medium: 15 files, 6 unique
+  - Hard: 6 files, 2 unique
+Stack: 45 files, 16 unique problems
+  - Easy: 12 files, 5 unique
+  - Medium: 27 files, 9 unique
+  - Hard: 6 files, 2 unique
+Trees: 62 files, 26 unique problems
+  - Easy: 32 files, 12 unique
+  - Medium: 25 files, 12 unique
+  - Hard: 4 files, 2 unique
+Two Pointers: 39 files, 16 unique problems
+  - Easy: 18 files, 7 unique
+  - Medium: 18 files, 8 unique
+  - Hard: 3 files, 1 unique
+
+Total number of files: 376
+Total unique problems: 160
+
+Total by difficulty:
+  - Easy: 129 files, 50 unique
+  - Medium: 192 files, 89 unique
+  - Hard: 47 files, 21 unique
