@@ -30,8 +30,8 @@ Trees: 62 problems, 26 unique
   - Total: 32 Easy, 25 Medium, 4 Hard
   - Unique: 12 Easy, 12 Medium, 2 Hard
 
-Two Pointers: 39 problems, 16 unique
-  - Total: 18 Easy, 18 Medium, 3 Hard
+Two Pointers: 40 problems, 16 unique
+  - Total: 18 Easy, 18 Medium, 4 Hard
   - Unique: 7 Easy, 8 Medium, 1 Hard
 
 2-D Dynamic Programming: 2 problems, 2 unique
@@ -43,10 +43,10 @@ Backtracking: 1 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 389
+Total number of problems: 390
 Total unique problems: 166
 
 Total by difficulty:
   - Easy: 130 problems, 50 unique
   - Medium: 205 problems, 95 unique
-  - Hard: 47 problems, 21 unique
+  - Hard: 48 problems, 21 unique
