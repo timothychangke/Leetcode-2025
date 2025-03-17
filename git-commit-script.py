@@ -20,6 +20,8 @@ num_to_word = {
 
 pattern = re.compile(r"^(?:.*/)?([EMH])\.(.*?)-(\d+)\.py$")
 
+subprocess.run(["python3", "count_files.py"])
+
 files = subprocess.check_output(["git", "ls-files", "--modified", "--others", "--exclude-standard"]).decode().splitlines()
 
 if not files:
@@ -38,6 +40,7 @@ else:
             
             print(f"Processing: {file}")
             subprocess.run(["git", "add", file])
+            subprocess.run(["git", "add", 'statistics.txt'])
             subprocess.run(["git", "commit", "-m", commit_message])
             print(f"Committed: {file} with message: '{commit_message}'")
         else:

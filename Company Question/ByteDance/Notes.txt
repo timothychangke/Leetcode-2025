@@ -1,0 +1,114 @@
+LRU Cache (20 mins):
+
+problem
+get = get key if exists else reutrn -1
+put = updates value if it exists else it will add a new key value pair, if number of keys exceed, evict the least recently used key
+get and put must be O(1)
+
+use a doubly linked list
+get will remove it to the back of the queue
+put will remove the element, insert to the back of the queue
+
+insert, remove in additoin to get and put
+doubly linked list, size, dict 
+
+constraints:
+
+solution:
+create a doubly linked list node class
+front node and back node
+isnert inserted into the back of the queue
+remove one element, but if not specifed by default ill remove from the last element
+
+get check if element, if true, remove the element and insert the element
+
+put check if element: 
+not change to size: remove the old element and insert the new element
+if not lelement
+increment the size if out of range: remove the last element in the queue
+insert the new element
+
+Time complexity:
+get - O(1)
+put - O(1)
+
+Space complexity:
+O(size)
+
+
+Mistakes:
+remove function swap next and previous
+put function must update node with new value
+
+
+Smallest Subsequence of Distinct Characters
+given a string s, return in lexi order, all distinct Characters
+
+any caps? only english characters? will there always be an answer?
+
+create a set() to identify the distinct characters
+from the set create a dict witht he sets values as keys and the value be one
+to avoid checkint he dict every timne to see if all zero, have a counter variavle to check if all lettersa re ssatified
+cannot contain a dup
+two sets, need and visited
+if in need and not in visited: then i can move my right pointer, else, l = r, r = r + 1
+termination condition will be len(visited) = len(seen) or r is out of range
+return the sorted result
+
+Read the question wrongly :(
+
+Reinterpretation: i want the results of the smallest lexigraphically ordered result
+you take in the smallest alphabet if there are other alphabets down the line 
+
+solution:
+create a dictionary with teh last occurences
+create a set to track which letters are in the stack
+if element is already inside the stack Skipping
+if element is not in the stack and the stack character can be found further down the sting, pop the character out and get teh one further down the string
+
+Second try timing (4 mins)
+
+Tune complexity: O(n)
+space complexity: O(n)
+
+
+Remove duplicate letters
+same question as previous
+
+
+First day you have been in all the rooms
+if you have been to the room an odd nubmer of times, including the current visit, thenext day you will vista a room with a lower or equal room number
+if you have been to the room an even number of times, on the next day you will visit room i + 1 mod n
+return answer modulo 10^9  + 7
+
+day = 0
+counts = [] * N
+counter += 1 when counts turn from 0 to one
+terminate when counter == n
+when transitioning from room i to i + 1, all the previous rooms must be even
+
+ggwp...
+
+
+
+Longest substring without repeating Characters
+only lowercase? only english letters got symbols, spaces etc
+
+declare a res
+have a l and an r pointer
+once theres a repeat, increment L until no more repeat
+save the max value
+
+Time and space is O(n)
+
+Number of Islands(2 mins)
+return the total number of islands
+
+def dfs() when grid[r][c] is 1
+change the grid number to 0 so that i dont traverse to the same node
+traverse to its neighbors, if its in range and grid number is 1, perform dfs
+increment res for each dfs performed
+
+
+Delete Operation for two strings
+minimum number of steps to make string 1 = string 2

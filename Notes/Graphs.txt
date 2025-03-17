@@ -1,0 +1,78 @@
+Find the Town Judge:
+Create a array of degrees that measure outgoing degrees and ingoing degrees. The town judge should be one that has no ingoing degrees but n-1 outgoing degrees. This can be done via incrementing and decrementing the same variable
+
+Island perimeter:
+Whenever an island traverses to the sea or to the boundary, a perimeter is added
+
+Making a Large island:
+Go through the graph and index each individual island with a unique index. Create a dictionary storing this index with the size of the island. For non-island cells, sum up if any, the neighbouring island sizes of its immediate 
+neighbours based on their index
+
+Word Ladder:
+Create a dictionary of all possible words with one replacement letter (can indicate it with a special character). Traverse starting from the current word to the next word via iterating through all possible words with one special
+letter and checking whether this word with the special letter exists in the dictionary
+
+Accounts Merge:
+Declare a union find structure. Create a map mapping emails to the accounts via index, if the email already exists in the dictionary, merge these two accounts via union. for each of the emails, find the parent of the id and 
+append the email to the parent. Lastly, get the name corresponding to the id the concat the result with the emails corresponding to that parent id
+
+Clone Graph: 
+Create a map mapping the old graph to the new graph. Perform a dfs that first checks if the node is in the map. If it is, return the corresponding new node. Else, create a node and append its neighbours via a recursive dfs, 
+either to create them if they dont exists or return the new nodes if already created
+
+Course Schedule 1:
+Create the graph with the edges and its degrees of prerequisites. For those with no prerequisites, append them to the deque and start the bfs. For each node visited, decrement its prerequisites. If it has no prerequisites, 
+append the node to the queue. Output whether the size of the visited set is equal to the number of courses
+
+Course Schedule 2:
+Do the same as course schedule one except the additional step of recording the path. Only output the path if the size of the visited set is equal to the size of the number of courses
+
+Evaluate Division:
+Create a map with the edges a, b being the value and b, a being the reciprocal of the value. Do a bfs from the starting node to see whether it can reach the ending node, if can, return the value. Do this for each query and return
+the result
+
+Graph Valid Tree:
+A tree is a connected component that does not contain a Graph. These means that the property of no cycles and being completely connected must be adhered to. 
+No Cycles: have a prev variable and make sure that the current node visited is not the prev variable but yet is in the seen set. This would mean that there is a cycles
+Completely Connected: the lenght of the set must equal to the total number of nodes
+
+Max Area of Island:
+Perform a dfs on each island to return the area of that island component. On each visit to the island, change it to 0 so as to not visit it again. Return the largest amongst all the islands
+
+Minimum Height Trees:
+The idea is to identify the leave nodes, then traverse closer and closer to the center. Like a bfs but from the end of the graph. This is done via creating a adjacency list and appending only leave nodes into the q. For each 
+traversal, remove the leaf node of the neighbours of the leaf node and see whether they become leave nodes (only have one remaining neighbour in the adjaceny list). At each iteration, also decrement the count of n by one. The 
+condition will terminate once at most 2 MHT roots are found, there can never be 3 as the either 1. it is a cycle or 2. the center node is deeper than the other two nodes
+
+Number of connected components in a undirected graph:
+Create a union find structure and union the connected components. For each successful union, decrement the number of components by one. Return this number
+
+Number of Islands:
+Do a dfs to turn every island into water and increment the result each time. Repeat for each island
+
+Number of Provinces: 
+Same as Number of connected components
+
+Open the lock:
+Convert deadends to a set for more efficient lookups. Create a getNeighbour function that finds the neighbour given a number. Each neighbour is an incremented or decremented version of the lock - to perform this transformation
+increment the number by 10 then mod 10 so as to account for overflow. For each move, increment the count by one and return the count when the target is found.
+
+Pacific Atlantic Water Flow: 
+Create a boolean matrix to indicted visitation for both the pacific and atlantic oceans. The idea is to start from the edges and work a dfs down towards each cell (reverse of the question which states for water to flow to the
+oceans). Update the boolean matrices accordingly and if they are both true for a cell, append it to the result
+
+Redundant Connection:
+Perform Union on each edge, if the edge is connecting to an already connected component = cycle, return that edge. Remember to declare the union find strucutre with edges + 1 as the nodes are zero indexed (in a non-cyclic
+graph, a tree with N nodes will always have N - 1 edges)
+
+Rotten Oranges:
+Count the number of fresh oranges and append the rotten oragnes into a deque. Perform bfs while appending the rotten oranges into the queue and decrementing the fresh oranges count. The terminatining conditon is the queue as well
+as the number of fresh oranges being zero. Return the result of time if the number of fresh oranges is zero
+
+Surrounded Regions:
+Traverse each O on the edge and change the nodes to a temporary "T". For the remaining "O"s, they will be surrounded as they have no "O"s on the border. Change these "O"s to "X"s and change the "T"s to "O"s
+
+Walls and Gates:
+Append all walls into a deque and perform bfs from there. Each update will be the minimum path so there will be no repeated traversal routes
+
+
