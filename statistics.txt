@@ -1,44 +1,48 @@
-Arrays: 64 files, 27 unique problems
-  - Easy: 34 files, 13 unique
-  - Medium: 24 files, 10 unique
-  - Hard: 6 files, 4 unique
-Binary Search: 48 files, 16 unique problems
-  - Easy: 12 files, 4 unique
-  - Medium: 23 files, 9 unique
-  - Hard: 9 files, 3 unique
-Graphs: 40 files, 24 unique problems
-  - Easy: 3 files, 2 unique
-  - Medium: 32 files, 20 unique
-  - Hard: 4 files, 2 unique
-Heap: 24 files, 11 unique problems
-  - Easy: 4 files, 2 unique
-  - Medium: 14 files, 7 unique
-  - Hard: 4 files, 2 unique
-Linked List: 27 files, 15 unique problems
-  - Easy: 8 files, 4 unique
-  - Medium: 14 files, 8 unique
-  - Hard: 5 files, 3 unique
-Sliding Window: 27 files, 10 unique problems
-  - Easy: 6 files, 2 unique
-  - Medium: 15 files, 6 unique
-  - Hard: 6 files, 2 unique
-Stack: 45 files, 16 unique problems
-  - Easy: 12 files, 5 unique
-  - Medium: 27 files, 9 unique
-  - Hard: 6 files, 2 unique
-Trees: 62 files, 26 unique problems
-  - Easy: 32 files, 12 unique
-  - Medium: 25 files, 12 unique
-  - Hard: 4 files, 2 unique
-Two Pointers: 39 files, 16 unique problems
-  - Easy: 18 files, 7 unique
-  - Medium: 18 files, 8 unique
-  - Hard: 3 files, 1 unique
+Arrays: 64 problems, 27 unique
+  - Total: 34 Easy, 24 Medium, 6 Hard
+  - Unique: 13 Easy, 10 Medium, 4 Hard
 
-Total number of files: 376
-Total unique problems: 160
+Binary Search: 48 problems, 16 unique
+  - Total: 12 Easy, 23 Medium, 9 Hard
+  - Unique: 4 Easy, 9 Medium, 3 Hard
+
+Graphs: 43 problems, 24 unique
+  - Total: 3 Easy, 35 Medium, 4 Hard
+  - Unique: 2 Easy, 20 Medium, 2 Hard
+
+Heap: 24 problems, 11 unique
+  - Total: 4 Easy, 14 Medium, 4 Hard
+  - Unique: 2 Easy, 7 Medium, 2 Hard
+
+Linked List: 28 problems, 15 unique
+  - Total: 8 Easy, 15 Medium, 5 Hard
+  - Unique: 4 Easy, 8 Medium, 3 Hard
+
+Sliding Window: 28 problems, 10 unique
+  - Total: 6 Easy, 16 Medium, 6 Hard
+  - Unique: 2 Easy, 6 Medium, 2 Hard
+
+Stack: 47 problems, 18 unique
+  - Total: 12 Easy, 29 Medium, 6 Hard
+  - Unique: 5 Easy, 11 Medium, 2 Hard
+
+Trees: 62 problems, 26 unique
+  - Total: 32 Easy, 25 Medium, 4 Hard
+  - Unique: 12 Easy, 12 Medium, 2 Hard
+
+Two Pointers: 39 problems, 16 unique
+  - Total: 18 Easy, 18 Medium, 3 Hard
+  - Unique: 7 Easy, 8 Medium, 1 Hard
+
+2-D Dynamic Programming: 1 problems, 1 unique
+  - Total: 0 Easy, 1 Medium, 0 Hard
+  - Unique: 0 Easy, 1 Medium, 0 Hard
+
+
+Total number of problems: 384
+Total unique problems: 163
 
 Total by difficulty:
-  - Easy: 129 files, 50 unique
-  - Medium: 192 files, 89 unique
-  - Hard: 47 files, 21 unique
+  - Easy: 129 problems, 50 unique
+  - Medium: 200 problems, 92 unique
+  - Hard: 47 problems, 21 unique
