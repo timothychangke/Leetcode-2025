@@ -6,9 +6,9 @@ Binary Search: 48 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
   - Unique: 4 Easy, 9 Medium, 3 Hard
 
-Graphs: 44 problems, 24 unique
-  - Total: 4 Easy, 36 Medium, 4 Hard
-  - Unique: 2 Easy, 20 Medium, 2 Hard
+Graphs: 45 problems, 25 unique
+  - Total: 4 Easy, 37 Medium, 4 Hard
+  - Unique: 2 Easy, 21 Medium, 2 Hard
 
 Heap: 25 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
@@ -43,10 +43,10 @@ Backtracking: 1 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 390
-Total unique problems: 166
+Total number of problems: 391
+Total unique problems: 167
 
 Total by difficulty:
   - Easy: 130 problems, 50 unique
-  - Medium: 205 problems, 95 unique
+  - Medium: 206 problems, 96 unique
   - Hard: 48 problems, 21 unique
