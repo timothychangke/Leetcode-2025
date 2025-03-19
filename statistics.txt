@@ -1,22 +1,22 @@
-Arrays: 65 problems, 27 unique
-  - Total: 34 Easy, 24 Medium, 6 Hard
-  - Unique: 13 Easy, 10 Medium, 4 Hard
+Arrays: 66 problems, 28 unique
+  - Total: 34 Easy, 25 Medium, 6 Hard
+  - Unique: 13 Easy, 11 Medium, 4 Hard
 
 Binary Search: 48 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
   - Unique: 4 Easy, 9 Medium, 3 Hard
 
-Graphs: 45 problems, 25 unique
-  - Total: 4 Easy, 37 Medium, 4 Hard
+Graphs: 46 problems, 25 unique
+  - Total: 4 Easy, 38 Medium, 4 Hard
   - Unique: 2 Easy, 21 Medium, 2 Hard
 
 Heap: 25 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
   - Unique: 2 Easy, 7 Medium, 2 Hard
 
-Linked List: 30 problems, 17 unique
-  - Total: 8 Easy, 17 Medium, 5 Hard
-  - Unique: 4 Easy, 10 Medium, 3 Hard
+Linked List: 31 problems, 18 unique
+  - Total: 8 Easy, 18 Medium, 5 Hard
+  - Unique: 4 Easy, 11 Medium, 3 Hard
 
 Sliding Window: 28 problems, 10 unique
   - Total: 6 Easy, 16 Medium, 6 Hard
@@ -43,10 +43,10 @@ Backtracking: 3 problems, 2 unique
   - Unique: 0 Easy, 2 Medium, 0 Hard
 
 
-Total number of problems: 398
-Total unique problems: 171
+Total number of problems: 401
+Total unique problems: 173
 
 Total by difficulty:
   - Easy: 130 problems, 50 unique
-  - Medium: 212 problems, 100 unique
+  - Medium: 215 problems, 102 unique
   - Hard: 48 problems, 21 unique
