@@ -17,7 +17,7 @@ class RandomizedSet:
             pos = self.d[val]
             val_of_last = self.a[-1]
             self.d[val_of_last] = pos
-            self.a[pos] = pos
+            self.a[pos] = val_of_last
             self.a.pop()
             del self.d[val]
             return True
@@ -30,8 +30,8 @@ class RandomizedSet:
     """ 
     ["RandomizedSet","insert","insert","remove","insert","remove","getRandom"]
 [[],[0],[1],[0],[2],[1],[]]
-array = 
-dict
+array = [1, 2]
+dict = {1:0, 2:0}
     """
 
 

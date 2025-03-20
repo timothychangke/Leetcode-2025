@@ -112,3 +112,299 @@ increment res for each dfs performed
 
 Delete Operation for two strings
 minimum number of steps to make string 1 = string 2
+
+letters only lower case? only english?
+
+The problem is the same as the longest consecutive subsequence problem. Maximising the longest subsequence would minimise the total number of delete operations
+
+The longest subsequence problem is a 2dp problem
+The recursive equation is as such = 
+1. if the two letters match, the longest consecutive subsequence is the longest consecutive subsequence of the strings after that letter
+2. Else, the longest subsequence is the maximum LCS of the substring including the letter from text1, excluding the letter from text2 and the substring including the letter from text2, excluding the letter from text1
+
+Can imagine the text 2 letters on the top boundary of the grid while the text 1 letter on the left boundary of the grid. The is done via bottom up, with the right and bottom boundary of the grid wrapped with zeros:
+    if match: dp[i][j] = dp[i + 1][j + 1] + 1
+    else: dp[i][j] = max(dp[i + 1][j], dp[j][i + 1])
+return the difference in the len of the longest common subsequence and the words 1 and 2
+
+Time complexity:
+O(n * m) as all cells have to be traversed
+Space complexity:
+O(n * m) as the dp grid has to be created
+
+3 mins
+
+
+Course Schedule
+
+Create a adjacency list containing all the courses and their prerequisites
+Create a degree matrix that saves the number on prerequisites (outbound connections) that each course requires
+Initialise the values for both the adjaceny list and the degree matrix
+For those in the degree matrix that are 0, meaning that they do not depend on any other courses, add them into the queue
+Perform bfs on the queue given these courses and decrementing its degree. If the degree == 0, add it into the queue
+No need for a visited set as the arrows in the graph are unidirectional
+Return whether the length of visited is equal to the number of courses
+
+6 mins
+
+Combination Sum
+
+frequency of elements is unlimited, but cannot have duplicate results
+have a binary tree with one branch to include and one branch to not include the number
+base case is then sum is > target
+append sum if its == target
+perform dfs with number, perform dfs without number
+have a running sum , counter of i , and array of numbers already in set
+
+* push candidate into arr, perform dfs, pop candidate from array, perform dfs
+because arrays are mutable, when appending to res you are appending the reference of res. This means that when modifying the arr in the dfs, you end up modifiying the array in res. Hence you need to append a copy
+
+Time complexity: 
+each brach has two calls, lengh of branch is T assumeing each element is posivite:
+Therefore O(2^T)
+
+
+Kth Largest element in an array
+
+heapify the array
+pop from the heap until the kth element
+Take note that it is a minHeap so elements have to be multiplied by -1
+TC: O(nlogn)
+
+Basic Calculator 2
+
+have a stack that i throw all elements in
+first round do the multiplications and diviisons first, the push the elemen back intot the stack
+then i do the additions and subtractions
+
+O(n)
+
+fialed...
+
+have a sign variable to track the operation to do after the second number has been saved
+for additions and subtractions, save num and -num respectively then sum up the numbers after the for loop, this allows multiplication and division to occur first
+
+solution:
+have num, op, stack
+for each s in string, if isdigit, increment num
+if +-*/ or last digit
+perform the pervious operation with the sign
+for additions and subtractions, just append teh positive and negativies of the numbers
+for / and *, append the result
+reset num and set sign to be the sign currently
+
+TC: O(n)
+
+
+Trapping rain water
+
+the water collectedis the minimum of the left and right boundary minus the difference in the height if not zero
+
+TC: O(n)
+
+
+House Robber
+
+at each house, compute the max between the sum of this current house and the house two indexes down and the house one index down. This will decide whether to include the current house or not. 
+To optimise space complexity, only two variables, the house before and the house before before that
+
+TC: O(n)
+SC: O(1)
+
+House Robber 2
+
+similar to the original house robber problem, however with the circle, it means that the robber either robs the first house and not the last house or the last house and not the first house. 
+The simple solution is thus to use the original house robber algorithm but on these two scenarios
+
+TC: O(n)
+SC: O(1)
+
+
+Number of Good Leaf Node Pairs
+
+perform a dfs on the left and right subtrees, recording the lengths of each node to the parent node. Iterate through these lists to find the distance between the nodes, before merging and return the lists. 
+Will need to increment all the distances by 1 else well
+
+O(n3) iterating through each node and for each node comparing the distances
+
+
+Longest consecutive sequence
+
+Save all the numbers into a dictionary
+instead of finding subsequence starting with each element, find the source of the subsequence, which is the lowest number where num - 1 doesnt exist int he dictionary. Traverse this number to get its subsequence and save the
+length into the res
+Optimise with a visit set so that the same numbers are not iterated through againa
+return the res
+
+3 mins
+
+Two Sum
+
+its just two summ....
+
+
+Add two numbers
+
+while condition for i and j being less than the lengths of the linked lists as well as the carry not being null
+get the values of each number, if exceeds the length then return 0
+sum this with the carry
+if there is an overflow, move the value to the carry
+create a new list node with the summation
+return dummy.next
+
+3 mins
+
+
+Longest Palindromic substring
+for each element start from the center, iterate outwards to check for Palindromic properties, save the max to res
+perform this again but the center being two characters
+return the max value
+
+5 mins
+
+
+Decode string
+
+iterate the string, and find the '['. Set this index and derive the number from this range. push this number into the stack
+iterate through the string until you find a
+
+if you see a generate the string with current number and the letter
+add it to the end of the previous letter
+
+iterate s
+find [
+indexes prior will be a number
+store in stack
+traverse letter until a number, throw in stack
+find [ save as number
+traverse until  not number ]
+crate string, multiply, then pop letter and append
+
+TC: O(n)
+
+11 mins
+
+
+
+Rotting Oranges
+
+count the number of fresh oranges initially
+get the rotten oranges and place them into the queue
+do a bfs on the rotten oranges and have them rot the fresh oranges
+no need for a visited set as we can just mark the oranges accordingly
+but need level order so as the track the time
+
+TC:O(m x n)
+SC: O(1)
+
+sort linked list
+Perform merge sort on the linked list
+first find the mid point via a fast a and a slow pointer
+split the list into left and right sections and recursively call the merge sort until there is only one element or none
+perform the merge operation simplier to the normal merge operation
+
+TC:O(nlogn)
+
+
+
+search in a rotated sorted array
+do a binary search on the array
+for the mid point, compare it with the first element
+if mid is greater then mid is on the left half of the array
+else mid is on the right half
+for mid in left half, if target is more than the mid or target is less than the first element, move the left boundary to the right
+else move the right boundary to the left
+for mid in right half, if the target is less mid or target is greater than the first element, move the right boundary to the left
+else move the left boundary to the right
+
+TC:O(logn)
+
+
+Combination Sum 2:
+Run the search in a binary tree like manner with one branch including the number and the other branch not including the number
+the two branchs are:
+1. to include the number
+2. to exclude the number entirely and all elements of the same value
+
+sort the array
+define the dfs function
+if the value if out of range or the sum is greater than the target, return 
+if sum is target, append it to res
+append the number, increment the sum variable, and call the dfs
+pop the number
+while the number is not the prev number
+call the dfs
+return res
+
+TC: O(2^n)
+as each element is either included or excluded
+
+
+Merge Intervals
+
+given an arry of Intervals, merge all intervals and return non-overlapping intervals that cover all intervals
+first, sort the intervals by their starting position
+append the first interval into the array
+check if the start of the current interval overlaps with the end of the most recent interval
+if not append this new interval
+if yes check if the end of the new interval exceeds the current interval, 
+if yes then append this interval end to the most recent Interval
+
+TC: O(nlogn) as sorting is required
+
+Climbing stairs
+
+base case0 = 0
+1 = 1
+2 = sum 1 and 0
+to save space complexity, use two variables
+
+O(n)
+
+
+Reverse linked list
+just reverse bro
+
+
+Course Schedule 2
+create graph of the nodes via the prerequisites and a degree array for the number of prerequisites nodes
+for each node with degree 0, append it to the queue
+perform bfs with the queue
+return the res if the len of the res == numCoourses
+
+TC: O(v + e)
+
+Maximal squares
+
+Create helper idctionary that caches the largest square each cell can create
+if cell in dictionary, return that cell, else check the left, right and diagonal of each cell to find the square area
+then traverse the dictinoary to find the max value
+
+
+Sum Game
+
+for bob to win, there are several conditions that must be met:
+1. there must be an even number of question marks as bob has to be able to make the last move
+2. the difference between the two numbers has to be a multiple of 9 where the multiple is the difference in teh number of question marks
+
+
+Best time to buy and sell stock
+
+Traverse the array and calculate the difference in pointer l and r's value, only when r's value goes to one that is less than l, move l and r
+return the max value seen'
+
+TC: O(1)
+
+
+Insert Delete GetRandom
+
+initialise a dictionary and a array
+store the values in both the dictionary and the array
+add(): add the value into both the dictionary and the array if not prerequisites
+remove(): remove the value from the dictioary and the array if present
+for the arry move the last element in the array to the spot of the removal, then remove the last element of the array and the dictionary
+if the element to remove is the last element then this will work either ways
+return a randomly generated number from 0 to the len of the index and return that value
+
+Add to array-form of integer
+
