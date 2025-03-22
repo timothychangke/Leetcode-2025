@@ -26,17 +26,17 @@ Stack: 49 problems, 19 unique
   - Total: 12 Easy, 31 Medium, 6 Hard
   - Unique: 5 Easy, 12 Medium, 2 Hard
 
-Trees: 62 problems, 26 unique
-  - Total: 32 Easy, 25 Medium, 4 Hard
-  - Unique: 12 Easy, 12 Medium, 2 Hard
+Trees: 63 problems, 27 unique
+  - Total: 32 Easy, 25 Medium, 5 Hard
+  - Unique: 12 Easy, 12 Medium, 3 Hard
 
 Two Pointers: 41 problems, 17 unique
   - Total: 18 Easy, 19 Medium, 4 Hard
   - Unique: 7 Easy, 9 Medium, 1 Hard
 
-2-D Dynamic Programming: 3 problems, 3 unique
-  - Total: 0 Easy, 3 Medium, 0 Hard
-  - Unique: 0 Easy, 3 Medium, 0 Hard
+2-D Dynamic Programming: 4 problems, 4 unique
+  - Total: 0 Easy, 4 Medium, 0 Hard
+  - Unique: 0 Easy, 4 Medium, 0 Hard
 
 Backtracking: 3 problems, 2 unique
   - Total: 0 Easy, 3 Medium, 0 Hard
@@ -47,10 +47,10 @@ Math: 1 problems, 0 unique
   - Unique: 0 Easy, 0 Medium, 0 Hard
 
 
-Total number of problems: 414
-Total unique problems: 182
+Total number of problems: 416
+Total unique problems: 184
 
 Total by difficulty:
   - Easy: 135 problems, 54 unique
-  - Medium: 220 problems, 107 unique
-  - Hard: 48 problems, 21 unique
+  - Medium: 221 problems, 108 unique
+  - Hard: 49 problems, 22 unique
