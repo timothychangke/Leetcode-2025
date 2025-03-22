@@ -2,7 +2,7 @@ import os
 import re
 
 parent_folders = [
-    "Arrays", "Binary Search", "Graphs", "Heap", "Linked List", "Sliding Window", "Stack", "Trees", "Two Pointers", "2-D Dynamic Programming", "Backtracking"
+    "Arrays", "Binary Search", "Graphs", "Heap", "Linked List", "Sliding Window", "Stack", "Trees", "Two Pointers", "2-D Dynamic Programming", "Backtracking", 'Math'
 ]
 
 pattern = re.compile(r"^(E|M|H)\.([\w\s]+)-\d+\.py$")

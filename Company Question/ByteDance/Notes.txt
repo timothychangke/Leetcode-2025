@@ -408,3 +408,125 @@ return a randomly generated number from 0 to the len of the index and return tha
 
 Add to array-form of integer
 
+initialise two pointers at the end of each array
+sum them up and if they are greater than 9, increment a carry
+store the result
+terminate when carry = 0 or both pointers have reached -1
+
+
+Max value at a given index in a bounded array
+
+Perform binary search to see whether peak is feasible, then maximise the peak
+
+
+Container with the most water
+
+Initialise a left and right pointer
+check its area created
+move the pointers according to which on is at a smaller height
+
+
+H-index
+Perform a binary search on the citations 
+return the maximum valid number
+
+
+Trapping rain water 2
+start with the base case
+if i want to trap one unit of water, 
+
+is it the same as trapping rain water 1 but now multiplied with the different 3 dimensional depth?
+No, because the water must be trapped on both horizontally and column wise
+
+None of the edges can hold any water
+*skipped...
+
+
+Move zeros
+keep a pointer i and move all numbers to that pointer
+increemnt that pointer by one each time
+
+There are three steps to this problem
+step 1: traverse the array from the back and find the point where the array is no longer increasing, if there is no such point, 
+return the array reversed. This means that the current array is already the maximum
+step 2: traverse the array again and find an element that is greater than the current breakpoint
+step3: reverse the numbers after the break point
+
+
+Intersection of two Linked lists
+for each of the nodes that have already been traversed, append them into the hashmap, if it already exists, return that node
+
+
+pow(x, n)
+the native solution is not enough
+not efficient enough
+the most efficient way is to square the numbers
+
+Degree of array
+
+have a degree count, a res count, a dictionary with the first index of each number
+if the number is not in first, add to first
+increment the degree
+if degree greater than max, save value to res
+if degree == max, update res if the difference of the value is less than the previous res
+return res
+
+
+Count Binary strings
+The key idea is to count the number of groups of the same elements and when they flip
+
+
+Coin change
+Using dp, the number of coins need at i is the minimum number of coints at i - c where c are the coins present
+
+TC: O(n * c)
+
+
+Find all good indices
+
+native solution is the perform a left and right traversal for each index to determine whether it is a good index, however this would take O(n^2)
+first precompute a forward pass with a non-increasing monoatomically decreasing stack, at each index, if the size of the stack is >- k, return a truthy value at that index
+next, precompute a backward pass with a non-decreasing monoatomically increasing stack, and do the same at each index
+return the indexes that are truthy in both the forward and backward passes
+
+
+Minimum Window substring
+Create a have map and a need map
+Initialise a counter that counts the remaining number of haves to satisfy so that we dont have to check the dictionary each time
+for each letter, increment the havemap, if it matches the need map count, increment the match counter by one
+keep doing until the match counter = len of the needmap
+save the answer to res
+then now decrement the back until the match count is no longer == len of needmap
+go back to incrementing the right pointer of the sliding window
+
+
+Minimum Area Rectangle
+create a visited set
+for each point, iterate through every other point. 
+if the two other corners, x2 y1 and y2 x1 exists in the set, form the rectangle and make the area, 
+then update res
+return res if the area is not -inf
+
+
+Sum of distances in tree
+the idea is that the sum of distances of the nodes from the base node is used as a reference
+then for each child node, the sum of its distances is the sum of all the root nodes children - 1 and the sum of all the distances of the parent nodes - 1
+This can be simplified with decrementing the children nodes by the number of children nodes and incrementing the parent nodes by the number of parent nodes
+perform two dfs, the first being the stand calculation of distances from the root node
+while calculating the distances, you could save the weights of each node (how many children are under them, to derive the parent, you would then n - children)
+for the subsequent dfs, traverse the graph again and sum up the total depths by subtracting the weights of each node and adding the n - weights of each node
+
+Basic Calculator
+
+initialise a res, num, sign and a stack
+iterate through the string
+1. if the character is a number, add up the num variable by multiplying by ten and adding the new number
+2. if the character is a sign, perform the previous operation with the previous sign and number, reset number and set the new sign
+3. if it is a open bracket, save the res and the sign in the stack and reset them
+4. if it is a close bracket, perform the operation with sign and num, add that to res, set the res based on the popped out sign and add the res to the popped out res, set num back to zero
+5. finish  the loop and return the res plus the last remaining num and sign
+
+Binary Tree ZigZag Order traversal
+Perform the normal bfs but at odd level of numbers, append the level in reverse order
+
+Open the lock
