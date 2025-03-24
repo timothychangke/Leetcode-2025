@@ -14,9 +14,9 @@ Heap: 25 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
   - Unique: 2 Easy, 7 Medium, 2 Hard
 
-Linked List: 32 problems, 19 unique
-  - Total: 9 Easy, 18 Medium, 5 Hard
-  - Unique: 5 Easy, 11 Medium, 3 Hard
+Linked List: 33 problems, 20 unique
+  - Total: 9 Easy, 19 Medium, 5 Hard
+  - Unique: 5 Easy, 12 Medium, 3 Hard
 
 Sliding Window: 28 problems, 10 unique
   - Total: 6 Easy, 16 Medium, 6 Hard
@@ -47,10 +47,10 @@ Math: 3 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 423
-Total unique problems: 190
+Total number of problems: 424
+Total unique problems: 191
 
 Total by difficulty:
   - Easy: 135 problems, 54 unique
-  - Medium: 224 problems, 111 unique
+  - Medium: 225 problems, 112 unique
   - Hard: 52 problems, 25 unique
