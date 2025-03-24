@@ -1,6 +1,6 @@
-Arrays: 76 problems, 36 unique
-  - Total: 38 Easy, 29 Medium, 7 Hard
-  - Unique: 16 Easy, 15 Medium, 5 Hard
+Arrays: 78 problems, 38 unique
+  - Total: 38 Easy, 31 Medium, 7 Hard
+  - Unique: 16 Easy, 17 Medium, 5 Hard
 
 Binary Search: 49 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
@@ -47,10 +47,10 @@ Math: 3 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 421
-Total unique problems: 188
+Total number of problems: 423
+Total unique problems: 190
 
 Total by difficulty:
   - Easy: 135 problems, 54 unique
-  - Medium: 222 problems, 109 unique
+  - Medium: 224 problems, 111 unique
   - Hard: 52 problems, 25 unique
