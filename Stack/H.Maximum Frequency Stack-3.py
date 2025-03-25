@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+
 class FreqStack:
 
     def __init__(self):
@@ -9,7 +11,7 @@ class FreqStack:
     def push(self, val: int) -> None:
         self.counts[val] += 1
         self.maxCount = max(self.maxCount, self.counts[val])
-        self.countArr[self.counts[val]].append(val)        
+        self.countArr[self.counts[val]].append(val)
 
     def pop(self) -> int:
         res = self.countArr[self.maxCount].pop()
@@ -17,7 +19,6 @@ class FreqStack:
         if not self.countArr[self.maxCount]:
             self.maxCount -= 1
         return res
-        
 
 
 # Your FreqStack object will be instantiated and called as such:
