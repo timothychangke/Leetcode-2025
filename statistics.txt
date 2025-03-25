@@ -26,9 +26,9 @@ Stack: 49 problems, 19 unique
   - Total: 12 Easy, 31 Medium, 6 Hard
   - Unique: 5 Easy, 12 Medium, 2 Hard
 
-Trees: 63 problems, 27 unique
-  - Total: 32 Easy, 25 Medium, 5 Hard
-  - Unique: 12 Easy, 12 Medium, 3 Hard
+Trees: 64 problems, 28 unique
+  - Total: 32 Easy, 26 Medium, 5 Hard
+  - Unique: 12 Easy, 13 Medium, 3 Hard
 
 Two Pointers: 41 problems, 17 unique
   - Total: 18 Easy, 19 Medium, 4 Hard
@@ -47,10 +47,10 @@ Math: 3 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 424
-Total unique problems: 191
+Total number of problems: 425
+Total unique problems: 192
 
 Total by difficulty:
   - Easy: 135 problems, 54 unique
-  - Medium: 225 problems, 112 unique
+  - Medium: 226 problems, 113 unique
   - Hard: 52 problems, 25 unique
