@@ -7,7 +7,7 @@ class Solution:
             prefix += n
             diff = prefix - k
             res += map.get(diff, 0)
-            map[prefix] = map.get(prefix, 0) + 1
+            map[prefix] = map.get(prefix, 0) + 
         return res
     
 """ 
