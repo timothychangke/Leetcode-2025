@@ -1,6 +1,7 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         res = []
+
         def dfs(left, right, seq):
             if left < n:
                 dfs(left + 1, right, seq + '(')
