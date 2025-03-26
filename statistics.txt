@@ -1,6 +1,6 @@
-Arrays: 78 problems, 38 unique
-  - Total: 38 Easy, 31 Medium, 7 Hard
-  - Unique: 16 Easy, 17 Medium, 5 Hard
+Arrays: 77 problems, 37 unique
+  - Total: 38 Easy, 30 Medium, 7 Hard
+  - Unique: 16 Easy, 16 Medium, 5 Hard
 
 Binary Search: 49 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
@@ -14,9 +14,9 @@ Heap: 25 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
   - Unique: 2 Easy, 7 Medium, 2 Hard
 
-Linked List: 33 problems, 20 unique
-  - Total: 9 Easy, 19 Medium, 5 Hard
-  - Unique: 5 Easy, 12 Medium, 3 Hard
+Linked List: 33 problems, 19 unique
+  - Total: 10 Easy, 18 Medium, 5 Hard
+  - Unique: 5 Easy, 11 Medium, 3 Hard
 
 Sliding Window: 28 problems, 10 unique
   - Total: 6 Easy, 16 Medium, 6 Hard
@@ -30,9 +30,9 @@ Trees: 64 problems, 28 unique
   - Total: 32 Easy, 26 Medium, 5 Hard
   - Unique: 12 Easy, 13 Medium, 3 Hard
 
-Two Pointers: 41 problems, 17 unique
-  - Total: 18 Easy, 19 Medium, 4 Hard
-  - Unique: 7 Easy, 9 Medium, 1 Hard
+Two Pointers: 42 problems, 18 unique
+  - Total: 18 Easy, 20 Medium, 4 Hard
+  - Unique: 7 Easy, 10 Medium, 1 Hard
 
 2-D Dynamic Programming: 5 problems, 5 unique
   - Total: 0 Easy, 4 Medium, 1 Hard
@@ -48,9 +48,9 @@ Math: 3 problems, 1 unique
 
 
 Total number of problems: 425
-Total unique problems: 192
+Total unique problems: 191
 
 Total by difficulty:
-  - Easy: 135 problems, 54 unique
-  - Medium: 226 problems, 113 unique
+  - Easy: 136 problems, 54 unique
+  - Medium: 225 problems, 112 unique
   - Hard: 52 problems, 25 unique
