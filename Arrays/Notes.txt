@@ -36,3 +36,12 @@ Concatenation of Array
 2. Pseudo Code:
     1. Return the array multiplied by two
 3. Time Complexity: O(n)
+
+
+Contains Duplicates
+
+1. Edge Cases: empty array?, all duplicates, no duplicates
+2. Pseudo Code:
+    1. Turn both arrays into sets and compare the lengths of both sets
+    2. Return if the length of the sets are the same
+3. Time Complexity: O(n)
