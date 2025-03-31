@@ -182,3 +182,6 @@ Similar idea to majority element 1, just that now two variables are saved instea
 4. Space Complexity: O(1)
 
 
+Remove Elements
+
+Same as move zeros
