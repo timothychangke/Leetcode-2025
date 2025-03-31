@@ -149,4 +149,25 @@ this element is a majority element. This algorithm only works on the assumption 
  - It only works if there is guaranteed a majority element in the array
 
 
+Majority Element 2
 
+1. Edge Case: 
+2. Idea: 
+Similar idea to majority element 1, just that now two variables are saved instead of one. Same principle applies where if there are two majority elements, their counts will be greater than the rest of counts of the other elements combined
+3. Pseudo Code:
+    1. Initialise four variables, two for the counts of the max and second max frequencies and two variables to save what these elements are. Make sure that the second variable initialised is different from the first variable
+    2. Iterate the array of elements
+     - if the element is equal to the first variable, increment the first variable by one
+     - if the element is equal to the second variable, increment the second variable by one
+     - else if the count of the first variable is zero, save the current variable to be the most frequent variable and set its count to 1
+     - else if the count of the second variable is zero, save the current variable to be the second most frequent variable and set its count to 1
+     - else, decrement the counts of both the variables by one
+    3. Return the variables if the counts are greater than zero and their actual counts are greater than len(array) // 3
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings:
+ - Variation of the original boyer moores algorithm but with multiple variables instead of just one
+ - Initial element has to be different so that there isn't a bias to one number
+
+ 
+  
