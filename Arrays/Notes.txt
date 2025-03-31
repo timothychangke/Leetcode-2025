@@ -57,3 +57,22 @@ Comparing two sections of the string (either a 1s section and a 0s section or a 
     2. For each pair of sections side by side, calculate the minimum value between these two sections. This would return the number of substrings that are grouped consecutively between these two sections
     3. Increment the res for each of these sections and return the final value
 4. Time Complexity: O(n)
+
+
+Degree of an Array
+
+1. Edge Cases: empty string, elements with multiple max frequency
+2. Idea:
+To solve this in one pass, there are several steps to do 
+- Save the index of the first occurrence of the element. 
+- Save the max frequency of each element. If the max frequency is greater then the current max, the res is the length of the current index and the element's first index
+- If the count of the current element is the same as the max frequency and its starting index is ahead of the current max frequency's starting index, meaning that its substring length is shorter, save it as the res instead
+3. Pseudo Code:
+    1. Initialise a res, a dictionary to store the max frequencies, a dictionary to store the first index, and a max frequency variable
+    2. Iterate through the string
+        - If not in the first index map, add the index inside
+        - Increment the max frequency of the element. If it greater than the current max frequency, save its substring length as the res. This is calculated by minusing the current index position with the first index position   
+        - If the current frequency is equal to that of the current max frequency and its length is shorter than the current res, save this length as res
+    3. Return res
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
