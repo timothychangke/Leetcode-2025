@@ -111,3 +111,25 @@ Use an array together with a linked list to construct a hash map. This involves 
 Design Hashset
 
 Same as design hashmap, just that you store only the hash keys with no need for storing values
+
+
+Longest Common Prefix
+
+1. Edge Cases: empty strings, same strings, no common Prefix
+2. Idea:
+The string of each word to that index has to be the same for every word
+3. Pseudo Code:
+1. Use the first string as the comparision to the result
+2. Iterate through the other strings at the same index. 
+ - if the letter at the same index is different, break out of the loop and return the res
+ - if the index is greater than the length of that string, break out of the loop and return the res
+ - else, once reaching the end of the strs loop for that particular index, append that letter to the res
+3. Return res
+4. Time Complexity: O(total number of letters in all strs)
+5. Learnings:
+- Checking for strings where the index exceeds the length of that string is also a terminating condition
+
+
+
+
+
