@@ -169,5 +169,16 @@ Similar idea to majority element 1, just that now two variables are saved instea
  - Variation of the original boyer moores algorithm but with multiple variables instead of just one
  - Initial element has to be different so that there isn't a bias to one number
 
- 
-  
+
+ Move zeros
+
+ 1. Edge Case: empty array, array with all zeros, array with no zeros
+ 2. Pseudo Code:
+    1. Initialise a pointer k where k will be the ending index where all numbers preceding it are non-zeros, k itself points to a zero
+    2. Iterate through the array:
+     - if num is not zero, make nums[k] = that number and increment k by 1
+    3. Return the resultant array modified inplace
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
+
+
