@@ -106,3 +106,8 @@ Use an array together with a linked list to construct a hash map. This involves 
 - Removing the node before putting the node makes for cleaner code
 - While trying to find the node in the remove(), have cur be node.next so that the removal process of joining the node prev and node next easier
 - Hash function 
+
+
+Design Hashset
+
+Same as design hashmap, just that you store only the hash keys with no need for storing values
