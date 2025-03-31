@@ -45,3 +45,15 @@ Contains Duplicates
     1. Turn both arrays into sets and compare the lengths of both sets
     2. Return if the length of the sets are the same
 3. Time Complexity: O(n)
+
+
+Count Binary Strings
+
+1. Edge Cases: empty string, one element string, invalid string?
+2. Idea:
+Comparing two sections of the string (either a 1s section and a 0s section or a 0s section and a 1s section), finding the minimum length between these two sections will return the number of substrings grouped consecutively within that two sections
+3. Pseudo Code
+    1. Pre compute the length of each consecutive section of zeros or ones
+    2. For each pair of sections side by side, calculate the minimum value between these two sections. This would return the number of substrings that are grouped consecutively between these two sections
+    3. Increment the res for each of these sections and return the final value
+4. Time Complexity: O(n)
