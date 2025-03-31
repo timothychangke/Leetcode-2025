@@ -119,17 +119,34 @@ Longest Common Prefix
 2. Idea:
 The string of each word to that index has to be the same for every word
 3. Pseudo Code:
-1. Use the first string as the comparision to the result
-2. Iterate through the other strings at the same index. 
- - if the letter at the same index is different, break out of the loop and return the res
- - if the index is greater than the length of that string, break out of the loop and return the res
- - else, once reaching the end of the strs loop for that particular index, append that letter to the res
-3. Return res
+    1. Use the first string as the comparision to the result
+    2. Iterate through the other strings at the same index. 
+     - if the letter at the same index is different, break out of the loop and return the res
+     - if the index is greater than the length of that string, break out of the loop and return the res
+     - else, once reaching the end of the strs loop for that particular index, append that letter to the res
+    3. Return res
 4. Time Complexity: O(total number of letters in all strs)
 5. Learnings:
 - Checking for strings where the index exceeds the length of that string is also a terminating condition
 
 
+Majority element
+
+1. Edge Case: empty array, one element array, array containing two elements of the same frequency
+2. Idea:
+A Majority element will have a frequency that is more than the rest of the other elements in the array combined. If we encounter the element with the max frequency and increment it while decrementing it if we face other elements, if in the end this value is greater than zero, 
+this element is a majority element. This algorithm only works on the assumption that there is always a majority element in the array
+3. Pseudo Code:
+    1. Initialise a majority element variable and a max frequency variable
+    2. Iterate through the elements
+     - if the element is the same as the max frequency element, increment its count by 1
+     - if the element is not the same as the max frequency element, decrement its count by 1
+         - if the max frequency is now 0, set this number as the new max frequency element
+    3. Return the max frequency element if the value of the max frequency is greater than zero and the count is indeed more than half the length of the array
+4. Time Complexity: O(n)
+5. Learnings:
+ - This is the Boyer Moores voting algorithm
+ - It only works if there is guaranteed a majority element in the array
 
 
 
