@@ -14,7 +14,7 @@ class Solution:
             k //= 10
         return list(q)
             
- """ 
+""" 
  num = [2,1,5], k = 806
 8 + 2
  sum = 1

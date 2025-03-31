@@ -1,0 +1,12 @@
+Add to Array-Form of Integer
+
+1. Edge Cases: Adding from an empty array, adding zeros, handling carry overs
+2. Pseudo code:
+    1. Initialise a carry value, a result value, a pointer that traverses the array backwards
+    2. While the pointer is greater than zero or sum or carry:
+        - Sum the all the elements together and mod them by 10, obtain the carry by doing floor division by 10
+        - Add this value to the res by multiplying it with 10 * pow
+        - Decrement the pointer, divide the number by 10 and increment the pow
+        - If the num is 0, have it return 0 in the sum. if the index is <= 0, have it return zero in the sum (handling of overflow)
+    3. Return res
+3. Time Complexity: O(n + m)

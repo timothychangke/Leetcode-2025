@@ -1,0 +1,668 @@
+146.LRU Cache
+
+1. Built a least recently used cache that can get and put in O(1) time whereby if the size exceeds the capacity, it ejects the least recently used
+2. Optimise for time complexity
+3. all definitions make sense
+4. capacity is positive, duplicates are updated, assume all input formats are logically correct? ie no empty values etc, negative values can be handled, get if list is empty?
+5. Use a linked list to queue the items and a hash map to get retrival down to O(1)
+6. brute force will be to have a hash map with an index of priorities for each elememt. then I update this priority after every operation. Will take O(n) for each instruction
+7. Implementation
+Initialise a doubly linked list, initialise the start and ending nodes
+Initialise a hash map
+create insert and remove helper functions
+insert takes in a node and connects it to the prev and next
+remove takes in a node and connects the prev and next to remove the node. Add a default value for it to remove the least recently used node
+get function find the element in the hash map, if not found return -1
+if found, remove the element from the list and append it to the starting node as it is now the most recently used
+this will be done with the help of the insert function, update the hash map
+put, check the size of the hash map if element is not present, if max capacity, remove the least recently used, afterwhich, update the hashmap, increment the count
+if element is already present, remove the existing node and insert the new node, update the hash map
+return the node's val
+8. Time complexity O(1) for each operation: retrive via hash map, insert and delete is all in constant time
+9. 
+
+1081. Smallest Subsequence of distinct characters
+1. Return the smallest lexi subsequence of all characters with no duplicates
+2. Clarify the meaning of lexicographically, abcd vs abdc. Clarify subsequence
+3. Are there any constraints? should i maximise for time or space?
+4. input is only alphabets? any numbers? capitalisations? is an empty input allowed? There will be duplicates. 
+5. use a monoatomically lexi increasing stack so as to store the res in an increasing order
+6. brute force is to try every substring check if there is duplicates and return the lexi smallest one. each substring will take O(n) to check and O(n^2) to find all substrings
+7. Implementation
+initialise a hash map containing the indexes of the last elements, can do this by setting the index iteratively, the index remaining will be the last index set
+create a hash map of seen to prevent duplicates
+if index is last then no choice have to take that character
+iterate through the string
+if stack and the top of the stack is greater lexi than the current element,
+if the element's last index is > than the current index, then can pop the element, remove from seen
+append the current element into the stack
+add to seen 
+join the stack into a string and return 
+8. time complexity is O(N), completed in one pass. an element is added and poped from the stack at most once each
+9. 
+
+3. Longest Substring without repeating characters
+1. return longest substring with unique characters
+2. Clarify substring as characters in consecutive order?
+3. only english letters? only alphabets or ar there numbers? all small casing? empty inputs? symbols?, spaces?
+4. what are the input constraints? do i optimise for time or space complexity? edge cases: empty string, one character all same character
+5. data structures used : set, left and right pointers? sliding Window
+6. brute force will be to check every substring and if it does not contain any duplicates, return its length
+7. Implementation
+Initialise a set
+iterate through the list via a right pointer
+if letter is not seen before, add to the set
+save the max res
+once it meets a duplicate element, increment the left pointer until this duplicate is no more
+continue iterating
+8. time complexity : O(n) each element is processed at most 2 times, to include into the set and to remove from the set
+9. 
+
+
+200. Number of Islands
+1. return the number of connected 1s seperated by 0s
+2. nothing to clarify
+3. assume only ones and zeros in the input? empty input? can the whole thing be one island? actually that is a valid test case
+4. optimise for time complexity? size of input and output. Can i modify the input element?*
+5. data structures: do i need a set? acutally no if i mark them as 1 after processed. graph
+6. brute force: my current solution is brute force. Traverse eachelement and see if it is in a island
+7. Implementation
+define a dfs function
+when processed, mark the current cell as 0 so as to not reprocess the cell again
+for each neighbour top bottom left right, perform dfs if it is 1 and in range of rows and columns
+for each cell, perform dfs if the cell value is 1, increment the number of Islands
+return the number of Islands
+8. TC: O(m x n) since each dfs would mark a cell and it would not be processed more than once
+9. 
+
+583. Delete operation for two substrings
+1. return the minimum number of steps to make word1 into word2 = total length - longest common subsequence of two strings * 2
+2. one operation involved the deletion of only one character from one word? is the length of the first string always longer than the seconds tring?
+3. only english letters? alphabets? no caps no symbols spaces, no numbers
+4. edge cases: empty string, one letter string, already the same, cannot be matched?
+5. optimise for time complexity? or space?
+6. Brute force try every combination of deletions and see if the two strings match: O(M x N)
+7. data structures: matrix (dp problem)
+8. Implementation 
+Initialise a 2d matrix with length and width of n + 1 and m + 1
+each side will represent the letter
+   s e a 
+e  2 2 0 0 
+a  0 0 1 0
+t  0 0 0 0
+   0 0 0 0
+do it bottom up starting form the last index
+the longest substring at the current character is
+1. the characters match, so the longest substring is plus that character, continue the iteration excluding that character
+2. if that character doesnt match, the max longest substring with the character in word1 and the character in word 2
+if match:
+ dp[i][j] = dp[i + 1][j + 1] + 1
+else
+ dp[i][j] = max(dp[i + 1][j], dp[i][j + 1])
+ then i return dp[0][0] subtracted with the lenght fo the two other strings
+
+207. Course Schedule
+1. return if all nodes in teh graph can be traversed give that they have prequritiies
+2. a, b, b first then course a
+3. courses will all be numbers all in increments of one? cycles?
+4. Edge cases: cycles, no prerequisites, no courses?
+5. Optimise for tiem complexity?
+6. Brute force is the actual solution
+7. data structures: graph, array, queue
+8. Implementation
+Create a graph based on the prerequisites
+Implement a degree array that counts how many inbound connections each node has
+for those with degree of 0 and hence no prerequisities, add them into the queue
+perform bfs on the courses
+the edges are unidirection so no case where it will traverse backwards
+decrement the degree for each visit, if the degree == 0, add to the queue
+count the number of courses at each visit
+return if the c == numCourses
+9. Time complexity = O(N) for every node is to be traversed
+
+39. Combination Sum
+1. return the combination of numbers that equal to a specific sum
+2. unlimited number of times mean 1111112 for an input of 12?
+3. can there be duplicates in the input array? only positive numbers? 
+4. edge cases: no candidates? target = 0? no valid answer?
+5. optimise for time or space complexity
+6. brute force iterate through every combination and check its sum. 
+7. data stucture: array, method: backtracking
+8. Implementation
+the two paths will be either to include the element or not include the element. This is to prevent duplicates
+declare a dfs taking in the start index, current array and current sum
+check the base case; if sum is == target, append to global res. if sum is greater than the base case, return
+else add the element into the current arr, increment the sum and perform the dfs on the same numbered index
+pop the element from teh array and perform the dfs on the next index, not including this current indexes
+return the res
+9. TC: O(target * c) as each addition to the arr should be >= 1 and or is it 2^n?
+
+215. kth largest element in an array
+1. Return the kth largest element in an array
+2. kth largest in terms of value? 12345 2th largest is 4?
+3. can there be duplicates? yes. Will the duplicates count towards the counting of k?
+4. all the same number, no numbers k > len(nums)?
+5. optimise for time complexity
+6. brute force is to sort then iterate from the back O(nlgn)
+7. heap
+8. Implementation
+Heapify the number
+heap pop until kth largest is remaining
+python heap is a min heap so have to negate the numbers when putting it into the heap
+and negate the numbers when returning the answer
+OR 
+could have created a min heap of size k, so if the len excies, pop it out of the minheap. Will use O(k) space instead of O(n)
+9. Time complexity: O(nlgn) for creating the heap structure, O(klgn) for popping the items out of the heap
+10. 
+
+227. Basic calculator 2
+1. return the result of the operations with priority on times and divide
+2. definition of a valid operation? truncate towards zero means its a floor division?
+3. are there multiplciation and dividsion of negeative numbers? of decimal places? brackets? theres spacings, are there other symbols of operators? are there zeros?
+4. empty input string, divide by zero error?
+5. optimise by time complexity
+6. brute force is to convert the entire string into mathematical operations
+7. data strucutres and algorithms: stack 
+8. Implementation
+initialise a stack, sign and num
+iterate through the string
+if num is a digit, add to num via the ones place
+    if character is an operator, perform the operation on teh previous element OR the character is the last of the index
+    if sign an addition, append num to the stack
+    if sign a subtraction, append -num into the stack
+    if sign a multiplcation, pop from stack and multiple the two numbers then append to the stack
+    if sign is a division, pop form the stack and divide the two numbers then append to the stack
+    set the new sign and make num = 0
+return the sum of the stack
+9. TC O(N) as each element i iterated in one pass and every element in the stack is only push and popped at most twice
+
+198. House Robber
+1. Maximum sum of alternating houses
+2. adjacent houses are those taht are beside each other?
+3. all values are positive? input is non empty?
+4. one house, two houses
+5. brute force solution: do a bactrack of ever possible combination of houses O(2^N)
+6. dp array 
+7. Implementation:
+Initialise a dp array
+dp[i][j] = max(dp[i - 1][j - 1], dp[i - 2][j - 2] + dp[i][j])
+return the last value
+to optimise space complexity, i dont actually need an array as i can just use two variables
+8. TC: O(n)
+9. dry run with a example test case
+
+213. House Robber 2
+1. similar to the previous hoouse robber, jsut that two dfs are need, one includig the first house and excluding the last house and one includeing last house and excluding the first house
+
+Number of good leaf node pairs
+1. Return the pairs of leaf nodes that have distances less than or equal to klgn
+2. leaf nodes are just those with no children? distance = number of edges between the nodes?
+3. Always connected components? input always valid
+4. Tree is non empty? one node, two node, three node trees
+5. brute force: for every leaf node, do a dfs to every other leaf not and check if the distance is less than or equal to k
+6. data structures and methods: dfs on a trees
+7. Implementation
+Create a dfs exploring its left and right nodes
+the base case will be a left node, returning an array of [1] representing distance
+the left and right nodes will return an array of left nodes in the left and in the right
+compare each node with each other and if their distances are <= k, append them to the result
+join these two lists together and return their distances but incremented by 1
+8. TC(n^2 * n)?
+
+128. Longest consecutive sequence
+1. return the longest consequtive sequence out of all the elements
+2. definition of sequence? longest means length of sequence?
+3. only numbers? negative numbers? empty inputs? Can a sequence start from 0? Can numbers duplicate?
+4. Edge cases: entire input is in the sequence, one number input, inputs with multiple longest sequences, duplicates?
+5. brute force: for every element, chech the longest sequence it can make O(n^2) or sort the input
+6. data strucutres and methods: set
+7. Implementation
+Create two sets, one for visited and one for all the numbers
+iterate through the numbers and check if the number - 1 is in the set, this is the optimisation as we are trying to find the start of the sequence, no point traversing a sequence before realising there are numbers before it
+if it is the start of a sequence, iterate to find the next element until none are found, update the res value also update the seen set so that we do not need to traverse to these element again as they cannot be 
+another starting position
+return res
+
+2. Add two numbers
+1. return a linked list of the sum of the two numbers
+2. 
+3. No leading zeros? Can there be a zero input? Can there be an empty linked list as an input
+4. one digit? carry propagation, one empty list, both empty
+5. Brute force, convert the linked list into interger numbers then perform the summation
+6. data structures: linked list
+7. Implementation
+while the lists and the carry are non null, 
+ - obtain the values of l1 and l2, 0 if they are null
+ - sum them up together with the carry
+ - if greater than 10, add to carry
+ - mod the answer by ten 
+ - create a list node withthe value and set the res.next to be this node
+ - move down l1 and l2 if their .next are non null
+return the resultant linked list
+
+5. Longest Palindromic Substring
+1. return the longest Palindromic substring
+2. substring = consecutive characters? Palindromic?
+3. s is only letters? english? capitalisation? any symbols, whitespace? are caps considered Palindromic
+4. empty string, single character string, even lengths of Palindromic strings and odd lengths of Palindromic strings, all distinct characters
+5. Brute force: check for every substring whether it is a palindrome or not O(n^3)
+6. sliding Window
+7. Implementation
+initialise the resLen and res
+Iterate through the list 
+   let each element be the center of the palindome (odd)
+   set l and r to the the characters right and left of the center
+   also must check whether the l and right pointers are in range
+   while they match, increment the r and decrement the left to expand the sliding Window
+   record the lenght of this window and append to the result if its greater than the result
+   let each element be the left pointer and the right pointer be the next element (even)
+   same as previous but with different left and right pointers
+return res
+8. TC: O(n^2)
+9.
+babbad
+|----|
+
+394. Decode string
+1. return the decoded string by multiplying each substring with the number outside its brackets
+2. digits are only multipliers and original string is made up of only characters
+3. empty string? empty brackets? are all encoded strings valid? no characters with no multipliers, all brackets match? can number have leading zeros?
+4. multipliers within multipliers, empty inputs, strings with no multipliers
+5. brute force = current solution is brute force
+6. data structures: stack to save the previous results
+7. Implementation
+initialise a stack, num, str
+iterate the characters in the stack
+if digit: add it to the ones place in nums
+if character, append it to the str
+if [, append str and num into the stack, let num = 0 and str be empty
+if ], pop num and str from the stack, append the str += num * str
+return stack[0]
+9. 
+"2[abc]3[cd]ef"
+           i 
+ str = 'abcabccdcdcdef', num = 0
+stack = [ ]
+"abcabccdcdcdef"
+
+994. Rotting Oranges
+1. return how long it takes for rot to spread to all Oranges
+2. each rot can be spread simultaneously from multiple sources?
+3. only digits 0, 1, and 2 present? valid graph input?
+4. empty graph? no rotten oranges? all rotten oranges? no oranges? single non rotten orange, single rotten orange
+5. Brute force
+6. data structures and algorithms: bfs to traverse all oranges in levels so that i can count the time taken, queue
+7. Implementation
+count all oragnes
+add all rotten oranges into my queue
+initialise a visited set
+while my q is none empty:
+for len in q
+   increment time
+   add orange into visited set
+   for its neighbours
+      if it is not in visited and in range and 1
+         add to queue
+return if len(visited) == number of all oragnes return time else -1
+mistake: count the number of fresh, decrement the number of fresh upon each visit, terminate the loop when the number of fresh is less than 0
+
+148. Sort list
+1. return the list in sorted order
+2. ascending != non-decreasing? will there be duplicates?
+3. no cycles?
+4. negative numbers, empty input lists, duplicates?
+5. brute force: traverse the list, convert to an array and sort, then convert back into the list
+6. dsa: merge sort
+7. Implementation 
+define a find mid algorithm: consists of a slow and fast pointer
+slow = i and fast = i.next
+while fast and fast.next
+return slow
+the mid will then be slow.next
+base case will be when the pointer is null or the pointer,next is null, return the element
+split the current linked list via this mid point, mid.next = none
+recursively call the function on the left and right
+then call merge on the left and right
+sort the strings iteratively and return the sorted string
+return 
+
+Search in a rotated sorted array
+1. return the index of the element in a rotated sorted array
+2. possibly rotated means could be not rotated?
+3. all numbers are unique? negative numbers? 0s? only numbers? invalid rotations?
+4. empty inputs? single digit inputs? double digit inputs? non-rotated inputs?
+5. brute force: linear seach of O(n)
+6. dsa: binary search
+7. Implementation
+Perform a binary search on the input
+initialise the left and right pointers
+while they dont overlap
+find mid
+if its equal to the target, return 
+check where mid is by comparing it with the left pointer:
+if less than left, its in the second half
+   check if target is less than mid or more than or equal to the left pointer, then its in the first half
+   else its in the second half
+else less than or equal to the left pointer
+   check if target is greater than mid or less than the left pointer, then its in the second half
+return -1 as the result is not found after concluding the loop
+8. TC: O(lgn) for binary search
+
+Combination sum 2
+1. return all unique combinations of numbers where the sum equals to the target. Each number can only be used once
+2. There will be duplicates in the input string? clarify what duplicate combinations mean
+3. are there negative numbers? are there negative target numbers? target or numbers = 0?
+4. duplicates, empty inputs?, unreachable targets (if smallest number is greater than target, return unreachable)
+5. Brute force
+6. dsa: backtracking
+7. Implementation
+*sort before backtracking
+define a dfs function that takes in the current index, current sum and current array of numbers
+if sum = target append the copy* to the list and return . list are mutatle references so cannot pass int he list
+if sum > target, assuming no negatives, return
+the two branches in the tree will be to include this number or not include this number. if i were to exclude this number, i must exclude all versions of this number so as to prevent duplicates
+               1111
+                /\
+               1  N
+               /\
+             11  1
+             /\
+           111 11
+dfs to include the number, increment the index by one, increment the sum and add the number into the arr
+next dfs to exclude the number, pop the number from the number index, while the letter is the same and index is within range, iterate until letter is not the same
+then perform dfs on that index
+return the res 
+
+Trapping rain water
+1. return the maximum amount of rain water the graph can Trapping
+2. Clarify that water being trapped is the spacing between two columns in the graph where their heights are more than the heights of the water inside it
+3. heights is always positive? alwasy will have blocks?
+4. no water? 
+5. 
+6. dsa: prefix and suffix sum to calculate the max heights
+7. Implementation
+initiliase a prefix and suffix counter
+calculate the maximum value to the left of each value
+calculate the maximum value to the right of each value
+add to the res the minimum of these two boundaries and its difference with the current cell height if positive
+8. TC: O(3N) = O(N)
+9.
+       x
+   x   xx  x
+ x xx xxxxxx
+           i
+[0,1,0,2,1,0,1,3,2,1,2,1]
+
+Merge intervals
+1. return the overal interval that covers all overlapping intervals
+2. 
+3. are all intervals positive numbers? are they all valid, small to big?
+4. no intervals, one interval, one big interval that overlaps every other interval, no overlapping intervals all intervalse the same
+5. brute force, mark each element if they are in an interval and derive the overal interval from there, O(n^2)
+6. dsa: sorting, sort the start interval
+7. Implementation
+sort the intervals by the starting interval
+initialise a res array
+traverse the sorted intervals
+capture the starts and ends of the last element in the array and the current element
+if the end of the last element is greater than the start of the current element, append the last element to be the max between the two ends
+else, theyare disjoint sets and append the current into the res
+return the res
+
+Shortest distance from all buildings
+1. find the point where the distance to all buildings is the shortest
+2. must go around an obstacle and a building?
+3. only 0-2 integers? empty input grid? no houses? all obstacles? one house and no empties
+4. input with ones house? input with no houses, input with unreachable houses/ allowed to modify the input array?
+5
+6. dsa: dfs and bfs
+7. Idea
+find all the houses do a bfs out to every available cell
+iterate through each cell for every house, get the smallest of the total distance
+optimisation: have a solution matrix where the distances are updated each time
+another optimisation: instead of a visited set for each iteration, decrement the islands form 0 to -1 to -2, etc ,etc then for that particular bfs, run the bfs with islands being that value
+note that the min distance must be tracked within the loop as there might be cases where the cell is not reached but stil saved as a min distance
+
+70. Climbing stairs
+1. return the number of ways to climb stairs given that you can either take one or two steps each time
+2. 
+3. is n always greater than 0?
+4. base case if n= 1, ans = 1, if n = 2 ans = 2, either 2 steps or 1 + 1 steps
+5. brute force: calculate the number of steps each time: there will be duplicate cases so use memoisation
+6. dsa: 1dp, infact can just use a temp variable for space optimisation as only the immediate and second immediate steps are relevant
+7. Implementation
+if n < 2: return N
+prev, and prevprev which start off at 0 and 1
+for each step
+current step = sum of prev and prevprev
+let prevpprev = prev
+and prev = current
+return prev
+
+206. Reverse linked list
+1, return the head of the linked list in reverse order
+2. 
+3. is he linked list always non-null? are there no cycles? singly linked list?
+4. no nodes, one node, two nodes
+5. 
+6. dsa: traverse the linked list
+7. Implementation
+intialise a prev to be null and a cur to point to the head of the node
+while cur is not null:
+temp = cur.next
+cur.next = prev
+prev, cur = cur, nexst
+return prev which is the new head of the node
+
+210. Course Schedule 2
+same as course scheudle 1 but now u append the order of the courses to the res and reutrn only if the len of the result == number of courses
+
+347. Top k frequent elements
+1. return the k most frequent elements
+2. confirm that there can be more than one kth most frequent element?
+3. k always more than zero? input string is non empty? is there always an output? ie if k > len of numbers
+4. one element, more than one kth frequent element
+5. what is the brute force approach?
+6. dsa: counter, array of frequency
+7. Implementation
+set the arry to become a countere frequeny, len of the array is the len of the string as the max count is the length of the string 1111
+for each value in the counter
+intialise a frequency arr where the index is the count. the array is a defulat list
+append into the frquqency array as there can be more than one number with the same frequencies
+traverse the array from the back until the kth frequency is reached
+return the array of this result
+
+221. maximal square
+1. return the largest square containing only ones
+2. square is a shape with length and breadth being equal
+3. only 0s and 1s? input is non empty? valid grid?
+4. one square, two squares
+5. brute force: for each sqaure, construct the largest square it can form (via dfs?) O(n^2 * m^2). There will be alot of duplicate cases so use memoisation
+6. dsa: 2dp
+7. Implementation:
+idea: if the current square is a one, the largest square i can construct is the min(i - 1, j, i, j - 1, and i - 1, j - 1)
+start off with the last sqaure at the bottom right edge
+create a buffer region on the right and bottom sides
+craete a grid with rows + 1 and cols + 1
+have a max square variable
+the values we are saving are length so will have teo reutrn lengths **2 later
+traverse teh grid wiht grid[i][j] = min(grid[i - 1][j], grid[i][j - 1], grid[i - 1][j - 1]) if grid[i][j] is 1
+
+1143. Longest common subsequence
+same as remove elements
+initialise a 2 dp array with teh lengths being the lengths of text 1 and text 2
+start form the end
+if the letters are the same, dp[i][j] = d[i -  1][j - 1] + 1
+else dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+Sum Game
+1. return if alice will win
+2. definition of optimally
+3. will there always be a ?, will the length always be even? any negative numbers?
+4. no queestion marks, all question marks? no in put? non even length of string
+5. brute force test out all possibilities of ? 1- 9 and see if theres a scenario where alice will lose
+6. dsa:
+7. Idea
+Bob will win if the smaller sum has more question marks as the larger sum
+the difference between the question marks are even so that bob plays the last turn
+the difference between teh two sums are == 9 * difference in question marks / 2 as one goes to alice
+at every turn, bob will try to sum up two question marks to be 9
+implementation:
+find the mid point and split the two arrays to left and right
+count he number of question marks in each array
+get teh difference, get the sum of each array
+if the difference in the arrays == 9 * difference in question marks, alice will lose
+
+380. insert delete getrandom
+1. insert, delete, and get a random integer in O(1) time
+2. what is the definiation of random? can i use randint() ?
+3. insert numbers already present? remove numbers not present? only numbers or can have symbols, whitespace, letters, etc, get randome of no items?
+4. get random of one item? delete from emtpy, insert with Duplicates
+5. 
+6. dsa: array, randint()
+7. implementation
+insert: add element to the end of the array
+delete: move the last element to overwrite the element to be deleted in the array
+getrandom: with the range of the array, get a randome integer, which will return the index with equal probability
+8. TC: O(1) for each operation, O(n) space complexity
+9. 
+
+989. Add to array form of interger
+1. Add two numbers one via array form one via numerical form
+2. 
+7. Implementation
+intialise a i pointer starting from the back of the array form number
+while the poitner is > 0 , k > 0 and carry is greater than zero
+append all together if non null
+obtain carry and sum %= sum
+add to result via the pow method
+decrement i and lower k
+
+1802. Maximum value at a given index in a bounded array
+summation of the numbers to the left and to the right of the peak based on the peak's index, conditionally add the remaining 1s depended on where the peak mountain ends
+
+11. Container with the most water
+1. return the maximum amount of water the container can store
+
+274. H-index
+
+7. Do a binary search on the valid h index
+
+31. Next permutation
+7. Iterate from the back of the array to the front, checking each element if there is a decrease in the value
+If there is none, return the string in reverse, this means that the current string is already the maximum permutation
+else
+   for this referenced point, go through the array from the back again and find the next element that is bigger than this current element. 
+   This element will always exist. 
+   swap this element with the referenced element. This swap will still make the remainder of the string in order
+   then minimise the number by reversing the string to get the next biggest number
+
+160. Intersection of linked list
+
+7. Go through both linked list and calculate the length of each list
+iterate through the difference in the length for the longer list
+at both start points both list should have the same number of nodes remaining to traverse
+compare each node traversed to find the intersecting node
+
+
+50. Pow(x, n)
+
+7. if n is negative
+set x to be the reciprocal of itself
+set n to be positive
+while n is greater than zero
+   if it is odd, multiply x by n and decrement n by 1
+   now n should be even 
+optimise by multiplying x by itself, and divide n by 2. 
+If n is less than 2, this operation will return a 0 and hence terminate out of the loop
+
+697. Degree of array
+
+7. Initialise a result array
+Iterate through the array and find the index of the first occurance of a number as well as the counts of each number
+if the count is greater than the current degree, set the result to be the length of the current index and the index of the first occurence
+if the count is == to the current degreee, set the result if the length is shorter than that of the current
+Algorithm can finish in one pass
+
+696. Count Binary strings
+
+7. Idea is to find when there is a switch in the digits and save the counts of the previous digits before this change
+ie 111100 => [4, 2]
+the number of consecutive 1s then 0s of the same length is the min(4, 2)
+
+62. Unique paths
+
+7. Initialise a 2d dp grid representing the number of paths to reach the star from the current paths
+add a buffer on the right and bottom sections of the grid
+intialise the star cell to be 1 and do the dp bottom up
+dp[i][j] = dp[i + 1][j] + dp[i][j + 1]
+
+322. Coin change
+
+7. Initialise a 1d dp array representing the number of coins needed to create that particular amount of money
+for each cell:
+dp[i] = min(dp[i - c] for c in coins if i - c > 0 else MAX) + 1
+
+
+2420. Find all good indices
+
+Create a monoatomic stack 
+Store the elements in non-increasing order
+if the size of the monoatomic stack is greater or equal to k at a particular index, set it to be true in the truthy array
+for that index, if its value is more than the value of the top of the stack, pop t76. he stacl then append the value
+create another stack but this time it is monoatomically non-increasing. If the length of this stack is greater than or equal to k and the valid previously in the 
+forward stack is truthy, append this to the result. Continue adding to the stack
+
+76. Minimum window substring
+
+create a have map and a need map where the need map is the map of all the letters of t and its count while the have map is the same map but with counts = 0
+create a have and need variable to that the dictionaries dont have to be iterated through each time a check is made
+for each character in the string s
+   add the count of the letter to the have map
+   if the have map matches that of the need map, increment have by one
+   while have == need, meaning that all the need letter requirements are accounted for 
+      append teh length of this substring to the result
+      increment the left pointer which removes the last letter
+      decrement the have map for the last letter, if the have requirement is now less than the need requirement, decrement the have varialble
+return the length of res if it is not the float int it was set to be
+
+
+Sum of distances of a tree
+
+7. Create a map with the distances of the root node its children node. Create a weights map to count the number of children nodes a node has
+Gather these two sets of data via a dfs
+icnrement the depth parameter by 1 each recursive call, sum up the total number of valid nodes and return it
+do another dfs to return the sum of distances. 
+For the root node, the sum of distances will be the sum of the distance array values
+subsequently, the sum of the distances of the children nodes previous nodes distance minus the count of all the children (goes nearer to all children by one) and 
+plus the count of all the parent nodes (goes further away from the parent by one). This information is via the weights
+
+Basic calculator
+
+7. initialise a nums, res, stack , and sign variable
+for each character in teh string
+   if it is a number, increment it 
+   if it is a sign, perform the caculation of num and sign 
+   set the new sign and reset the nums variable
+   if it is a (, append the res and the string variable into the stack, reset res and sign
+   if it is a ), calcuate the current res with the current sign , pop the stack for the sign and multiply it with the current res, then pop and add the res to the new res
+   set num = 0 
+return res + the last nums and sign
+
+Binary tree zig zag order
+
+7. Perform the normal bfs but reverse the level if the count is odd
+
+Open the lock 
+
+7. 
+start with a start state of 0000
+append it to the queue
+while q
+   for each level of the q
+   if the combination is the same as the target, return moves
+   return the neighbours of the lock combination
+      add them into the q 
+   increment the moves counter
+As for the calculation of the neighbours of a lock combination
+for each index, add 1 and minus one. Add the number by 10 and mod it. if the combination is not in the deadlock list and not in the set, append it to the result
