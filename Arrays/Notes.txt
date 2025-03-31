@@ -185,3 +185,18 @@ Similar idea to majority element 1, just that now two variables are saved instea
 Remove Elements
 
 Same as move zeros
+
+
+Two Sum
+
+1. Edge Case: Assumption is that there is a solution to the question
+2. Idea:
+Have a dictionary that stores all the numbers that it has come across. Save the index of this number
+For each other number, check if the difference between the target and the number is inside the dictionary. This means that the target can be reached summing up these two numbers
+3. Pseudo Code
+    1. Initialise a dictionary
+    2. For each number, check if the difference between the target and the current number is in the dictionary. 
+     - If it is, then return the index of the current element and the index from the dictionary
+     - Else, add the element to the dictionary with the key being the value and the value being the index
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
