@@ -10,3 +10,16 @@ Add to Array-Form of Integer
         - If the num is 0, have it return 0 in the sum. if the index is <= 0, have it return zero in the sum (handling of overflow)
     3. Return res
 3. Time Complexity: O(n + m)
+
+
+Best Time to Buy and Sell Stock
+
+1. Edge Cases: empty array?, one element array?, two element array with non-increasing values?
+2. Pseudo Code;
+    1. Initialise the left and right pointers and a res variable
+    2. While the right pointer does not exceed the length of the array:
+        - if the value at the right pointer is more than the value at the left, save it to res if it is greater than res
+        - else, let left = right 
+        - increment right by one
+    3. Return res
+3. Time Complexity: O(n)
