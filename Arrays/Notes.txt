@@ -10,16 +10,29 @@ Add to Array-Form of Integer
         - If the num is 0, have it return 0 in the sum. if the index is <= 0, have it return zero in the sum (handling of overflow)
     3. Return res
 3. Time Complexity: O(n + m)
+4. Learnings:
+- Use the pow method to append to the front of a number
+- Use floor division to obtain the carry
 
 
 Best Time to Buy and Sell Stock
 
 1. Edge Cases: empty array?, one element array?, two element array with non-increasing values?
-2. Pseudo Code;
+2. Pseudo Code:
     1. Initialise the left and right pointers and a res variable
     2. While the right pointer does not exceed the length of the array:
         - if the value at the right pointer is more than the value at the left, save it to res if it is greater than res
         - else, let left = right 
         - increment right by one
     3. Return res
+3. Time Complexity: O(n)
+4. Learnings:
+ - Reset sliding window when the delta is no longer positive
+
+
+Concatenation of Array
+
+1. Edge Cases: empty array
+2. Pseudo Code:
+    1. Return the array multiplied by two
 3. Time Complexity: O(n)
