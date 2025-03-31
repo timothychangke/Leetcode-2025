@@ -57,6 +57,8 @@ Comparing two sections of the string (either a 1s section and a 0s section or a 
     2. For each pair of sections side by side, calculate the minimum value between these two sections. This would return the number of substrings that are grouped consecutively between these two sections
     3. Increment the res for each of these sections and return the final value
 4. Time Complexity: O(n)
+5. Learnings:
+Pre computing the minimum between each sections will give the number of consecutive substrings between the two elements
 
 
 Degree of an Array
@@ -76,3 +78,31 @@ To solve this in one pass, there are several steps to do
     3. Return res
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
+6. Learnings:
+ - Saving the start index of each element to compute the final length of the Strings
+ - Solve for the edge case where two elements have the same maximum frequency by comparing every elements frequency and saving the shorter length of the two
+
+
+Design Hashmap
+
+1. Edge Case: Duplicate values?
+2. Idea:
+Use an array together with a linked list to construct a hash map. This involves the coding up of the various functions relevant to a Hashmap
+ - Hashing: Initialise a multiplier and a hash number (length of the array). For every element, multiply it with the multiplier and then mod it with the hash number, this would return the index in which this element should be placed
+ - Inserting: Append the element to its hashed position, at the head of the linked list
+ - Getting: Find the position of the element via the hash function, then traverse the linked list to find the element
+ - Removing: Hash the value to get the position of the element. At this position, traverse the linked list to find the element that is to be removed. Remove it by joining the elements before and after it
+ 3. Pseduo Code:
+    1. Initialise a list node 
+    2. Initialise the multipler and the hash value
+    3. Initialise the array of length of the hash value
+    4. Create hash function that multiplies the value with a multiplier than hashes it with the hash value to indentify the index it is to be inserted into
+    5. Insert(): Create a linked list node and append it to the start of its position in the array (found via the hash function). However, before this, you'll have to remove the node if it already exists.
+    6. Get(): Find the node's position via the hash function and traverse the linked list until you find that node. If not found, return -1, else return the node's value
+    7. Remove(): Find the node's position via the hash function. First check if the first node is the node in question. If not the while node.next is non null, loop through to find if node.next.key is the key we are looking for. If loop ends without finding the node, return -1
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings:
+- Removing the node before putting the node makes for cleaner code
+- While trying to find the node in the remove(), have cur be node.next so that the removal process of joining the node prev and node next easier
+- Hash function 
