@@ -200,3 +200,12 @@ For each other number, check if the difference between the target and the number
      - Else, add the element to the dictionary with the key being the value and the value being the index
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
+
+
+Valid Anagram
+
+1. Edge Case: empty string, string of different lengths
+2. Idea:
+An anangram is when two strings contain letters that are the rearrangement of one another
+3. Pseudo Code:
+    1. Return whether the counters of both strings are equal``

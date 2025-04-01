@@ -1,7 +1,7 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
         if len(nums) <= 1:
-            return
+            return nums
         mid = len(nums) // 2
         s1 = self.sortArray(nums[:mid])
         s2 = self.sortArray(nums[mid + 1:])
