@@ -34,9 +34,9 @@ Two Pointers: 42 problems, 18 unique
   - Total: 18 Easy, 20 Medium, 4 Hard
   - Unique: 7 Easy, 10 Medium, 1 Hard
 
-2-D Dynamic Programming: 7 problems, 7 unique
-  - Total: 0 Easy, 6 Medium, 1 Hard
-  - Unique: 0 Easy, 6 Medium, 1 Hard
+2-D Dynamic Programming: 8 problems, 8 unique
+  - Total: 0 Easy, 7 Medium, 1 Hard
+  - Unique: 0 Easy, 7 Medium, 1 Hard
 
 Backtracking: 3 problems, 2 unique
   - Total: 0 Easy, 3 Medium, 0 Hard
@@ -47,10 +47,10 @@ Math: 3 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 428
-Total unique problems: 193
+Total number of problems: 429
+Total unique problems: 194
 
 Total by difficulty:
   - Easy: 136 problems, 54 unique
-  - Medium: 227 problems, 114 unique
+  - Medium: 228 problems, 115 unique
   - Hard: 52 problems, 25 unique
