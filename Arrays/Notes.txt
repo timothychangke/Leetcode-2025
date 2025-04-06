@@ -244,5 +244,18 @@ for each character in the string:
     set nums to 0
 3. Time Complexity: O(n)
 4. Space Complexity: O(n)
-`
+
+
+First Missing positive
+
+1. Edge case: negative numbers, zeros, empty strings
+2. Idea: do modifications in place to save Space. Have notations for numbers based on the indexes and traverse the array, Each number contains two information: the number and whether the index (as a number) exists in the arraychecking for the number with the missing 
+index = first missing positive
+3. Pseudo Code:
+Set all negative numbers to zeros
+For each number in the array:
+ - if the number is between 0 and the length of the array, set the index equalling to that number to be negative
+ - if the number is 0, set the number to the length of the array 
+ Traverse the array and return the first non-negative number
+
 
