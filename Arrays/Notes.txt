@@ -208,4 +208,8 @@ Valid Anagram
 2. Idea:
 An anangram is when two strings contain letters that are the rearrangement of one another
 3. Pseudo Code:
-    1. Return whether the counters of both strings are equal``
+    1. Return whether the counters of both strings are equal
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+
+
