@@ -261,13 +261,9 @@ For each number in the array:
 
 Longest Valid Parenthesis
 
-1. Edge Case: 
-2. Idea: sort of like backtracking where at each case it can branch out into two cases
-    1. if the number of ( is less than n, then add a (
-    2. if the number of ) is less than n, then add a )
-3. Pseudo Code
-Initialise a dfs function taking in x and y which are the number of open and close brackets
-if x + y == n: append the copy of the current string into the result array
-if x < n: append a open bracket into the string
-if x < y: append a close bracket into the string
-return the res array
+1. Edge Case: counting the parentheses must also be done in reverse order to catch all possible valid cases
+2. Pseudo code:
+Initialise two counters, to count the number of open and close parentheses
+if the number of parentheses are the same, save the total length of the string to the res
+perform the operation on the reverse
+
