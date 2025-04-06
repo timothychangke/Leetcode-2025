@@ -279,3 +279,13 @@ for each value in the grid
  - if the value is already in these sets, then return False
 return true
 
+
+Best time to buy and sell stock 2:
+
+1. Edge case: 0 profits possible
+2. Idea: Increment all positive moves from a stock price at i and a stock price at i + 1
+3. Pseudo Code:
+Initialise a res
+for each stock price in the array, if the stock price is greater the next day, increment res by the difference, else 0
+return res
+
