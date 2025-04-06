@@ -224,3 +224,25 @@ For each pair of words A and B:
 Return True if all consequtive pairs are analysed
 
 
+Basic Calculator
+
+1. Edge case: Must consider characters not integers or signs, arithmetic with minus signs in front of brackets
+2. Pseudo Code
+Initialise a result, a number, a sign and a stack
+for each character in the string:
+ - if it is a number: add it to the back of num
+ - if it is a sign:
+    perform the previous operation between the previous sign, num and res
+    set num to be 0 and set sign to be the new sign
+ - if it is a (:
+    append the res and the sign to the stack
+    set the sign to be positive and the res to be 0
+ - if it is a ):
+    calculate res with nums 
+    pop the stack for the existing res and sign
+    add to the base res the res from the bracket together with the sign
+    set nums to 0
+3. Time Complexity: O(n)
+4. Space Complexity: O(n)
+`
+
