@@ -337,3 +337,16 @@ Longest Consequtive Subsequence
    - for each value visted, save it into the visited set so as to not visit it again
 3. Time Complexity: O(n)
 
+
+Merge Intervals
+
+1. Edge Case: First interval can overlap all Intervals
+2. Idea: for each interval, check if they overlap, if they do, save the overlapping interval, else save the interval
+3. Pseudo Code:
+Initialise res containing the first merged interval
+for each interval, check if the start is less than the most recent interval in the res, if no, insert the new interval into res
+if yes, take the max end point between the most recent interval and the current interval
+return res
+4. Time Complexity: O(n)
+
+
