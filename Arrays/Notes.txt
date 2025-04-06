@@ -320,4 +320,20 @@ while i is less than the length of the string
  3. Time Complexity: O(n)
  4. Space Complexity:O(26n)
 
- 
+
+Longest Consequtive Subsequence
+
+1. Edge Case: All numbers are in decreasing order
+2. Idea: optimisation of the brute force
+ - perform traversals only when the start of the subsequence is identified
+ - for elements that have already been part of a traversal, they would not be part of a longer subsequence so there is no need to traverse them again
+ 3. Pseudo Code
+ Initialise a visited set and have all the elements initialised into a set
+ for each element in the array
+  - if the value is in visited, continue
+  - check if the element - 1 is in the set, if it is not, that means that this is the start of the subsequence
+  while the next element is in the set:
+   - increment the value by one and save the length into res
+   - for each value visted, save it into the visited set so as to not visit it again
+3. Time Complexity: O(n)
+
