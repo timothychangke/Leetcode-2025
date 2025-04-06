@@ -213,3 +213,14 @@ An anangram is when two strings contain letters that are the rearrangement of on
 5. Space Complexity: O(n)
 
 
+Verifying an Alien dictionary
+
+1. Edge case: empty strings, strings that entirely match, strings that completely dont match
+2. Pseudo Code
+Store the order into a hash map where the keys are the letters and the values are the indexes
+For each pair of words A and B:
+ - if there are letters in B that are of a position earlier than A or the length of A is smaller than the length of B: return False
+ - once there is a letter that is of a smaller order index in A than B, A is lexigraphically smaller than B already so a break can be made
+Return True if all consequtive pairs are analysed
+
+
