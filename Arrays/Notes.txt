@@ -278,6 +278,7 @@ for each value in the grid
  - if the value is within the bounds of the grid, add it to the row set, the column set and the square set (r//3, c//3)
  - if the value is already in these sets, then return False
 return true
+4. Time Complexity: O(n)
 
 
 Best time to buy and sell stock 2:
@@ -288,6 +289,7 @@ Best time to buy and sell stock 2:
 Initialise a res
 for each stock price in the array, if the stock price is greater the next day, increment res by the difference, else 0
 return res
+4. Time Complexity: O(n)
 
 
 Encode and Decode Strings:
@@ -305,3 +307,17 @@ while i is less than the length of the string
  - the value between i and j is the length of the next string
  - use this value to slice the next string
  - set i = j + 1
+4. Time Complexity: O(n)
+
+
+ Group Anagrams:
+
+ 1. Edge Case: All anagrams of one another, None are anagrams of one another
+ 2. Pseudo Code:
+ Initialse a default dictionary where the key is an array of letters with their counts while the value is an array of the words
+ For each word, find the counter of its letters and append that word to the dictionary
+ return the dictionary.values()
+ 3. Time Complexity: O(n)
+ 4. Space Complexity:O(26n)
+
+ 
