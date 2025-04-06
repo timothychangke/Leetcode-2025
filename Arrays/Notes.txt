@@ -282,10 +282,26 @@ return true
 
 Best time to buy and sell stock 2:
 
-1. Edge case: 0 profits possible
+1. Edge Case: 0 profits possible
 2. Idea: Increment all positive moves from a stock price at i and a stock price at i + 1
 3. Pseudo Code:
 Initialise a res
 for each stock price in the array, if the stock price is greater the next day, increment res by the difference, else 0
 return res
 
+
+Encode and Decode Strings:
+
+1. Edge Case: Types of symbols that could be wrongly intepretted as length delimiters
+2. Idea: For each string, append the length of the string, a delimiter, then the actual string as the encoding
+For decoding, find the delimiter, the value between this index and i is the length of the string, use this value to get the string
+set the points to the index after the string
+3. Pseudo Code:
+Encode: For each string in the original array, append the length of the string, ':' and the actual string
+Decode: 
+Initialise a i and j index
+while i is less than the length of the string
+ - find the index of the next ':' and let this be j
+ - the value between i and j is the length of the next string
+ - use this value to slice the next string
+ - set i = j + 1
