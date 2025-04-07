@@ -348,5 +348,5 @@ for each interval, check if the start is less than the most recent interval in t
 if yes, take the max end point between the most recent interval and the current interval
 return res
 4. Time Complexity: O(n)
-
+5. Space Complexity: O(n)
 
