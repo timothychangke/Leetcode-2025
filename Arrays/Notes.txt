@@ -170,10 +170,25 @@ Similar idea to majority element 1, just that now two variables are saved instea
  - Initial element has to be different so that there isn't a bias to one number
 
 
- Move zeros
+Next Greater Element 1
 
- 1. Edge Case: empty array, array with all zeros, array with no zeros
- 2. Pseudo Code:
+1. Entirely decreasing array, Entirely increasing array, duplicates, negative numbers
+2. Idea:
+Create monoatomic stack to track what is the next greater element, save results into a dictionary, then return the result when traversing the array
+3. Pseudo Code
+    1. Initialise a dictionary to store the number of the greater element and a monoatomically decreasing stack
+    2. Traverse the array and place the items into the stack
+        - If the value is less than the value at the top of the stack, append it into the stack
+        - Else, pop the value off the stack and add to the dictionary with the key of the item that was popped and the value being the item that popped it
+    3. Traverse nums1 and return the result of the values with the numbers in num1 as the keys. If the number does not exist, append a -1
+4. Time complexity: O(n)
+5. Space complexity: O(n)
+
+
+Move zeros
+
+1. Edge Case: empty array, array with all zeros, array with no zeros
+2. Pseudo Code:
     1. Initialise a pointer k where k will be the ending index where all numbers preceding it are non-zeros, k itself points to a zero
     2. Iterate through the array:
      - if num is not zero, make nums[k] = that number and increment k by 1
@@ -349,4 +364,7 @@ if yes, take the max end point between the most recent interval and the current 
 return res
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
+
+
+Next Greater element
 
