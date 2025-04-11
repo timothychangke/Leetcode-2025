@@ -370,10 +370,46 @@ Product of Array except self
 
 1. Edge cases: Empty array?, Negative numbers, zeros
 2. Idea: Create a prefix multiplication array and a suffic multiplication array. For the res, multiply the left and right indexes of the prefix and suffix array
-3. Pseduo Code:
+3. Pseudo Code:
     1. Initialise a prefix array with a running prefix that multiplies itself with each value. So at position i, the value is all the values before this position multiplied together excluding that position.
     2. Initilise a suffix array with a running suffix that multiplies itself with each value. So at position i, the value is all the value after this position multipled together excluding that position.
     3. Initialise a results array where each value is the multiplication of the value in the prefix and the suffix array
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 
+
+Range Sum Query 2D - Immutable
+
+1. Edge Cases
+2. Idea: Precompute the sum of all squares in the grid where (x, y) is the value of the sum of all numbers in the square where (x, y) is the bottom rightmost point. There value of a rectangle is therefore the value of the big rectangle, minusing off
+the rectangle on its top and left, but adding back the square diagonally left of it as it is double counted
+3. Pseudo Code:
+    1. Initialise a grid with an extra row and column. For each row, its the value of the rowing sum prefix plus the value of the cell above it
+    2. return the value of the rectangles by subtracting the left and top rectangles from the big rectangle, then adding back the left diagonal
+4. Time Complexity: O(mn)
+5. Space Complexity: O(mn)
+
+
+Sort an Array
+
+1. Edge Cases: empty array, array of length 1, even and odd lengths
+2. Idea: Perform merge Sort
+3. Pseudo Code:
+    1. Recursively call mergesort(). mergesort() has a base case of 1 and 0 where itll return. else, it finds the mid and calls the function
+    for the left and right bounds. Then call merge() on the left and right 
+    2. iterate through the left and right arrays. Save the smallest number of the two and increment the pointers. 
+4. Time complexity: O(nlogn)
+5. Space complexity: O(1)
+
+
+Sub Array sum equals k
+
+1. Edge Case: negative numbers?, 0?, empty array
+2. Idea: Iterate through the array and find the subarray sum that starts from 0. Save each sum into a dictionary, always checking if 
+the target - current sum is in the dictionary
+3. Pseudo code:
+    1. Loop through the array and calculate the subarray sum at that index. 
+    2. Save this sum into the dictionary with the key being the value and the value being the index. 
+    3. Check to see if target - sum exists in the dictionary. If it does, save the sub array into the res
+4. Time complexity: O(n)
+5. Space complexity: O(n)
