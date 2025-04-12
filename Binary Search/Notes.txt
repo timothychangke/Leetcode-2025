@@ -1,0 +1,12 @@
+Binary Search
+
+1. Edge Case: Element does not exist in array, array contains non-numeric characters?
+2. Pseudo Code: 
+    1. Initialise a left and right pointer at both ends of the sorted array. 
+    2. Find the middle element. 
+         - if it is larger than the target, it means that the element in question is in the left half of the array
+         - else it is in the right half
+    3. If the element is found, return the index of the element
+    4. Repeat the loop until the element is found
+3. Time Complexity: O(nlogn)
+4. Space Complexity: O(1)
