@@ -1,0 +1,9 @@
+Merge Sorted Arrays
+
+1. Edge Cases: Arrays of different lengths, empty arrays, 
+2. Pseudo code:
+    1. Initialise two pointers, each one at the start of each array. 
+    2. While the pointers are less than the length of their respective arrays, increment them when their value is less than the other, adding this smaller value to the res
+    3. If there are still arrays that have yet to be traversed, add these remaining elements into the array
+3. Time Complexity: O(m + n)
+4. Space Complexity: O(1)
