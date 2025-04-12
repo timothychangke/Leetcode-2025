@@ -165,3 +165,16 @@ Rotate Array
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: To shift the array to the right by K elements is to move K elements from the back to the front of the array. The intuition is then to reverse first then reverse back the portions of k and len - k so as to get the shifted array
+
+
+Two Sum 2
+
+1. Edge Case: Sum cannot be reached? Array has less than 2 elements
+2. Idea: The difference between the current sum and the target tells us whether we need to increase or decrease the sum. By leveraging the fact that the array is sorted, we can adjust the left or right pointer—moving the left pointer right to 
+increase the sum, or the right pointer left to decrease it.
+3. Pseudo Code:
+    1. Initialise a left and right pointer at the start and end of the array
+    2. Based on the difference between the current sum and the target sum, adjust the pointers accordingly
+    3. Return the index when the target sum is met
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
