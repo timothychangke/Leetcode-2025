@@ -141,3 +141,17 @@ volume of water by contradiction
     3. Move the pointer pointing at the smaller of the two heights
 4. Time Complexity: O(n)
 5. Space Compexity: O(1)
+
+
+Longest palindromic substring
+
+1. Edge case: No palindromic substring, duplicate palindromic substring with the same max length, palindrome with odd and even length
+2. Idea: Check palindrome with each index being the center of the palindrome. Do the same check again but with i and i + 1 being the center of the palindrome
+3. Pseudo Code:
+    1. Initialise a pointer that tracks the center of the palindrome. From the center, find the longest palindrome moving outwards from that point. Break if substring it no longer a palindrome
+    2. Repeat but with i and i + 1 as the middle of the palindrome
+4. Time Complexity: O(n^2)
+5. Space Complexity: O(n)
+6. Learnings: To resolve the edge case of the palindrome being of even length, repeat the loop again but with two characters as the center this time
+
+
