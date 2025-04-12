@@ -61,3 +61,12 @@ Valid Palindrome 2
 6. Learnings: perform the same func but excluding either the left or the right pointer so as to mimic a deletion of a character
 
 
+Valid Palindrome 
+
+1. Edge Cases: One letter array, empty array, even length and odd length array
+2. Pseudo Code: 
+    1. Initialise two pointers, one at the start and one at the end of the array
+    2. While the left pointer is less than the right, move them closer to the center if they match, else, return False
+    3. If the loop is completed, return True
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
