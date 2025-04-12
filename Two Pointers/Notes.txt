@@ -128,3 +128,16 @@ Boats to save people
 4.  Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: proof of correctness
+
+
+Container with the most water
+
+1. Edge Cases: array with less than two elements, mountain array 
+2. Idea: Initialise a left and right pointer at both ends of the array. calculate the max water it can take and save it to the res. Then move the pointer than is smaller. It can be proven that the smaller height cannot possibly make larger 
+volume of water by contradiction
+3. Pseudo Code: 
+    1. Initialise two pointers at the start and end of the array. 
+    2. Calculate the volume of water it can contain and update the res accordingly
+    3. Move the pointer pointing at the smaller of the two heights
+4. Time Complexity: O(n)
+5. Space Compexity: O(1)
