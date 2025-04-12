@@ -413,3 +413,33 @@ the target - current sum is in the dictionary
     3. Check to see if target - sum exists in the dictionary. If it does, save the sub array into the res
 4. Time complexity: O(n)
 5. Space complexity: O(n)
+
+
+Sum Game
+
+1. Edge Case: Non-even number of ?, Majority of ? on the larger side of the array, no ?, 
+2. Idea: Dont have to brute force calculate every possibility. There are conditions that need to be satisfied in order for bob to
+win the Game
+    condition a: each ? on either side will cancel out each other so only the difference in the ? matters. This difference then has
+    to be an even number as we want bob to play the last move
+    condition b: for each pair of ?, bob can make it such that it equals to 9, since he can adjust his choice based on alices choice
+    This means that the difference between the two array sums have to be a 9 * the number of pairs of ?
+3.  Pseudo code:
+    1. Split the array into two halves and count the number of ? in each half with two for loops
+    2. Calculate the difference in the sum of the two arrays
+    3. Calculate the difference in the number of ? in the two arrays
+    4. If the difference in the number of ? is even and this difference // 2 * 9 is equal to the difference in the sum of the two arrays, then bob can win
+4. Time complexity: O(n)
+5. Space complexity: O(n)
+
+
+Top K frequent elements
+
+1. Edge Case: K > len of elements, empty array of elements, elements with the same counts
+2. Idea: Count the number of elements, add their counts as keys to an array and the values be the value of the numbers. Then iterate backwards until k numbers have been added into the results
+3. Pseudo Code:
+    1. Initialise a counter of all the elements
+    2. Iterate through the counter and insert the number into this respective counts
+    3. Traverse the count array in reverse, appending the numbers into the result K times
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
