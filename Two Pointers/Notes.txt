@@ -83,3 +83,14 @@ Trapping Rain Water
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 
+
+3Sum
+
+1. Edge Case: no solution, array less than length of 3
+2. Idea: Perform two sum but on every number
+3. Pseudo Code:
+    1. For each number, perform two sum on the i + 1 to len(num), with the target of the two sum being the target of the 3sum - the current number
+    2. Append combinations that work to the res
+4. Time Complexity: O(n ^ 2)
+5. Space Complexity: O(1)
+6. Learnings: avoid duplicates by only processing numbers ahead of the current index
