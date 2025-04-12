@@ -145,7 +145,7 @@ volume of water by contradiction
 
 Longest palindromic substring
 
-1. Edge case: No palindromic substring, duplicate palindromic substring with the same max length, palindrome with odd and even length
+1. Edge Case: No palindromic substring, duplicate palindromic substring with the same max length, palindrome with odd and even length
 2. Idea: Check palindrome with each index being the center of the palindrome. Do the same check again but with i and i + 1 being the center of the palindrome
 3. Pseudo Code:
     1. Initialise a pointer that tracks the center of the palindrome. From the center, find the longest palindrome moving outwards from that point. Break if substring it no longer a palindrome
@@ -155,3 +155,13 @@ Longest palindromic substring
 6. Learnings: To resolve the edge case of the palindrome being of even length, repeat the loop again but with two characters as the center this time
 
 
+Rotate Array
+
+1. Edge Case: 
+2. Idea: Instead of actually rotating, you'll notice that a rotation is can also be made up of three reversals: Reversing the entire array, then reversing from 0 to k and k to len(array). 
+3. Pseudo Code:
+    1. Define the reversal function comprising of pointers and swaping each value until the pointers reach the center
+    2. Perform the reversal first on the entire array, on the half from 0 to k and then from k to the end of the array
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: To shift the array to the right by K elements is to move K elements from the back to the front of the array. The intuition is then to reverse first then reverse back the portions of k and len - k so as to get the shifted array
