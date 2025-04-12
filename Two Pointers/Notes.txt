@@ -89,8 +89,28 @@ Trapping Rain Water
 1. Edge Case: no solution, array less than length of 3
 2. Idea: Perform two sum but on every number
 3. Pseudo Code:
-    1. For each number, perform two sum on the i + 1 to len(num), with the target of the two sum being the target of the 3sum - the current number
+    1. Sort the input. For each number, perform two sum on the i + 1 to len(num), with the target of the two sum being the target of the 3sum - the current number
     2. Append combinations that work to the res
 4. Time Complexity: O(n ^ 2)
 5. Space Complexity: O(1)
 6. Learnings: avoid duplicates by only processing numbers ahead of the current index
+
+
+4Sum 
+
+1. Edge Case: 
+2. Idea: Instead of doing 4Sum, make a standardised algorithm that can solve k sum. Initialise a function that takes in the target value, the start as well as the array of the current selection and k. For each iteration, if the target is negative, 
+return. if the target is zero, add it to the array. 
+ - if k is still more than 2, call the function for every other value in the array, decrementing the target, appending to the array and adding to the start index. 
+ - else, perform two sum on the remaining 
+3. Pseudo Code: 
+    1. Initialise an arr to store the temporary value and a result array. Sort the input
+    2. Define the function that takes in the remaining target value, the start index and k
+    3. if k is greater than 2, starting from the start index and ending at length - k, call the function for the remaining indexes of nums. 
+    4. Since the question specified that all numbers are distinct, skip numbers that are repeated
+    5. Append the value into the array, call the function then pop it out for the next iteration
+    6. If the value of k == 2, perform the usual two sum and if the target == 0, append the values into the res. Continue running the two sum on this set of numbers as another valid combination may appear, just remember to skip duplicates
+    7. Call the function for 4Sum
+4. Time complexity: O(n^k)
+5. Space Complexity: O(n)
+6. Learnings: This is sort of a backtracking algorithm. Remember how to deal with duplicates, how to append, call then pop. Remember to call the function before returning the answer
