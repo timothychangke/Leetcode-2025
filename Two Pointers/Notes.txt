@@ -17,3 +17,13 @@ Merge Strings Alternately
     2. While the pointers are less than the length of their respective arrays, increment them alternatively, each time adding their value to the res
 3. Time Complexity: O(n)
 4. Space Complexity: O(1)
+
+
+Remove duplicates from sorted array
+
+1. Edge case: All duplicates
+2. Pseudo Code:
+    1. Traverse the array and only insert into res if num[i] != num[i + 1]
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
+
