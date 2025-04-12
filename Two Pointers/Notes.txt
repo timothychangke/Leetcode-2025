@@ -114,3 +114,17 @@ return. if the target is zero, add it to the array.
 4. Time complexity: O(n^k)
 5. Space Complexity: O(n)
 6. Learnings: This is sort of a backtracking algorithm. Remember how to deal with duplicates, how to append, call then pop. Remember to call the function before returning the answer
+
+
+Boats to save people
+
+1. Edge Cases: Every individual is within the limit of the boat? 
+2. Idea: Greedily, it makes sense to pair the heaviest individual with the lightest individual. If they already exceed the weight, then no other individual paired with the heaviest individual would meet the weight limit
+3. Pseudo Code: 
+    1. Sort the array and initialise a left and right pointer at the start and end of the array. 
+    2. Check if both individuals meet the limit. If so, move the pointers and increment the boat count by one
+    3. Else, only increment the right pointer as the heaviest person has to take the boat themselves
+    4. Return the number of Boats
+4.  Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: proof of correctness
