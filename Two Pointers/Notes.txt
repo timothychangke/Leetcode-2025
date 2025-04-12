@@ -7,3 +7,13 @@ Merge Sorted Arrays
     3. If there are still arrays that have yet to be traversed, add these remaining elements into the array
 3. Time Complexity: O(m + n)
 4. Space Complexity: O(1)
+
+
+Merge Strings Alternately
+
+1. Edge Case: Arrays of different lenghts, empty arrays
+2. Pseudo Code:
+    1. Initialise two pointers, each at the start of the array
+    2. While the pointers are less than the length of their respective arrays, increment them alternatively, each time adding their value to the res
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
