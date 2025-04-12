@@ -70,3 +70,16 @@ Valid Palindrome
     3. If the loop is completed, return True
 3. Time Complexity: O(n)
 4. Space Complexity: O(1)
+
+
+Trapping Rain Water
+
+1. Edge Cases: No rain water to trap, entirely non-decreasing or entirely non-increasing or a mountain array
+2. Idea: For each index in the array, find the maximum left boundary and maximum right boundary. The minimum of these two boundaries minus its current value is the amount of water that particular cell can hold
+3. Pseudo Code:
+    1. Initialise an array for the left max and the right max.
+    2. Using prefix and suffix, calculate the left and right boundaries for each index
+    3. To calculate the res, if the minimum of the two boundaries minus the height at the current index is more than zero, increment the water by that numbers
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+
