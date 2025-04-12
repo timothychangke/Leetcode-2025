@@ -37,3 +37,27 @@ Reverse Strings
 3. Time Complexity: O(n)
 4. Space Complexity: O(1)
 
+
+Squares of sorted array
+
+1. Edge Cases: Negative numbers, Zeros
+2. Pseudo Code:
+    1. Initialise two pointers left and right at both ends of the array
+    2. Compare their squared values and insert the larger one into the front of the array
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
+5. Learnings: Have both pointers at both ends, append to the res array from the front
+
+
+Valid Palindrome 2
+
+1. Edge Cases: One letter array, empty array, even length array, odd length array
+2. Idea: Initialise the usual valid palindrome function. When the case where the characters dont match, skip that character both from the left side and the right side. If there is still a case where the characters dont match, then return False
+3. Pseudo Code:
+    1. Initialise the valid palindrome function with left and right pointers and a while loop
+    2. Perform another valid palindrome function, but in the event that there is a mismatch, return the values of the palindrome skipping either the left value or the right value
+4. Time complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: perform the same func but excluding either the left or the right pointer so as to mimic a deletion of a character
+
+
