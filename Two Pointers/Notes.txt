@@ -27,3 +27,13 @@ Remove duplicates from sorted array
 3. Time Complexity: O(n)
 4. Space Complexity: O(1)
 
+
+Reverse Strings
+
+1. Edge Case: palindromic strings, one character strings, empty strings
+2. Pseudo Code: 
+    1. Initialise a left and right pointer at the start and end of the strings
+    2. While the left pointer is less than the right pointer, swap their values
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
+
