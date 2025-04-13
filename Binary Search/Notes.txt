@@ -10,3 +10,18 @@ Binary Search
     4. Repeat the loop until the element is found
 3. Time Complexity: O(nlogn)
 4. Space Complexity: O(1)
+
+
+First Bad Version
+
+1. Edge Case: The first bad version is the first/last element in the array
+2. Pseudo Code:
+    1. Initialise a left and right pointer for both ends of the array
+    2. Find the middle element and while the left is less than or equal to the right
+        - If the elmenet is a bad version, save it to the array and move leftward to find the smaller bad version
+        - If the element is not a bad version, move rightward to find the bad version
+3. Time Complexity: O(logn)
+4. Space Complexity: O(1)
+5. Learnings: This is the common pattern of binary search, where if the condition is met, you move leftward to find the smaller result
+that still meets the condition. If the condition has yet to be met, you move rightward to find a result that meets the condition. 
+Whether or not the ternary condition is l < r or l <= r is determined by if the left and right pointers can overlap or not
