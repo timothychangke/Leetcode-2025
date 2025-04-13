@@ -53,4 +53,19 @@ Search Insert Position
 3. Time Complexity: O(logn)
 4. Space Complexity: O(1)
 5. Learnings: Initialise the res to be the index after the end of the string so as to account for the edge case where the all elements
-is less than the target·
+is less than the target
+
+
+Sqrt(x)
+
+1. Edge Case: x = 0, x = 1
+2. Pseudo Code:
+    1. Initialise the left pointer to be 0 and the right pointer to be x. These are the boundaries where the square root of the value will lie in
+    2. While left <= right, find the mid point
+        - If the mid point squared is less than or equal to x, save the value to res and shift the left pointer to mid + 1
+        - Else, shift the right pointer to mid - 1
+3. Time Complexity: O(logn)
+4. Space Complexity: O(1)
+5. Learnings: Though it doesn't look like this question can be solved via binary search, it can
+
+
