@@ -142,3 +142,31 @@ Capacity to ship packages within d days
 4. Time Complexity: O(nlogn)
 5. Space Complexity: O(1)
 6. Learnings: They all use the same binary search framework
+
+
+Find minimum in rotated sorted array
+
+1. Edge Cases: Non-rotated array, negative numbers?, 0s
+2. Idea: Use the ends of the array and compare it with the current mid point to determine which have the element belongs to
+3. Pseudo Code:
+    1. Set l and r to be the start and end index of the array
+    2. Find the mid point and check if it is > than the rightmost element
+        - If it is, then shift the left pointer to mid + 1
+        - Else, save mid to res and shift the right pointer to mid - 1
+4. Time Complexity: O(logn)
+5. Space Complexity: O(1)
+
+
+H-Index
+
+1. Edge Cases: Array with zeros
+2. Idea: Do binary search on the possible H-index to find the maximum one that still satisfies the criteria
+3. Pseudo Code:
+    1. Set l = 0 and r = len(citations) as they are the lower and upper bounds of the H-index
+    2. While l <= r, find the middle point
+        - If the mid point satisfies the H-index criteria, save it to res and move l = mid + 1
+        - Else, move r = mid - 1
+        - Initialise the h-index criteria function by iterating through the array to see if there are h number of citations greater 
+        than H
+4. Time Complexity: O(nlogn)
+5. Space ComplexityL O(1)
