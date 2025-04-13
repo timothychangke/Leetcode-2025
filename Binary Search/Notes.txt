@@ -125,3 +125,20 @@ Split Array largest sum
 4. Time Complexity: O(nlogn)
 5. Space Complexity: O(1)
 6. Learnings: Similar to the previous learning, it might not be obvious at first glance that this could be solved via binary search, but it can and the solution is rather simple
+
+
+Capacity to ship packages within d days
+
+1. Edge Case:
+2. Idea: Do binary search on the minimum weight required such that the ships capacity can satisfy the package requirements
+3. Pseudo Code:
+    1. Set l = max(package) and r = sum(packages). These are the lower and upper bounds of the ships limit
+    2. While l <= r:
+        - Find the mid point
+        - Check if the mid point satisfies the condition:
+            - If it does, save it as res and move r = mid - 1 to find a smaller weight limit that satifies the condition
+            - Else, move l = mid + 1
+        - For the function, iterate through the array and check if the number of days can be met with that particular weight limit
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+6. Learnings: They all use the same binary search framework
