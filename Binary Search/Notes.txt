@@ -34,7 +34,23 @@ Guess Number Higher or lower
     1. Initialise a left and right pointer for both ends of the array
     2. Find the middle point and while left is less than or equal to right
         - If the element is equal to pick, return pick
-        - If the element is more than pick, move the right pointer leftward
-        - If the element is less than pick, move the left pointer rightward
+        - If the element is more than pick, move the right pointer mid - 1
+        - If the element is less than pick, move the left pointer to mid + 1
 3. Time Complexity: O(logn)
 4. Space Complexity: O(1)
+
+
+Search Insert Position
+
+1. Edge Case: Index is inserted at the start of the array, Index is inserted at the end of the array
+2. Pseudo Code:
+    1. Initialise the left boundary to be 0 and right boundary. Initialise the res variable to be the len(nums), so as to account for 
+    the scenario where 
+    2. Find the middle point and while left is less than or equal to right
+        - If the element is equal to the target, return the element
+        - If the element is less than the target, move the left pointer mid + 1
+        - If the element is more than the target, save the index to res and move the right pointer to mid - 1
+3. Time Complexity: O(logn)
+4. Space Complexity: O(1)
+5. Learnings: Initialise the res to be the index after the end of the string so as to account for the edge case where the all elements
+is less than the target·
