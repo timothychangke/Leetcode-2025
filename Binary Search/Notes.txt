@@ -69,3 +69,19 @@ Sqrt(x)
 5. Learnings: Though it doesn't look like this question can be solved via binary search, it can
 
 
+Find in Mountain Array
+
+1. Edge Cases
+2. Idea: Find the peak of the mountain array, then perform binary search on the ascending portion of the mountain array and binary search on the descending portion of the mountain array. One optimisation is to  also try to find the element while
+finding the peak of the mountain
+3. Pseudo Code:
+    1. While left <= right, find the smallest point where i > i + 1
+        - If that is the case, save it to res and let r = mid - 1
+        - Else move l = mid + 1
+        - Do the additional check of if num == target, then return it
+    2. Check the ascending portion of the array, so perform binary search up to peak to find the target
+    3. If still not present, check the descending portion of the array by performing binary search on the descending portion of the mountain array
+    4. If still not found, return -1 
+4. Time Complexity: O(3logn) = O(logn)
+5. Space Complexity: O(1)
+6. Learnings: Have an optimisation to also search for the target while searching for the peak
