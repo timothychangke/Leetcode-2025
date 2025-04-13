@@ -85,3 +85,26 @@ finding the peak of the mountain
 4. Time Complexity: O(3logn) = O(logn)
 5. Space Complexity: O(1)
 6. Learnings: Have an optimisation to also search for the target while searching for the peak
+
+
+Median of Sorted Array
+
+1. Edge Case: Median is in one of the arrays, Median spans across both arrays, Median is a single number, Median is the middle of two numbers
+2. Idea: Perform Binary search to find the index of the median on the arr1. The condition is that the arr1 index is smaller than the arr2 index, while the arr2 index is smaller than the arr1 index + 1. If that is the case, then return the small of
+two indexes (arr2 index + 1 and arr1 index + 1), else find the max between the two indexes for both index and index + 1 and return the average between the two. Also there are many edge cases to take care off regarding the value of these four values, 
+especially when they are at the boundaries of the arrays
+3. Pseudo Code:
+    1. Have the length of arr1 be the array with the shorter length
+    2. Initialise the left and right pointers at the two ends of array 1
+    3. While True: 
+        - Let i be the mid point between l and r, then derive j based on the total length of the two arrays
+        - Caculate a1, a2, b1, b2 based on i and j. In the event that they are out of range of the array, set them to either inf or -inf so that they satisfy the condtion check
+        - If a1 <= b2 and b1 <= a2, the median has been found
+            - Based on whether the total length of the arrays are divisible by 2, return either the min of a2 and b2 or the mid point of max(a1, b1) and min(a2, b2)
+        - Else, 
+            - If a1 > b2, shift r to mid - 1
+            - Else, shift l to mid + 1
+4. Time Complexity: O(logn)
+5. Space Complexity: O(1)
+6. Learnings: Swapping of arguments to get the smallest array be array 1, simplifying the problem to be the finding of the boundary between a1, a2, b1, and b2, satisfy the various edge cases by setting a1, a2, b1, b2 to always meet the conditions when
+they are out of bounds
