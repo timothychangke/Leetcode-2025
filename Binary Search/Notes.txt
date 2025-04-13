@@ -170,3 +170,21 @@ H-Index
         than H
 4. Time Complexity: O(nlogn)
 5. Space ComplexityL O(1)
+
+
+Koko eating bananas
+
+1. Edge Cases: h greater than the length of bananas array
+2. Idea: Do Binary Search on the possible banana eating speeds and check if they satisfy the h condition
+3. Pseudo Code:
+    1. Set l = math.ceil(sum(bananas) / h) and r = max(bananas)
+    2. While l <= r, find the middle point
+        - If the mid point satisfies the condition, save it to res and move r = mid - 1 to find a smaller value that still 
+        satisfies the condition
+        - Else, move l = mid + 1
+    3. Initialise the banana function to iterate through the banana array and check if the condition of finishing the bananas before
+    h hours can be met
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+
+
