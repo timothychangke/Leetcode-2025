@@ -25,3 +25,16 @@ First Bad Version
 5. Learnings: This is the common pattern of binary search, where if the condition is met, you move leftward to find the smaller result
 that still meets the condition. If the condition has yet to be met, you move rightward to find a result that meets the condition. 
 Whether or not the ternary condition is l < r or l <= r is determined by if the left and right pointers can overlap or not
+
+
+Guess Number Higher or lower
+
+1. Edge Case: Pick > n?
+2. Pseudo Code:
+    1. Initialise a left and right pointer for both ends of the array
+    2. Find the middle point and while left is less than or equal to right
+        - If the element is equal to pick, return pick
+        - If the element is more than pick, move the right pointer leftward
+        - If the element is less than pick, move the left pointer rightward
+3. Time Complexity: O(logn)
+4. Space Complexity: O(1)
