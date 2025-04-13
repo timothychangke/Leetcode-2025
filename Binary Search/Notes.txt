@@ -108,3 +108,20 @@ especially when they are at the boundaries of the arrays
 5. Space Complexity: O(1)
 6. Learnings: Swapping of arguments to get the smallest array be array 1, simplifying the problem to be the finding of the boundary between a1, a2, b1, and b2, satisfy the various edge cases by setting a1, a2, b1, b2 to always meet the conditions when
 they are out of bounds
+
+
+Split Array largest sum
+
+1. Edge Cases: k > len of nums, negative numbers?, zeros, 
+2. Idea: Do binary search to find the value of sum that obtains the number of splits that equal to K
+3. Pseudo Code: 
+    1. Set l = max value in element and r = sum of all elements. These make up the lower and upper bounds of the splits
+    2. While l <= r:
+        - Find the mid point
+        - Check if the mid point value of sum satisfies the equation:
+            - If it does, save it as res and move the r pointer to mid - 1 so as to find a smaller sum that still satisfies the condition
+            - Else, move l = mid + 1
+        - For the function that checks if the condition is satified, iterate through the array and split the moment the temp sum exceeds the sum value
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+6. Learnings: Similar to the previous learning, it might not be obvious at first glance that this could be solved via binary search, but it can and the solution is rather simple
