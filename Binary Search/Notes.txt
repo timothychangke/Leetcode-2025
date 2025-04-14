@@ -214,3 +214,23 @@ Search a 2D Matrix
     2. Perform binary search on that row with l = first index of the row and r = last index of that row
 4. Time Complexity: O(nlogn)
 5. Space Complexity: O(1)
+
+
+Search a rotated sorted array 
+
+1. Edge Case: Array not sorted
+2. Idea: Perform a variant of binary search where you first compare the mid point to the first element to identify which half the mid point is in, then based on two comparisons of the mid point to the target and the mid point to the first element,
+shift the left/right pointers accordingly
+3. Pseudo Code:
+    1. Set the left and right boundaries to the the start and end indexes of the array
+    2. Find the mid point
+        - If the mid point is greater than or equal to the first element in the array, then it is in the first half of the array
+            - If the target is greater than the mid point of less than the first element in the array, shift the left pointer to mid + 1
+            - Else shift the right pointer to mid
+        - Else, it means that the mid point is in the second half of the array 
+            - If the target is less than the mid point or more than or equal to the first element of the array , shift the right pointer to mid - 1
+            - Else, shift the left pointer to mid + 1
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+6. Learnings: Compare with the first element in the arrange and group the condtions that yield the same outcome together
+
