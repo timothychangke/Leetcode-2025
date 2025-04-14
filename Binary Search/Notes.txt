@@ -250,3 +250,13 @@ Search a rotated sorted array 2
 4. Time Complexity: O(nlogn)
 5. Space Complexity: O(1)
 
+Time Based Key Value store
+
+1. Edge Case
+2. Idea: Set() appends value to the end of the array, get() does a binary search to find the value since they are appended in order
+3. Pseudo Code:
+    1. Set(): Append to the end of the array
+    2. Get(): Initialise the left and right boundaries and perform binary search to find the target value
+4. Time Complexity: O(logn)
+5. Space Complexity: O(1)
+
