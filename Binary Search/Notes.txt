@@ -188,3 +188,15 @@ Koko eating bananas
 5. Space Complexity: O(1)
 
 
+Minimum number of days to make M Bouquets
+
+1. Edge Case: the number of bouquets m * adjacent flowers k > the len(bloomday)
+2. Idea: Do Binary search on the possible minimum number of bloom days such that the bloom day is valid
+3. Pseudo Code: 
+    1. Set l = min(bloomday) and r = max(bloomday) as they are the upper and lower bounds of bloom day
+    2. While l <= r, find the middle point
+        - If the mid point can satisfy the condition, save it to res and move r = mid - 1 to find the smaller value that still satisfies the condtion
+        - Else, move l = mid + 1
+    3. Initialise the bloomday function by iterating through the array and count the number of bouquets when an unbloom flower is reached. Return if the bloom is more than of equal to M
+4. Time Complexity: O(nlogn)
+5. Space Complextity: O(1)
