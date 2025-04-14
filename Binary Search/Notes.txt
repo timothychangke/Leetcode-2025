@@ -200,3 +200,17 @@ Minimum number of days to make M Bouquets
     3. Initialise the bloomday function by iterating through the array and count the number of bouquets when an unbloom flower is reached. Return if the bloom is more than of equal to M
 4. Time Complexity: O(nlogn)
 5. Space Complextity: O(1)
+
+
+Search a 2D Matrix
+
+1. Edge Case: 
+2. Idea: Perform a first binary search to find out which row to search in, then perform a second binary search on that row to find the element in question
+3. Pseudo Code:
+    1. Set l = index of the first row and r = index of the last row. Find the mid point
+        - If the target is less that that row's first element, shift r = mid - 1
+        - Elif the target is more than that row's last element, shift l = mid + 1
+        - Else, that is the correct row (where the element is more than that rows first element and less than that rows last element)
+    2. Perform binary search on that row with l = first index of the row and r = last index of that row
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
