@@ -234,3 +234,19 @@ shift the left/right pointers accordingly
 5. Space Complexity: O(1)
 6. Learnings: Compare with the first element in the arrange and group the condtions that yield the same outcome together
 
+Search a rotated sorted array 2
+1. Edge Case: Array not sorted
+2. Idea: Same as the previous, just that if the value of mid is equal to the rightmost value, shift r to the left by one
+3. Pseudo Code:
+    1. Set the left and right boundaries to the the start and end indexes of the array
+    2. Find the mid point
+        - While the mid point value == the value at the right boundary, shift the right boundary to the left
+        - If the mid point is greater than or equal to the first element in the array, then it is in the first half of the array
+            - If the target is greater than the mid point of less than the first element in the array, shift the left pointer to mid + 1
+            - Else shift the right pointer to mid
+        - Else, it means that the mid point is in the second half of the array 
+            - If the target is less than the mid point or more than or equal to the first element of the array , shift the right pointer to mid - 1
+            - Else, shift the left pointer to mid + 1
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+
