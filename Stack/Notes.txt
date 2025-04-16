@@ -14,7 +14,7 @@ Baseball Game
 
 Implement Queue using a stack
 
-1. Edge Case: Invalid calls -> ie poping when empty
+1. Edge Case: Invalid calls -> ie popping when empty
 2. Idea: Have two stacks, stack 1 and stack 2. When you append things append it to stack 1. When you pop things, first check if stack 2 is empty, if it is not, then pop from stack 2. Else, move over all the items from stack 1 to stack 2, this inverts
 the order of all the elements
 3. Pseudo Code: 
@@ -28,6 +28,17 @@ the order of all the elements
 5. Space Complexity: O(n)
 
 
+Implement Queue using stack
+
+1. Edge Case: Invalid calls -> ie popping when empty
+2. Idea: Have a queue where you append to the end of the queue, but when it is time to pop, you pop and append n - 1 elements such that the lru element is now at the top of the queue
+3. Pseudo Code:
+    1. Initialise a queue
+    2. For appends, add to the back of the queue
+    3. For pops, pop and reappend n - 1 elements in the queue such that the most recently added element is at the top of the queue
+    4. For peek, just return the last element in the queue
+4. Time Complexity: O(1) for appends and O(n) for pops
+5. Space Complexity: O(n)
 
 
 Generate Parenthesis
