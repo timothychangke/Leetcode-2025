@@ -41,6 +41,21 @@ Implement Queue using stack
 5. Space Complexity: O(n)
 
 
+Valid Parenthesis
+
+1. Edge Case: Parenthesis pattern is contains characters that are not brackets
+2. Idea: Initialise a stack mapping closing brackets with their openning brackets. Have a stack to store open brackets. When met with a closing bracket, pop from the stack and check if its the corresponding open bracket. If invalid, return false
+3. Pseudo Code:
+    1. Initialise a hash map with the closing brackets as the keys and the openning brackets as the values. 
+    2. Iterate through the string
+        - If the element is a not in the dictionary (an openning bracket), append it to the stack
+        - Else, pop the stack and check if the current element (a closing bracket) correspondes to the openning bracket, if not return false
+    3. Return True but only if the stack is empty
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Check for any elements left in the stack as well to ensure validity
+
+
 Generate Parenthesis
 
 1. Edge Case: 
