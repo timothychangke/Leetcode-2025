@@ -1,3 +1,18 @@
+Baseball Game
+
+1. Edge Case: Invalid inputs, negative numbers, 
+2. Pseudo Code: 
+    1. Initialise a stack
+    2. Iterate through the operations string and check for the various characters
+        - If character is 'C': pop the top of the stack
+        - If the character is 'D': pop, multiply by two and append back the top of the stack
+        - If the character is '+': pop the two most recent elements from the stack, add them up and append them back into the stack
+        - Else, append that character into the stack
+3. Time Complexity: O(n)
+4. Space Complexity: O(n)
+
+
+
 Generate Parenthesis
 
 1. Edge Case: 
