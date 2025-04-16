@@ -12,6 +12,23 @@ Baseball Game
 4. Space Complexity: O(n)
 
 
+Implement Queue using a stack
+
+1. Edge Case: Invalid calls -> ie poping when empty
+2. Idea: Have two stacks, stack 1 and stack 2. When you append things append it to stack 1. When you pop things, first check if stack 2 is empty, if it is not, then pop from stack 2. Else, move over all the items from stack 1 to stack 2, this inverts
+the order of all the elements
+3. Pseudo Code: 
+    1. Initialise two stacks
+    2. For appends, add it to the first stack
+    3. For pops, 
+        - If stack 2 is not empty, pop from stack 2
+        - Else, while stack 1 is not empty, pop then append all elements into stack 2, then pop the very last element
+    4. For peeks, do the pop operation just that you return and not pop the last element
+4. Time Complexity: O(1) for appends and O(1) also for pops. Each element is popped only once 
+5. Space Complexity: O(n)
+
+
+
 
 Generate Parenthesis
 
