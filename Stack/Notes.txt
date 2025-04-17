@@ -82,6 +82,20 @@ added to the stack, increment its count in the dictionary, append it to the coun
 6. Learnings: Have a max frequency count to keep track of counts and make searches O(1)
 
 
+
+Asteroid Collision
+
+1. Edge Case: all left moving asteroids, all right moving asteroids
+2. Idea: Have a stack to keep track of the asteroids already seen. A collision only happens when a right asteroid is before a left asteroid
+3. Pseudo Code:
+    - Initialise the stack with the first asteroid
+    - While the subsequent asteriods are left asteriods, check if the top of the stack is a right asteriod, if it is, collide both of them. If their values sre the same, break out of the loop and dont execute the else block. If they have deltas, obtain the delta use it to continue colliding with the rest if the other right moving asteroids
+    - Have a while else else block to append the asteroid back to the array once the while loop is exited
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: While else block where the else block will be executed when the loop terminates unless a break statement is present
+
+
 Generate Parenthesis
 
 1. Edge Case: 
