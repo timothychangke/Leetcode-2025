@@ -68,6 +68,20 @@ Largest Rectangle in Histogram
 6. Learnings: Initalising of the 0 at the end to clear all the remaining rectangles as well as appending a -1 to the stack so that the first rectangles area can be calculated
 
 
+Maximum Frequency stack
+
+1. Edge Case: 
+2. Idea: Initialise a default dict that stores the frequencies of the elements and the dictionary that stores the counts. Also initialise a max count so that you know at what frequency to pop the element. When a number is
+added to the stack, increment its count in the dictionary, append it to the count in the frequency default dict and update the max frequency accordingly
+3. Pseudo Code:
+    1. Initialise a max frequency count, a default dict of lists that appends to it elements of that particular count and a dictionary that keeps track of each elements count
+    2. Add the new items into the frequency dictionary and increment its count. Update the max frequency if needed
+    3. When popping, use the max frequency count to search for the element in the frequency default dictionary. Pop and return that element. If the array for that count is now empty, decrement the maximum frequency count
+4. Time Complexity: O(1)
+5. Space Complexity: O(n)
+6. Learnings: Have a max frequency count to keep track of counts and make searches O(1)
+
+
 Generate Parenthesis
 
 1. Edge Case: 
