@@ -240,3 +240,18 @@ by checking first whether the letter is in the monoatomically increasing stack a
 5. Space complexity: O(n)
 6. Learnings: Check of whether the index is the last index such that a better lexicographically small answer can be found
 
+
+Simplify Path
+
+1. Edge Case: Invalid path structure
+2. Idea: Have a stack to keep track of the path
+3. Pseudo Code:
+    1. Split the current path via the '/'. 
+    2. Loop through the various elements of the split text
+        - If it is a string, append to the res
+        - If it is a .., pop from the res if the res is non-empty
+    3. Join back the array with '/', and add a '/' at the front of the string
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Split array by '/' and remember to join it back
+        
