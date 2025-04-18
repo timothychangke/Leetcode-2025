@@ -144,6 +144,24 @@ Daily Temperatures
 6. Learnings: Using monoatomically non-increasing stack, be sure the check that the stack is non null
 
 
+Decode string
+
+1. Edge Case: invalid input string, non-bracket and non-numeric characters, negative integers?, decimal numbers?, 0s?
+2. Idea: Initialise a stack, num and res. Add to num or add to res until an open bracket is reached, then append num and res to the stack and reset it. Repeat inside the the bracket. When met with a closing bracket or the end of the string is reached, multiply res with the popped out num and append it to the popped
+out res string, continue until the and of the string
+3. Pseudo Code:     
+    1. Initialise a stack, num and res. Iterate through the string
+        - If the character is a number, multiply the current number by 10 and add to it, forming the new number. 
+        - If the character is a string, append to the end of res
+        - If the character is an open bracket, save the num and res into the stack and reset them
+        - If the character is a closed bracket or the last character, pop num and res from the stack. Multiply the current res with num and then let the new res += res in the bracket
+    2. Return res
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Have the stack remember the previous multiplier and res before the brackets, let the res save the current string up to that point
+    
+
+
 Generate Parenthesis
 
 1. Edge Case: 
