@@ -115,6 +115,21 @@ Basic Calculator 2
 6. Learnings: Save the previous sign as a variable and only perform the operation if there is a new sign or we've reached the last digit. Also remember to convert the characters to ints to do the operations
 
 
+Car Fleet 
+
+1. Edge Case: Entire array is one fleet, each car is its own fleet
+2. Idea: Sort the array by starting position and calculate where it would end up after x amount of time. Iterate the array in descending order and for each car that reaches a lesser distance, create a new fleet
+3. Pseudo Code: 
+    1. Zip the position and speed together and sort the array by starting position
+    2. Iterate the array from the back, and for each car, find the destination reached after x amount of time. Save this as a variable
+    3. If the next car reaches or exceeds this variable destination, it joins the previous car as one fleet, else, it is its own new fleet
+    4. Count and return the total number of fleets
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(n)
+6. Learnings: Zip and sort array, each car that reaches a lesser destination point creates a new fleet
+
+
+
 Generate Parenthesis
 
 1. Edge Case: 
