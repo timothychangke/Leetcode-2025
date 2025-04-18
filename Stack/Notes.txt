@@ -129,6 +129,20 @@ Car Fleet
 6. Learnings: Zip and sort array, each car that reaches a lesser destination point creates a new fleet
 
 
+Daily Temperatures
+
+1. Edge Case: Temperatures are all non-increasing, temperatures are always increasing
+2. Idea: Create a monoatomically non-increasing stack where elements are popped and process if there is an element that is greater than it
+3. Pseudo Code: 
+    1. Initialise a stack and a result array with default values of -1
+    2. While the stack is non null and the current value is more than the head of the stack
+        - Pop the head of the stack and subtract its index with the current value's index, append this at the index in the results array
+    3. Append the index of the current element to the stack 
+    4. Return the result array
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Using monoatomically non-increasing stack, be sure the check that the stack is non null
+
 
 Generate Parenthesis
 
