@@ -159,18 +159,16 @@ out res string, continue until the and of the string
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: Have the stack remember the previous multiplier and res before the brackets, let the res save the current string up to that point
-    
 
 
-Generate Parenthesis
+Evaluate Reverse Polish Notation
 
-1. Edge Case: 
-2. Idea: sort of like backtracking where at each case it can branch out into two cases
-    1. if the number of ( is less than n, then add a (
-    2. if the number of ) is less than n, then add a )
-3. Pseudo Code
-Initialise a dfs function taking in x and y which are the number of open and close brackets
-if x + y == n: append the copy of the current string into the result array
-if x < n: append a open bracket into the string
-if x < y: append a close bracket into the string
-return the res array
+1. Edge Case: division or multipliation by zero, divison or multipliation by negative numbers, decimal numbers, invalid notation (pop from stack when stack is empty)
+2. Idea: Have a stack to store the numbers, for each operand, pop the number and do the operation, append back the result into the stack
+3. Pseudo Code: 
+    1. Initialise the stack 
+    2. Iterate through the string and append to the stack if its a digit. Make sure that it is converted to integers before appending
+    3. If the character is any of the operands, pop and perform the operation. Make sure the stack is not empty
+    4. Take note for division, convert number to int so as to not deal with decimal places
+
+
