@@ -221,3 +221,22 @@ by the count of that particular element. Once the while loop terminates, add thi
 [[], [100], [80], [60], [70], [60], [75], [85]]
 stack = [[100, 1], [85, 6]]
 res = [1, 1, 1, 2, 1, 4, 6]
+
+
+Remove duplicate letters
+
+1. Edge Case: string of all the same letters
+2. Idea: Create a dictionary that stores all the last indexes of the letters, do this by iterating through and overriding the index of each character until the end of the string is reached. Loop through the array and construct the lexicographic string
+by checking first whether the letter is in the monoatomically increasing stack and if the letter can be popped out (the last index is still down the road)
+3. Pseudo Code:
+    1. Initialise a dictionary of all the last indexes of the elements
+    2. Initialise a lexicographically increasing stack and a set to track what elements are in the stack
+    3. For each new element
+        - If the element is already in the stack, continue
+        - If the element is lexicographic greater than the top of the stack, append it to the stack
+        - Else, check if the top of the stack has a end index greater than the current index, if yes then pop from the stack and remove it from the set, else, still append to the stack
+    4. Returned the joined version of the stack
+4. Time complexity: O(n)
+5. Space complexity: O(n)
+6. Learnings: Check of whether the index is the last index such that a better lexicographically small answer can be found
+
