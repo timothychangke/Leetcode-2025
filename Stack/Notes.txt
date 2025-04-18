@@ -202,3 +202,22 @@ Min stack
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: Save the minimum number as the second element of the tuple to save both space complexity and time complexity in retrieval
+
+
+Online Stock Span
+
+1. Edge Case: Continuously increasing prices, Continuously decreasing prices
+2. Idea: Create a monoatomically decreasing stack that saves but the current price and its number of stocks that it is greater than. If the current number is greater than the top of the stack, pop from the stack and increment the current element's count
+by the count of that particular element. Once the while loop terminates, add this item to the stack
+3. Pseudo Code:
+    1. Initialise an array
+    2. Iterate through the list and if the current price is more than the previous price, pop the previous prices and increment the count
+    3. Append the current price and its count to the stack
+    4. Return the count
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Check if stack is non-empty, increment the count based on the previous counts
+7. Example: 
+[[], [100], [80], [60], [70], [60], [75], [85]]
+stack = [[100, 1], [85, 6]]
+res = [1, 1, 1, 2, 1, 4, 6]
