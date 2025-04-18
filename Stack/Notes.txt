@@ -96,6 +96,25 @@ Asteroid Collision
 6. Learnings: While else block where the else block will be executed when the loop terminates unless a break statement is present
 
 
+Basic Calculator 2
+
+1. Edge Case: Invalid expressions, zeros, negative numbers, 
+2. Idea: Since * and / take precedence, do those expressions first while appending the rest to the stack. For negative numbers, simply append -num is enough as afterward, just return the sum of the stack
+3. Pseudo Code: 
+    1. Initialise a stack, a num variable, and a sign variable
+    2. Iterate through the string
+        - If the character is a digit, multiply the current digit by 10 and then add the new digit, this is the new num
+        - If the character is one of the signs or the last digit has been reached:
+            - If the current sign is +, append num to the array and save the new sign
+            - If the current sign is -, append -num to the array and save the new sign
+            - If the current sign is *, pop the stack and multiply the popped value with num. Append this new value to the stack and save the new sign
+            - If the current sign is /, pop the stack and divide the popped value with num. Append this new value to the stack and save the new sign
+    3. Return the sum of the stack
+4. Time Complexity: O(n) - Each value is inserted and popped from the stack at most once each 
+5. Space Complexity: O(n)
+6. Learnings: Save the previous sign as a variable and only perform the operation if there is a new sign or we've reached the last digit. Also remember to convert the characters to ints to do the operations
+
+
 Generate Parenthesis
 
 1. Edge Case: 
