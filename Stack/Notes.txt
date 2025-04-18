@@ -174,7 +174,7 @@ Evaluate Reverse Polish Notation
 
 Generate Parenthesis
 
-1. Edge Case: 
+1. Edge Case: n = 0 
 2. Idea: sort of like backtracking where at each case it can branch out into two cases
     1. if the number of ( is less than n, then add a (
     2. if the number of ) is less than n, then add a )
@@ -187,3 +187,18 @@ Generate Parenthesis
 4. Time Complexity: O(2^n)
 5. Space Complexity: O(n) as only that stack is used
 6. Learnings: Backtracking
+
+
+Min stack
+
+1. Edge Case: negative numbers
+2. Idea: Have the stack save the current number as well as the minimum number. Save the minimum number by comparing the current number with the previous minimum number
+3. Pseudo Code: 
+    1. Initialise a stack
+    2. For each element, save the number as well as the minimum number
+        - If the current number is smaller than the minimum number, save the current number
+        - If the current number is more, save the previous minimum number
+    3. For pops, return the minimum number
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Save the minimum number as the second element of the tuple to save both space complexity and time complexity in retrieval
