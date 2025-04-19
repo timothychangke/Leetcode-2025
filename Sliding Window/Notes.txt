@@ -21,4 +21,20 @@ Contains duplicate 2
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: Code is simplier if there is just a check whether r - l >= k as a condition to increment l
-    
+
+
+Minimum Window Substring
+
+1. Edge Case: String s does not contain the substring of t, lowercase and uppercase letters
+2. Idea: Initialise a have map and a need map, as well as a have counter and a need counter to reduce looping through the dictionary. For each letter in s, check if the letter is needed in t. Once all the conditions of t are met, 
+move the left pointer so see if the condition can still be fulfilled with a smaller string length. Repeat until the condition is no longer true and save each length to res
+3. Pseudo Code  
+    1. Initialise a have map and a need map, with the need map being a counter of t and the have map being empty. Also initialise a have count and a need count where the need count is the length of the need map
+    2. Iterate through the string s, checking if the letter is present in the need map, if it is, increment the have map by one
+    3. If the count in the have map is equal to the count in the need map, increment the have counter by one
+    4. While the have counter == need counter, save the length to res and move the left pointer by one and remove the left pointer's letter from the have map. If the count in the have map is now not greater than or equal to that of the need map, break out fo the loop
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Using a count to check if they are the same will reduce the need to compare both dictionaries
+
+
