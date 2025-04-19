@@ -1,0 +1,13 @@
+Best Time to Buy and Sell Stock
+
+1. Edge Case: non-increasing array
+2. Idea: Implement a sliding window that restarts when the right pointer is less than the left pointer
+3. Pseduo Code: 
+    1.Initialise the left pointer and have a for loop that moves the right pointer
+    2. When the value of the right pointer is more than that of the left pointer, record this value to the res
+    3. Else, let the left pointer = right pointer
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: No need to iterate through every possiblility if the delta between the left and right pointer is negative
+
+
