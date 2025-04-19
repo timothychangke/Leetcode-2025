@@ -63,3 +63,18 @@ Find K Closest elements
 5. Time complexity: O(n)
 6. Space Complexity: O(n)
 7. Learnings: There is actually a faster way which is to use binary search LOL
+
+
+Longest Repeating Character Replacement
+
+1. Edge Case: k = 0, k < 0, upper/lower case letters, non-alphabetical characters
+2. Idea: Initialise a array that counts the occurences of the letters and a maxC that records the maximum occurence of a single letter. If the length of the current window is > than maxC + k, increment the left pointer by 1 and remove its letter from the counter
+3. Pseudo Code:
+    1. Initialise an array that keeps track of the letters and their counts in the current window
+    2. have a maxC to keep track of the maximum count of a letter, without the need to loop through the array each time
+    3. If r - l + 1 > maxC + k, increment left by 1 and remove it from the array 
+    4. Return len(s) - l as the maximum window length will only increase and will never decrease, giving it the answer required
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Use a maxC variable to track the maximum count. Return len(s) - l is the answer as the window size will never decrease
+
