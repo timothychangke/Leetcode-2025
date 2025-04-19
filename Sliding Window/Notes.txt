@@ -90,3 +90,15 @@ Longest substring without repeating characters
     4. Record the length of the string for each loop and return the max length
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
+
+
+Minimum Size Subarray sum
+
+1. Edge Case: Subarray does not exist (k > sum(nums)), negative numbers
+2. Idea: Create a sliding window and a temp sum. Slide the window until temp sum >= k, the increment the left pointer to make the window smaller
+3. Pseudo Code:
+    1. Intialise a left pointer and a temp sum
+    2. Iterate through the nums array with the right pointer, incrementing the temp sum each time
+    3. When the temp sum reaches k, decrement the temp sum via the left pointer 
+    4. For each valid loop, save res and resLen
+    5. Return res and resLen
