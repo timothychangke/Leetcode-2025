@@ -11,3 +11,14 @@ Best Time to Buy and Sell Stock
 6. Learnings: No need to iterate through every possiblility if the delta between the left and right pointer is negative
 
 
+Contains duplicate 2
+1. Edge Case: k is less than zero
+2. Idea: have a sliding window of size k where all elements in the window are distinct, else return false
+3. Pseudo Code: 
+    1. Have a for loop to represent the right pointer and a set to save the elements in the window
+    2. At each loop, check if the new element is already in the set
+    3. r - l >= k, increment l by 1 and remove the element from the set
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Code is simplier if there is just a check whether r - l >= k as a condition to increment l
+    
