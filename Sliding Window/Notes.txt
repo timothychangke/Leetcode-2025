@@ -102,3 +102,27 @@ Minimum Size Subarray sum
     3. When the temp sum reaches k, decrement the temp sum via the left pointer 
     4. For each valid loop, save res and resLen
     5. Return res and resLen
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+
+
+Permuation in string
+
+1. Edge Case: length of s1 is greater than s2, they contain non-alphabetical characters, lower and uppercase letters
+2. Idea: Initialise a counter for s1. Initialise a match variable so as to not need to iterate through the dictionary to check that all values are 0. Loop through s2 and increment match accordingly. If the length
+of the window is larger than the len(s1), increment the left pointer
+3. Pseudo Code:
+    1. Initialise a counter for s1 as well as a matched variable
+    2. Loop through the string s2
+    3. If the character is in the s1 counter,
+        - If the current counter count for that letter is 0, match -= 1
+        - decrement the count in that counter by 1
+        - If the current counter count is now 0, match += 1
+    4. If the len of the window is greater than k and the last element is in the counter
+        - If the current counter count is 0, match -= 1
+        - Decrement the count by 1
+        - If the current counter count is not 0, match += 1
+    5. If match == len of s1, meaning that the window contains the complete permuation of s1, return True
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Use a match variable to save on time, there is no need for left pointer as it can be replaced with r - k
