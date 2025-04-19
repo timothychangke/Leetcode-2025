@@ -38,3 +38,15 @@ move the left pointer so see if the condition can still be fulfilled with a smal
 6. Learnings: Using a count to check if they are the same will reduce the need to compare both dictionaries
 
 
+Sliding window maximum
+
+1. Edge Case: Negative numbers, numbers with the same value
+2. Idea: Create a monoatomically decreasing stack, at each window, we only care about the maximum values and the values after the maximum value after it has be passed, values preceding that are smaller are no longer relevant.
+3. Pseudo Code: 
+    1. Have a for loop that represents the right pointer go through the array, and let the left pointer be zero. Also initialise a res array to store the results as well as monoatomically non-increasing stack that saves the index of the numbers
+    2. For each element that is looped across, add it to the monoatomically non-decreasing stack
+    3. If the top of the stack's index is less than the current left pointer, popleft the array
+    4. If r - l >= k, append the top of the stack to res 
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Use a monoatomically non-increasing stack to store the numbers. Popped off numbers are not relevant to us
