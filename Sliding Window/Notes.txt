@@ -50,3 +50,16 @@ Sliding window maximum
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: Use a monoatomically non-increasing stack to store the numbers. Popped off numbers are not relevant to us
+
+
+Find K Closest elements
+
+1. Edge Case: k < 1, duplicate numbers
+2. Idea: have a sliding window that iterates through the array until the element at r + 1 has a greater difference than l, this is then the k closest integers
+3. Pseudo Code: 
+    1. Initialise a sliding window with l = 0 and r = K
+    2. If the differnce between the element at r + 1 is less than l, move the sliding window up by one, else return the window
+4. Idea: Actually...just use binary search
+5. Time complexity: O(n)
+6. Space Complexity: O(n)
+7. Learnings: There is actually a faster way which is to use binary search LOL
