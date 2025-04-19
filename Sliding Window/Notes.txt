@@ -78,3 +78,15 @@ Longest Repeating Character Replacement
 5. Space Complexity: O(n)
 6. Learnings: Use a maxC variable to track the maximum count. Return len(s) - l is the answer as the window size will never decrease
 
+
+Longest substring without repeating characters
+
+1. Edge Case: string is only made up of one character, 
+2. Idea: Create a set that tracks the characters in the window. While the value is in the set, keep popping out the end of the window until the element can be added into the set
+3. Pseudo Code:
+    1. Initialise a left pointer and a set to store all the elements in the window
+    2. Have a for loop that represents the right pointer
+    3. While the current element is already present in the set, remove the left pointer value and increment the left pointer by 1
+    4. Record the length of the string for each loop and return the max length
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
