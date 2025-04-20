@@ -87,4 +87,17 @@ Binary Tree Inorder Iterative Traversal
 5. Space Complexity: O(n) for the stack
 6. Learnings: Append the cur.left until its null, the pop and traverse to the right by one
 
+
+Binary Tree Postorder Iterative Traversal
+
+1. Edge Case: Null or single node tree
+2. Idea: A node is processed if it has been touched twice. Append to the stack the node and whether it has been touched twice, process the node if it has been touched twice
+3. Pseudo Code:
+    1. Initialise a stack with the initial value of (root, false)
+    2. While stack
+        3. Pop from the stack and if true, append to res
+        4. Else, if node is non-null, append to the stack (root, True) and root.left and root.right with values of false
+4. Time Complexity: O(n)
+5. Space Complexity: O(n) for the stack
+6. Learnings: Post order processes nodes if touched twice
             
