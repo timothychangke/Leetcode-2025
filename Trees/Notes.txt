@@ -157,4 +157,17 @@ Same Tree
 Learnings: If both subtrees reach the null stage and did not return false, then they are valid trees
 
 
+Subtree of another tree
+
+1. Edge Case: Null or singlely depthed node tree, both subtree and tree are the same, subtree bigger than tree?
+2. Idea: For every node in the tree, check if the subtree is the same tree as that node
+3. Pseudo Code:
+    1. Define a function for same tree^
+    2. Do a dfs down tree, performing same tree for each node. If null, return False
+    3. Return the outcome of same tree
+4. Time Complexity: O(nm)
+5. Space Complexity: O(1)
+6. Learnings: Remember to have a terminating condition for the subtree function as well
+
+
 
