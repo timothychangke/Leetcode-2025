@@ -25,3 +25,17 @@ Binary Trees Preorder Recursive Traversal
     - dfs(right)
 3. Time Complexity: O(n)
 4. Space Complexity: O(1)
+
+
+Binary Trees Inorder Recursive Traversal
+
+1. Edge Case: Null or single node tree
+2. Pseudo Code:
+    1. Initialise a dfs function
+    - Terminal condition: if null, return 
+    - dfs(left)
+    - Performs function (ie print)
+    - dfs(right)
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
+
