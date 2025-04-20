@@ -170,4 +170,17 @@ Subtree of another tree
 6. Learnings: Remember to have a terminating condition for the subtree function as well
 
 
+Binary Tree Maximum path sum
 
+1. Edge Case: Negative numbers, null or single node trees
+2. Idea: For every traversal, calculate the path sum and add to the res if its greater, else, return the max path sum of the left and right node
+3. Pseudo Code: 
+    Initialise a dfs
+    1. Terminal condtion: if null, return 0
+    2. Obtain the max path sum of the left tree
+    3. Obtain the max path sum of the right tree
+    4. Calculate the max path sum of both the left and right tree and save to res
+    5. Return the max path sum of either the left or the right + the value of the current node
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Compute res insitu while returning the max path sum
