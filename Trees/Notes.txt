@@ -12,3 +12,16 @@ Balanced Binary Tree
 4. Time Complexity: O(n) where n is the number of nodes
 5. Space Complexity: O(1)
 6. Learnings: Have the dfs return -1 and propagate this -1 to the top of the call stack
+
+
+Binary Trees Preorder Recursive Traversal
+
+1. Edge Case: Null or single node tree
+2. Pseudo Code:
+    1. Initialise a dfs function
+    - Terminal condition: if null, return 
+    - Performs function (ie print)
+    - dfs(left)
+    - dfs(right)
+3. Time Complexity: O(n)
+4. Space Complexity: O(1)
