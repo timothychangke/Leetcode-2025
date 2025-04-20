@@ -71,3 +71,20 @@ Binary Tree Preorder Iterative Traversal
 6. Learnings: If condition to check if curr is null, if it is, let curr = stack.pop() which is the most recent right nodes
 
 
+Binary Tree Inorder Iterative Traversal
+
+1. Edge Case: Null or single node tree
+2. Idea: Use a stack to keep track of all previous cur.left nodes. Keep moving left and appending the node to the stack. Until cur is null, pop from the stack, save it to the result then set cur to be cur.right
+3. Pseudo Code:
+    1. Initialise a stack and curr to be the root node
+    2. While stack or curr
+        - While curr 
+            - Append curr to the stack 
+            - Set curr to be curr.left
+        - Pop from the stack and append the node to the res
+        - Set cur to be cur.right
+4. Time Complexity: O(n)
+5. Space Complexity: O(n) for the stack
+6. Learnings: Append the cur.left until its null, the pop and traverse to the right by one
+
+            
