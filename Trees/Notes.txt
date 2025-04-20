@@ -100,4 +100,25 @@ Binary Tree Postorder Iterative Traversal
 4. Time Complexity: O(n)
 5. Space Complexity: O(n) for the stack
 6. Learnings: Post order processes nodes if touched twice
+
+
+Diameter of binary tree
+
+1. Edge Case: Null or single node tree, linked list tree
+2. Idea: Perform dfs which sets res to the current diameter, then returns the max value of the depth of its left and right trees
+3. Pseudo Code:
+    Initialise a dfs function 
+    1. Terminal condition: if null, return 0
+    2. Obtain dfs for node.left
+    3. Obtain dfs for node.right
+    4. Calculate diameter and set to res if needed
+    5. Return the max of left and right as that is the max depth and hence the left/right portion of the diameter plus one (including the current node)
+4. Time Complexity: O(n) for the number of nodes
+5. Space Complexity: O(1)
+6. Learings: Compute res but return the max depth of that particular node. The max diameter does not necessarily pass through the root
+
+
+
+
+
             
