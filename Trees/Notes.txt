@@ -184,3 +184,20 @@ Binary Tree Maximum path sum
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Compute res insitu while returning the max path sum
+
+
+Serialise and deserialise binary tree
+
+1. Edge Case: Null or single node trees
+2. Idea: do a preorder traversal of the tree, appending also the null values. Deserialise by traversing the array 
+3. Pseudo Code:
+    1. Serialisation: Do a preorder dfs of the tree and append the values to res. If null, append a 'N' to res as well. Join array by ',' to convert it into a string
+    2. Deserialisation: split the string by ',', do a dfs of the array, taking in i as index. 
+        - If node is null, increment i by one and return 
+        - Create a node and set its value, increment i by 1. 
+        - Let node.left = dfs() and node.left = dfs()
+4. Time Complexity: O(n)
+5. Space Complexity: O(1) if result is not counted
+6. Learnings: have a dfs that iterates a global index value to go through the serialised array. Don't have to return null, just return when the terminal condition is met
+
+
