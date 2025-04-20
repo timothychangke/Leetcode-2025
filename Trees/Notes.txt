@@ -142,3 +142,19 @@ Maximum depth of binary tree
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 Learnings: No need for a dfs function, can just call the exisiting function. Could also use a bfs to count the max depth
+
+
+Same Tree
+
+1. Edge Case: Null or singlely depthed node tree
+2. Idea: Check if the both children are null, these means that the entire tree has been traversed and both trees are valid, else return False, return the dfs values of the left and right subtrees
+3. Pseudo Code:
+    1. If both subtrees are null, return True
+    2. If only one of them are null or their vaules are not equal, return false
+    3. Return the dfs value of the left subtree and the dfs value of the right subtree as both have to be true
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+Learnings: If both subtrees reach the null stage and did not return false, then they are valid trees
+
+
+
