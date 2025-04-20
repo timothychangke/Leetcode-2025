@@ -118,7 +118,14 @@ Diameter of binary tree
 6. Learings: Compute res but return the max depth of that particular node. The max diameter does not necessarily pass through the root
 
 
+Invert Binary Tree
 
-
-
-            
+1. Edge Case: Null or single node tree
+2. Idea: Recursively go down the tree and swap the left and right nodes
+3. Pseudo Code:
+    1. If null, return 
+    2. set the left and right nodes to be the func(right) and func(left) nodes
+    3. return the root
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: No need to initialise a dfs function
