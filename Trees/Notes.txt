@@ -201,3 +201,23 @@ Serialise and deserialise binary tree
 6. Learnings: have a dfs that iterates a global index value to go through the serialised array. Don't have to return null, just return when the terminal condition is met
 
 
+Sum of distances in tree
+
+1. Edge Case: Null or singly node trees, negative nodes
+2. Idea: No need to brute force. Do a first dfs to get the sum of the tree from the root as well as get the depths of node. Then perform a second dfs to get the distances by incrementing all distances of nodes not under
+the current node and decrementing all distances of nodes under the current node
+3. Pseudo Code:
+    1. Initialise the graph as a default dictionary. Each of the edges provided are bidirectional so connect both a->b and b->A
+    2. Initialise a count array and a res array. The count array will save the number of nodes under that particular node
+    3. Perform a dfs with the parameters of cur node, parent node and depth
+        - Set the current count to be 1
+        - If cur not equal to parent (have to make sure the node doesnt go back up)
+            - For each neighbour of the current node, increment the count by performing dfs on that node, also add to the distance of the root node
+            - Append to the count array and return the count for it to go upwards
+    4. Perform another dfs with the parameters being cur, parent and sub_ans
+        - For each neighbouring node of cur, if cur is not equal to parent, call dfs on it with the sub_ans being sub_ans + (n - count) - count as all the nodes under it decrease in distance by one while the rest increase in 
+        distance by 1
+        - Store each sub_ans into the result array and return it
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: The sum of distances of each node is related to the sum of distances of its neighbouring nodes
