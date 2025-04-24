@@ -1,6 +1,6 @@
-Arrays: 80 problems, 39 unique
-  - Total: 40 Easy, 30 Medium, 7 Hard
-  - Unique: 18 Easy, 16 Medium, 5 Hard
+Arrays: 81 problems, 40 unique
+  - Total: 40 Easy, 31 Medium, 7 Hard
+  - Unique: 18 Easy, 17 Medium, 5 Hard
 
 Binary Search: 50 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
@@ -18,9 +18,9 @@ Linked List: 33 problems, 19 unique
   - Total: 10 Easy, 18 Medium, 5 Hard
   - Unique: 5 Easy, 11 Medium, 3 Hard
 
-Sliding Window: 29 problems, 9 unique
-  - Total: 6 Easy, 16 Medium, 6 Hard
-  - Unique: 2 Easy, 5 Medium, 2 Hard
+Sliding Window: 30 problems, 10 unique
+  - Total: 7 Easy, 16 Medium, 6 Hard
+  - Unique: 3 Easy, 5 Medium, 2 Hard
 
 Stack: 50 problems, 19 unique
   - Total: 12 Easy, 31 Medium, 6 Hard
@@ -47,10 +47,10 @@ Math: 3 problems, 1 unique
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
 
-Total number of problems: 437
-Total unique problems: 196
+Total number of problems: 439
+Total unique problems: 198
 
 Total by difficulty:
-  - Easy: 140 problems, 57 unique
-  - Medium: 228 problems, 114 unique
+  - Easy: 141 problems, 58 unique
+  - Medium: 229 problems, 115 unique
   - Hard: 52 problems, 25 unique
