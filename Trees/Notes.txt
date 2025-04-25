@@ -335,3 +335,16 @@ Delete Node in BST
 6. Learnings: Returning of children if it has a null child node. Replacing with next smallest element and calling dfs on that element
 
 
+House Robber 3
+
+1. Edge Case: Same value with different robbing paths
+2. Idea: Break down into sub problems, the maximum sub problems will return the optimal solution. At each path, either include the root but not the most recent node or exclude the root but take the most recent nodes
+3. Pseudo Code:
+    1. Initialise a dfs function that takes in a node. 
+    2. Have the terminal condition that if node is null, return [0, 0]
+    3. For left and right, obtain the values of leftWith, leftWithout, rightWith and rightWithout
+    4. Return the two values, the values with and without the current node. The first value is the node value + leftwithout and right without and the second is the sum of max between lwith and lwithout and rwith and rwithout
+    5. Do for both with and without the root and return the value
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Max value can be obtained either from taking the root plus the withouts of the max value between with and withouts summed*
