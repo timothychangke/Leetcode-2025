@@ -9,3 +9,18 @@ Kth Largest Element in the stream
 4. Time Complexity: O(nlog(n)) as heapify is O(n) but heappush and heappop are log(n) operations
 5. Space Complexity: O(n)
 6. Learnings: Maintain a heap of size k, heappushpop on addition
+
+
+Last Stone Weight
+
+1. Edge Case: Empty array
+2. Idea: Heapify array and heappop to smash them tgt
+3. Pseudo Code:
+    1. Heapify array with all nums set to negative
+    2. Heappop twice to get x and y, smash them together and if heappush the difference
+    3. Return the heap once it has only one or none elements left
+4. Time Complexity: O(nlog(n)) as heappop n elements
+5. Space Complexity: O(n)
+6. Learnings: The default heap in python is a min heap. This means that it returns the minimum value in the heap. If the max value is to be returned, append to the heap negative numbers
+
+
