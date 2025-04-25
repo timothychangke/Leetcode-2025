@@ -320,3 +320,18 @@ Delete Leaves with a given value
 4. Time Complexity: O(n)
 5. Space Compelxity: O(1)
 6. Learnings: Need not process from the child node. Just go all the way down and if the child node is to be deleted, return None upwards in the call stack
+
+
+Delete Node in BST
+
+1. Edge Case: 
+2. Idea: After the removal of the specific node, if it is not a leaf node, you would want to replace it with the smallest other node in the subtree. 
+3. Pseudo Code:
+    1. Do a dfs to find the node with the given value. dfs of a binary tree would include checking whether the root value is less than or more than the current to see which side of subtrees to visit
+    2. When found, if the node has no right child, return its left child. If the node has no left child, return the right child, if both are null, return null
+    3. Else, go rightward one step then find the leftmost value in the BST. Replace that node with the node in question and then call the function on that node with the leftmost value
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Returning of children if it has a null child node. Replacing with next smallest element and calling dfs on that element
+
+
