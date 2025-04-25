@@ -238,11 +238,11 @@ Binary Tree Level Order Traversal
 
 Binary Tree Right Side View
 
-1. Edge Case: null of singly node trees
+1. Edge Case: null or singly node trees
 2. Idea: Do a BFS on the tree but now only saving the last element of each depth
 3. Pseudo Code:
     1. Initialise a queue with the root inside
-    2. For each value in the queue, append the left and right children of the nodes into res. Check if null
+    2. For each value in the queue, append the left and right children of the nodes into the queue. Check if null
     3. For the very last element in the loop (can also just have a running variable, the variable at the end of the loop will be the last variable)
     4. Save the last variable to res
     5. Return res
@@ -252,5 +252,16 @@ Binary Tree Right Side View
 
 
 Binary Tree Zigzag Level Order Traversal
+
+1. Edge Case: null or singly node trees
+2. Idea: Do a BFS on the tree but reversing the list of elements at each alternate level
+3. Pseudo Code:
+    1. Initialise a queue with the root inside
+    2. For each value in the queue, append the left and right children of the nodes into res. Track the depth and increment it by one each level
+    3. If the depth is even, reverse the array of elements before appending into res
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Same method as level order Traversal
+
 
 
