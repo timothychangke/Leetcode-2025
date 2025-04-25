@@ -46,11 +46,15 @@ Math: 3 problems, 1 unique
   - Total: 0 Easy, 1 Medium, 0 Hard
   - Unique: 0 Easy, 1 Medium, 0 Hard
 
+Bit Manipulation: 1 problems, 1 unique
+  - Total: 1 Easy, 0 Medium, 0 Hard
+  - Unique: 1 Easy, 0 Medium, 0 Hard
 
-Total number of problems: 439
-Total unique problems: 198
+
+Total number of problems: 440
+Total unique problems: 199
 
 Total by difficulty:
-  - Easy: 141 problems, 58 unique
+  - Easy: 142 problems, 59 unique
   - Medium: 229 problems, 115 unique
   - Hard: 52 problems, 25 unique

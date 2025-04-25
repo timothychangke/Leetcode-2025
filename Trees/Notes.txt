@@ -221,3 +221,19 @@ the current node and decrementing all distances of nodes under the current node
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: The sum of distances of each node is related to the sum of distances of its neighbouring nodes
+
+
+Binary Tree Level Order Traversal
+
+1. Edge Case: null or singly node trees, linked list trees
+2. Idea: Do a BFS on the tree with the help of a queue
+3. Pseudo Code:
+    1. Initialise a queue with the root inside
+    2. For each value in the queue, append the left and right children of the nodes to a sub res, if null, continue
+    3. Append the sub res to res
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Check if node is null and have a sub res to append to res for each levelOrder
+
+
+
