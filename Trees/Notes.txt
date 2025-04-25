@@ -250,7 +250,6 @@ Binary Tree Right Side View
 5. Space Complexity: O(n)
 6. Learnings: Same method as level order traversal, just that only the rightmost last element if of interest. Use the running variable
 
-
 Binary Tree Zigzag Level Order Traversal
 
 1. Edge Case: null or singly node trees
@@ -293,3 +292,18 @@ column
 4. Time Complexity: O(n^2log(n)). The grid will be broken up into log n levels, where at each level, n^2 is need to calculate the isSame
 5. Space Complexity: O(1)
 6. Learnings: Check for isSame, else recursively initialise the other child nodes 
+
+
+Count the number of good nodes in the binary tree
+
+1. Edge Case: There are no good nodes, All nodes are good nodes
+2. Idea: Do a dfs from the root, keeping track and updating the maximum node visited at that point in time. If the traversed node is greater, add it to the count and increase the maximum
+3. Pseudo Code:
+    1. Initiliase a dfs function with the max value
+    2. if the node is null, return 
+    3. If the current node is less than or equal to the maximum, ignore
+    4. Else, increment the res by 1 and call dfs on the left and right nodes
+    5. Return res
+4. Time complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Use a self.res as the res value must be made global
