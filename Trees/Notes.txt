@@ -264,4 +264,17 @@ Binary Tree Zigzag Level Order Traversal
 6. Learnings: Same method as level order Traversal
 
 
+Construct Binary Tree from Preorder and Inorder Traversal
 
+1. Edge Case: 
+2. Idea: A Preorder traversal starts from the root and goes down, while the inorder traversal starts from the left most node. The first node in the preorder traversal will be the root while the middle node will be the root in the inorder traversal
+Identifying the index of the root not in the inorder traversal will help split the tree into the left and right subtrees, of which the preorder traversal will have the same number of nodes. We can then use this to generate the left and right subtrees
+3. Pseudo Code
+    1. Initialise a dfs function that takes in the preorder and inorder Arrays
+    2. Terminal condition: if the either of the arrays are empty, return a null value
+    3. Else, find the index of the first element in the preorder array in the inorder array. This is the middle index
+    4. return the node of this middle index where its left tree the function dfs() of the left half of the index before the middle and the left half of the index after the first index of the preorder array and the right tree which is the right half of 
+    the index after the middle in the inorder array and the right half of the index in the preorder array of that same length
+4. Time Complexity: O(log(n))
+5. Space Complexity: O(1) excluding the result
+6. Learnings: Or condition for the terminal null values. Return the tree on initialisation
