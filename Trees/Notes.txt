@@ -374,3 +374,17 @@ Kth Smallest element in a BST
 4. Time Complexity: O(k)
 5. Space Complexity: O(n)
 6. Learnings: Inorder Traversal returns the BST in order
+
+
+Lowest Common Ancestor of BST
+
+1. Edge Case: Null or singly noded BST
+2. Idea: Find the node where there is one node on one side and the other node on the other side. This means that the LCA is a node that is in between the two nodes
+3. Pseudo Code:
+    1. If the curr value is less than both the nodes values, traverse to the right node
+    2. If the curr value is more than both the nodes values, traverse to the left node
+    3. Else, return the curr value
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: The lowest common ancestor is the first node that is between both nodes
+
