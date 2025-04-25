@@ -388,3 +388,18 @@ Lowest Common Ancestor of BST
 5. Space Complexity: O(1)
 6. Learnings: The lowest common ancestor is the first node that is between both nodes
 
+
+Validate Binary Search Tree
+
+1. Edge Case: Invalid Binary Tree
+2. A valid binary search tree has: 1. left nodes less than root node with is less than right node, 2. cannot have right node without left node
+3. Pseudo Code:
+    1. Start of with a boundary of -inf and inf
+    2. Traverse down the BST, udpateing the min and max boundaries
+    3. check that the current node's value is within the boundary, then call the dfs on the left child with the updated boundary
+    4. Do the same for the right child
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Use boundaries to check validity
+
+
