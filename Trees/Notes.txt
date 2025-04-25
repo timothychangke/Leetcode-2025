@@ -348,3 +348,17 @@ House Robber 3
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Max value can be obtained either from taking the root plus the withouts of the max value between with and withouts summed*
+
+
+Insert into Binary Search Tree
+
+1. Edge Case: Empty tree, duplicate?
+2. Idea: Traverse the binary tree to find the point where the left child is less than the value but the right child is more than the value. Compare this value with the current root node, if the root node is greater, insert into leftmost
+of right subtree, else rightmost of left sub tree. BUT the most simplest way is to append it to the leaf node
+3. Pseudo Code: 
+    1. If root is null, return the initialised tree node with the inserted value
+    2. Decide which direction (either left or right) traverse based on whether it is higher or lower
+    3. return the root of the original tree
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Easiest is to append to the leaf nodes as there are many valid BST
