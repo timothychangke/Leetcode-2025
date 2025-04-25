@@ -1,0 +1,11 @@
+Kth Largest Element in the stream
+
+1. Edge Case: Empty stream, K > len(stream)
+2. Idea: Have a max heap of K characters, pushpop when added to, return the first character
+3. Pseudo Code:
+    1. Initialise the heap array by heapifying nums. While the length of nums is greater than k, heappop from the array
+    2. On add, check if the current nums len == k, if it is, heappushpop the Element, else, just pushpop
+    3. return arr[0] for the minimum value in the max heap
+4. Time Complexity: O(nlog(n)) as heapify is O(n) but heappush and heappop are log(n) operations
+5. Space Complexity: O(n)
+6. Learnings: Maintain a heap of size k, heappushpop on addition
