@@ -307,3 +307,16 @@ Count the number of good nodes in the binary tree
 4. Time complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Use a self.res as the res value must be made global
+
+
+Delete Leaves with a given value
+
+1. Edge Case: Entire tree has nodes of the given value, Tree does not contain nodes of the given value
+2. Idea: Do a postorder to find a node of the given value. If the child node is of that value, make it null
+3. Pseudo Code:
+    1. Do a post order traversal as we want to process the children nodes before the parent nodes
+    2. Have node.left = dfs to the left and node.right = dfs to the right
+    3. If the current node is a leaf, have null left and right trees, and its value is the given value, return null
+4. Time Complexity: O(n)
+5. Space Compelxity: O(1)
+6. Learnings: Need not process from the child node. Just go all the way down and if the child node is to be deleted, return None upwards in the call stack
