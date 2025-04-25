@@ -275,6 +275,21 @@ Identifying the index of the root not in the inorder traversal will help split t
     3. Else, find the index of the first element in the preorder array in the inorder array. This is the middle index
     4. return the node of this middle index where its left tree the function dfs() of the left half of the index before the middle and the left half of the index after the first index of the preorder array and the right tree which is the right half of 
     the index after the middle in the inorder array and the right half of the index in the preorder array of that same length
-4. Time Complexity: O(log(n))
+4. Time Complexity: O(n^2) due to finding the index taking O(n) time
 5. Space Complexity: O(1) excluding the result
 6. Learnings: Or condition for the terminal null values. Return the tree on initialisation
+
+
+Construct a Quad Tree
+
+1. Edge Case: All nodes are the same, All nodes are different (all adjacent nodes are 1s and 0s)
+2. Idea: Check if the particular square isSame. If so, return the node, else Recursively call the dfs function on the four children nodes. The dfs function takes in a number n (which will be split by two every iteration), the starting row and the starting 
+column
+3. Pseudo Code:
+    1. Initialise a dfs function that takes in a n, the starting row and starting column
+    2. Go through the bounded area to check if the number is the same through, if it is, return the node initialised to isLeaf and the same value
+    3. Else, divide n by two
+    4. Create a node where it is not leaf and initalise its four children to be calls to dfs at the different starting points seperated by n
+4. Time Complexity: O(n^2log(n)). The grid will be broken up into log n levels, where at each level, n^2 is need to calculate the isSame
+5. Space Complexity: O(1)
+6. Learnings: Check for isSame, else recursively initialise the other child nodes 

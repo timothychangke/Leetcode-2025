@@ -9,3 +9,4 @@ class Solution:
         if not preorder or not inorder: return 
         mid = inorder.index(preorder[0])
         return TreeNode(inorder[mid], self.buildTree(preorder[1:mid + 1], inorder[:mid]), self.buildTree(preorder[mid + 1:], inorder[mid + 1:]))
+    
