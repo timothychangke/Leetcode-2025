@@ -362,3 +362,15 @@ of right subtree, else rightmost of left sub tree. BUT the most simplest way is 
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Easiest is to append to the leaf nodes as there are many valid BST
+
+
+Kth Smallest element in a BST
+
+1. Edge Case: K > len(BST)
+2. Idea: Traverse the BST in order and return the Kth smallest element. Traversing the BST inorder will return the BST in order
+3. Pseudo Code: 
+    1. Initialise a count
+    2. Traverse the BST inorder, incrementing the count for each node traversed. When count == k, return the element
+4. Time Complexity: O(k)
+5. Space Complexity: O(n)
+6. Learnings: Inorder Traversal returns the BST in order
