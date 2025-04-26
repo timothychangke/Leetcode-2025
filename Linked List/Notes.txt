@@ -1,0 +1,13 @@
+Add two numbers
+
+1. Edge Case: Addition of two numbers of difference lengths, negative numbers
+2. Idea: Initialse a carry and pointers to traverse the numbers. Sum there values and mod by ten to append to the res
+3. Pseudo Code:
+    1. Initialise a carry and two pointers at the ends of each list. 
+    2. If not null, sum their values together, let the sum = sum % 10 and the carry = sum // 10
+    3. Increment the points if not null
+    4. Repeat until pointers and carry are invalid
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Create a dummy node for res and return res.next, add the remainder of the two numbers if any, sum and carry can be derived with % and //
+
