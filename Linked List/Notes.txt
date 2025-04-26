@@ -11,3 +11,15 @@ Add two numbers
 5. Space Complexity: O(1)
 6. Learnings: Create a dummy node for res and return res.next, add the remainder of the two numbers if any, sum and carry can be derived with % and //
 
+
+Intersection of two linked list
+
+1. Edge Case: 
+2. Idea: Traverse each string once and count its length. Increment the longer strings pointer to make up for the difference then traverse each node together. One of these nodes will be the Intersection
+3. Pseudo Code:
+    1. Traverse each string and count its length
+    2. Increment the longer string by the difference then compare each node to check if they are the same
+    3. Return the Intersection
+4. Time Complexity: O(n)
+5. Space Complexity: O(1) 
+6. Learnings: Find intersection from the difference in lengths, use the a is b operator to check identical
