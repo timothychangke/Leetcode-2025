@@ -148,3 +148,19 @@ Copy List with Random pointer
 Design Circular Queue
 
 Just a doubly linked list
+
+
+Find the duplicate numbers
+
+1. Edge Case:
+2. Idea: Using Floyd's tortoise and hare algorithm, traverse each number by going to its index in the array 
+3. Pseudo Code:
+    1. Initialise a fast and a slow pointer where at each loop the fast pointer moves two nodes while the slow pointer moves One
+    2. Stop the loop when they intersection
+    3. Initialise another pointer at teh start point and find the intersection between this new point and where the previous point intersection
+    4. Return this intersection as the start of the cycle
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Two indexes point to the same value, so it forms a loop. Use Floyd to find the start of the loop
+
+
