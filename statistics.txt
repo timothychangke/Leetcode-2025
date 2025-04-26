@@ -10,13 +10,13 @@ Graphs: 47 problems, 26 unique
   - Total: 4 Easy, 38 Medium, 5 Hard
   - Unique: 2 Easy, 21 Medium, 3 Hard
 
-Heap: 25 problems, 11 unique
+Heap: 26 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
   - Unique: 2 Easy, 7 Medium, 2 Hard
 
-Linked List: 33 problems, 19 unique
-  - Total: 10 Easy, 18 Medium, 5 Hard
-  - Unique: 5 Easy, 11 Medium, 3 Hard
+Linked List: 34 problems, 18 unique
+  - Total: 8 Easy, 20 Medium, 5 Hard
+  - Unique: 4 Easy, 11 Medium, 3 Hard
 
 Sliding Window: 30 problems, 10 unique
   - Total: 7 Easy, 16 Medium, 6 Hard
@@ -51,10 +51,10 @@ Bit Manipulation: 1 problems, 1 unique
   - Unique: 1 Easy, 0 Medium, 0 Hard
 
 
-Total number of problems: 440
-Total unique problems: 199
+Total number of problems: 442
+Total unique problems: 198
 
 Total by difficulty:
-  - Easy: 142 problems, 59 unique
-  - Medium: 229 problems, 115 unique
+  - Easy: 140 problems, 58 unique
+  - Medium: 231 problems, 115 unique
   - Hard: 52 problems, 25 unique
