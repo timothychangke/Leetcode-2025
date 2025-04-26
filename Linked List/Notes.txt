@@ -38,3 +38,27 @@ Linked list cycle
 5. Space Complexity: O(1)
 6. Learnings: The floyds turtle and hare algorithm
 
+
+Merge Two Sorted list 
+
+1. Edge Case: Empty or null lists, lists of different lengths
+2. Idea: Initialise two pointers at the start of each list, check the smaller and append to res
+3. Pseudo Code:
+    1. Initialise two pointers at the start of each list
+    2. Initialise a res node where res.next is the node. Later return res.next
+    3. Whichever of the two node values are smaller, append to res
+    4. Loop until one of the nodes are invalid, the break out of the loop and append the last bit of the still valid list
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Dont forget about the last bit of the linked list. Initialise a cur to traverse the result while returning dummy.next
+
+Reverse Linked list
+
+1. Edge Case: Empty or singly noded list
+2. Idea: have a previous and a curr, do a swap at each iteration
+3. Pseudo Code:
+    1. Set prev to null and curr to the head of the node
+    2. While curr is valid, set cur.next to prev, prev to cur and cur to cur.next
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: One liner reversal
