@@ -204,3 +204,20 @@ From there, reverse the array then join it back alternatly
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: use a fast slow to find the mid point
+
+
+Sort List
+
+1. Edge Case: 
+2. Idea: Perform merge sort on the list, find the mid point via fast and slow pointers
+3. Pseudo Code:
+    1. Define a mid function where you initialise a fast and slow pointer and traverse until the fast pointer is null. Returning the slow pointer will be the mid point
+    2. Recursively call mergeSort on the two halfs of the linked list (set the right half to be after the mid and the end of the left half to null). Have a terminating condition if the lists are empty
+    3. Call merge on the two lists
+    4. Define the merge function():
+        - Have a pointer and a dummy node
+        - While the pointers to the two lists are not null, append the smaller of the two values to the node. 
+        - On break, whichever poitner is still valid will be the next portion of the answer
+4. Time Complexity: O(nlogn)
+5. Space Complexity: O(1)
+6. Learnings: Merge Sort but with linked list. Find the mid point and remember to have the end of the left list be null
