@@ -64,6 +64,22 @@ Word ladder
 
 1. Edge Case
 
+Rotting Oranges
+
+1. Edge Case: No Rotten Oranges, all oranges already Rotten
+2. Idea: Collect all the rotten oranges and append them into the deque. Also count the number of fresh oranges. Initialise a time variable. Do a bfs starting from the rotten oranges and if the bfs ends and 
+the count of fresh oranges is greater than zero, return -1, else return the time taken to rot all oranges
+3. Pseudo Code: 
+    1. Count the number of fresh oranges
+    2. Initialise the deque with rotten oranges
+    3. Initialise a counter that increments each loop
+    4. While deque, for _ in range of the len of deque, popleft and traverse the neighbours of that node if it is a fresh oranges
+    5. Make it rotten, decrement the count of fresh oranges and append it to the deque
+    6. Return minutes if the count == 0 else -1
+4. Time Complexity: O(nm)
+5. Space Complexity: O(nm)
+6. Learnings: Count the number of rotten oranges and decrement it each loop
+
 
 Surrounding Regions
 
