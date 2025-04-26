@@ -24,4 +24,19 @@ Island Perimeter
 5. Space Complexity: O(1)
 6. Learnings: Mark the island as seen by setting it to -1, if r, c are invalid or water, it is a perimeter to return 1
 
-s
+
+Making a Large Island
+
+1. Edge Case: No islands
+2. Idea: Create a hash map with the key being the island counter and the size of the island being the value. Count each islands size and save it to the dictionary. Also set the counter for each 
+of its islands. Go through the table once more and for each index, check its adjacent index and calculate its max res based on the islands it touches. Save it in a set so that the same island is
+not counted twice. 
+3. Pseudo Code:
+    1. Define a dfs function that returns the size of each island and sets all elements in the island to be the value of the counter. Increment this counter by 1 each time
+    2. Save these values into a hash map
+    3. Go thorugh the grid once more and check the adjacent squares. If they are valid and not 0, create a set of these indexes. Calculate the size to the sum of these indexed islands plus the
+    added island
+4. Time Complexity: O(n^2)
+5. Space Complexity: O(1)
+6. Learnings: Set the initial counter value to be 2 so that it doesnt confuse it with the other islands. Set the initial res to be the maximum original island. Set the 0 to be 0 in the hash map for 
+waters
