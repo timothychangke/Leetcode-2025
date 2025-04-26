@@ -64,6 +64,26 @@ Word ladder
 
 1. Edge Case
 
+
+Redundant Connections
+
+1. Edge Case: Multiple edges that can be removed
+2. Idea: To find the edge to remove, you have to identify the edge connection two subsets that is already connected. This can be done via a union find structure, unioning values unless they are already connected
+which then would return a false
+3. Pseudo Code: 
+    1. Initialise a union find structure
+    2. Initialise a parent array containing the values of each individual element and a rank array with contains all 1s
+    3. Initialise a find function: while cur not equal to par[cur], set par[cur] = par[par[cur]] for path compression and then res = par[cur]. Then return res
+    4. Initialise a union find function:
+        - Find the parents of a and b via find()
+        - If a == b, return false
+        - If the rank a of is greater, set the parent of b = a and the rank of a to += rank of b
+        - If the rank of b is greater, set the parent of a = b and the rank of b to += rank of a and return True
+    5. Iterate through the edges and return the result of the union
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Union find data structure for finding cycles can also be used to find the redundant edge that creates a cycle
+
 Rotting Oranges
 
 1. Edge Case: No Rotten Oranges, all oranges already Rotten
