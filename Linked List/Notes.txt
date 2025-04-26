@@ -62,3 +62,22 @@ Reverse Linked list
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: One liner reversal
+
+
+LRU Cache
+
+1. Edge Case: Invalid operations: get value not there, put value already there
+2. Idea: Initialise a doubly linked list data structure with nodes that have prev and next as well as a size value. Declare insert and remove operations as well. Declare get and put functions around these operations
+3. Pseudo Code:
+    1. Initialise a node to have a value, prev and next nodes
+    2. Initialise a doubly linked list queue comprising of these nodes. Save its size, the leftmost and right most nodes. Insertions will be at the right most while deletions will be at the left most
+    3. Insert will insert the node prev to the right most node
+    4. Deletions will remove the node after the leftmost node if no parameter is provided, else it would delete the node in question
+    5. Return size will return the size of the doubly linked list
+    6. Initialie the LRU Cache, comprising of a doulby linekd list and a hash map that stores the keys and points to the nodes in the list for O(1) time access
+    7. For get(): Use the hash map to find the node. Remove this node then insert it to the front of the dll
+    8. For put(): Check if the node already exists, if it does, delete it from the dll, remove from dictionary and decrease the size. Insert the node and declare it in the dictionary, increase the size of the dll
+    9. If after the put operation the size of the dll is greater than the capacity, remove the node next of the leftmost node
+4. Time Complexity: get and put have O(1) time Complexity
+5. Space Complexity: O(n)
+6. Learnings: Make use of different data structures to thing of how best to solve the question
