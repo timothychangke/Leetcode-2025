@@ -1,15 +1,3 @@
-Add two numbers
-
-1. Edge Case: Addition of two numbers of difference lengths, negative numbers
-2. Idea: Initialse a carry and pointers to traverse the numbers. Sum there values and mod by ten to append to the res
-3. Pseudo Code:
-    1. Initialise a carry and two pointers at the ends of each list. 
-    2. If not null, sum their values together, let the sum = sum % 10 and the carry = sum // 10
-    3. Increment the points if not null
-    4. Repeat until pointers and carry are invalid
-4. Time Complexity: O(n)
-5. Space Complexity: O(1)
-6. Learnings: Create a dummy node for res and return res.next, add the remainder of the two numbers if any, sum and carry can be derived with % and //
 
 
 Intersection of two linked list
@@ -113,3 +101,32 @@ Merge K sorted List
 4. Time Complexity: O(nlgn)
 5. Space Complexity: O(1)
 6. Learnings: Merge sort but for lists, Extrapolation of merge two sorted list problem
+
+
+Reverse Nodes in K Group
+
+1. Edge Case: K > len of linked list
+2. Idea: First iterate multiples of k to the end of the first set of nodes. Have l at the start and r at the end to traverse and reverse. Have a previous tail to connect the reversed set back to the linked list
+3. Pseudo Code:
+    1. Initialise a dummy node to point to the linked list and let l, r and prevTail = dummy node
+    2. while true, while count is less and k or r, increment k and r. If the loop ends and count is not equal to k, this means r is in valid and return the dummy.next
+    3. Else, count == k and traverse the linked list segment, reversing each node
+    4. Set the prevTail.next to the l so that it connects the segments
+    5. set l = r and continue the loop
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Prev Tail, dummy node, while count < k or r, if count == k else statement means r is invalid and can return
+
+
+Add two numbers
+
+1. Edge Case: Addition of two numbers of difference lengths, negative numbers
+2. Idea: Initialse a carry and pointers to traverse the numbers. Sum there values and mod by ten to append to the res
+3. Pseudo Code:
+    1. Initialise a carry and two pointers at the ends of each list. 
+    2. If not null, sum their values together, let the sum = sum % 10 and the carry = sum // 10
+    3. Increment the points if not null
+    4. Repeat until pointers and carry are invalid
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Create a dummy node for res and return res.next, add the remainder of the two numbers if any, sum and carry can be derived with % and //
