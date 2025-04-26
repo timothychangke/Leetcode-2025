@@ -143,3 +143,8 @@ Copy List with Random pointer
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: use a hash map to map old and new. Iterate through once to create node then once more to assign the nodes
+
+
+Design Circular Queue
+
+Just a doubly linked list
