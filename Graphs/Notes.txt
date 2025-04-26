@@ -40,3 +40,22 @@ not counted twice.
 5. Space Complexity: O(1)
 6. Learnings: Set the initial counter value to be 2 so that it doesnt confuse it with the other islands. Set the initial res to be the maximum original island. Set the 0 to be 0 in the hash map for 
 waters
+
+
+Shortest distance from all buildings
+
+1. Edge Case: No buildings, one building, all obstacles, 
+2. Idea: For each building, do a bfs to mark the distance at each point a new grid. set the point to the empty variable, which is decremented and tracked each time to make sure that it is visitable 
+from every building. set the value by the depth and push it back into the queue with the new depth. Keep track of a local min as well and set this local min to res so that another loop is not needed
+3. Pseudo Code:
+    1. Initialise a new grid, set the empty value and decrement it every iteration, initialise a local min
+    2. Traverse each cell and check if the value is a building, if it is, perform bfs
+    3. Create a deque with it inside, set the depth to zero. Initialise the local_min to be inf
+    4. While queue, for the number of elements in the queue, popleft and traverse that cell
+    5. if its value is equal to the value of empty, set it to be depth in the grid, and empty in the old grid
+    6. Append it to the deque and update the local_min if appropreiate
+    7. After the loop, decrement empty and update res with local_min
+4. Time Complexity: O((nm)^2)
+5. Space Complexity: O(nm)
+6. Learnings: Local_min variable, empty variable, create a new grid to keep track of the distances
+
