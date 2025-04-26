@@ -164,3 +164,14 @@ Find the duplicate numbers
 6. Learnings: Two indexes point to the same value, so it forms a loop. Use Floyd to find the start of the loop
 
 
+Remove Duplicates form a sorted list
+
+1. Edge Case: Entire list is duplicated
+2. Idea: Have a while loop that checks if the next node is valid and is the same as previous. Keep iterating until it isnt then set the previous.next to be after that section of Duplicates
+3. Pseudo Code:
+    1. Initialise a dummy where dummy.next is the list, cur at the head of the list and pre at dummy
+    2. While curr and curr.next, while cur and cur.next is same, increment cur = cur.next
+    3. On breaking out of the loop, increment prev and increment head
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Have a prev behind curr so that it can connect to after the duplication section. if , else increment prev then add a increment curr outside of the if else but within the while loop
