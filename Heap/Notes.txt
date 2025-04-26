@@ -24,3 +24,17 @@ Last Stone Weight
 6. Learnings: The default heap in python is a min heap. This means that it returns the minimum value in the heap. If the max value is to be returned, append to the heap negative numbers
 
 
+Find Median in data stream
+
+1. Edge Case: Even and odd numbers in the data stream
+2. Idea: Have two heaps, one min heap and one max heap, where the max heap will contain the numbers up to the median while the min heap will contain the numbers from the median onwards. 
+3. Pseudo Code:
+    1. Initialise a max heap for lesser half of the elements and a min heap for the greater half
+    2. On addition, heap push pop from the min heap and push to the max heap, also considering the differences in sign
+    3. If the length of the min heap is greater than the max heap, heappop and heappush into the min heap
+    4. To find the median, check whether the total len of the two heaps are divisible by 2. 
+        - If divisible, then the median is the average between the max of the max heap and the min of the min heap
+        - Else, the median is the min of the min heap
+4. Time Complexity: addition = O(logn), finding median = O(1)
+5. Space Complexity: O(n)
+6. Learnings: Use two heaps one min and one max to manage median
