@@ -22,4 +22,19 @@ Intersection of two linked list
     3. Return the Intersection
 4. Time Complexity: O(n)
 5. Space Complexity: O(1) 
-6. Learnings: Find intersection from the difference in lengths, use the a is b operator to check identical
+6. Learnings: Find intersection from the difference in lengths, use the a is b operator to check identical => is operator checks if two objects are identical in memory and not in equality
+
+
+Linked list cycle
+
+1. Edge Case: No cycle
+2. Idea: Initialise a fast and slow pointer, when they meet is where the fast pointer overlaps the slow pointer. Initialise another pointer at the start and where they meet will be the start of the cycle
+3. Pseudo Code:
+    1. Initialise a fast and a slow pointer where at each loop the fast pointer moves two nodes while the slow pointer moves One
+    2. Stop the loop when they intersection
+    3. Initialise another pointer at teh start point and find the intersection between this new point and where the previous point intersection
+    4. Return this intersection as the start of the cycle
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: The floyds turtle and hare algorithm
+
