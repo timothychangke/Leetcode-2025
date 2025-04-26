@@ -164,7 +164,7 @@ Find the duplicate numbers
 6. Learnings: Two indexes point to the same value, so it forms a loop. Use Floyd to find the start of the loop
 
 
-Remove Duplicates form a sorted list
+Remove Duplicates from a sorted list
 
 1. Edge Case: Entire list is duplicated
 2. Idea: Have a while loop that checks if the next node is valid and is the same as previous. Keep iterating until it isnt then set the previous.next to be after that section of Duplicates
@@ -175,3 +175,17 @@ Remove Duplicates form a sorted list
 4. Time Complexity: O(n)
 5. Space Complexity: O(n)
 6. Learnings: Have a prev behind curr so that it can connect to after the duplication section. if , else increment prev then add a increment curr outside of the if else but within the while loop
+
+
+Remove Nth Node form end of the list
+
+1. Edge Case: N > len of list
+2. Idea: Increment a fast pointer n times, then move a slow pointer and the end pointer until the nth pointer is null, then skip the next element
+3. Pseudo Code: 
+    1. Iterate the fast pointer by n nodes
+    2. Iterate both the fast and slow pointer until the fast pointer is null
+    3. Skip over the node in the slow pointer
+    4. Return the head
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: Have nth node sliding window and slide it from the start to the end
