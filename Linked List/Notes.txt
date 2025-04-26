@@ -130,3 +130,16 @@ Add two numbers
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Create a dummy node for res and return res.next, add the remainder of the two numbers if any, sum and carry can be derived with % and //
+
+
+Copy List with Random pointer
+
+1. Edge Case: 
+2. Idea: Create a hash map that stores the old nodes and the new nodes, for each old node, create a entry in the hash map and create the new node. Traverse again but now connect the random pointers to the new nodes
+3. Pseudo Code:
+    1. Iterate the linked list and map each old node to the new node
+    2. Iterate the linked list again and for each old node, map the new nodes to the new next and the new pointer
+    3. Return the value of the hashmap with the old head as the key
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: use a hash map to map old and new. Iterate through once to create node then once more to assign the nodes
