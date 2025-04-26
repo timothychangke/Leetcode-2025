@@ -81,3 +81,20 @@ LRU Cache
 4. Time Complexity: get and put have O(1) time Complexity
 5. Space Complexity: O(n)
 6. Learnings: Make use of different data structures to thing of how best to solve the question
+
+
+LFU Cache
+
+1. Edge Case: Invalid operations, capacity = 0
+2. Idea: Likened to that of LRU Cache, LFU Cache is the same just that for each frequency it has a dll. There will be an additional min F variable and a default dict of dlls for each frequency. Each node will also store a frequency variable
+3. Pseudo Code:
+    1. Continuing from LRU Cache
+    2. Initialise a update function that updates a node. Obtain its frequency and remove it form the dll. If the dll is zero and that frequency was the minimum frequency, delete that dll and increment minimum frequency
+    3. Insert the node into the next frequency dll and update the hash map of that node with its new frequency
+    4. For get(): If the key is not present, return -1, else, get the node from the hash map and update the node with update()
+    5. For put(): If there is not capacity, return. If the key already exists, update the key. Else, the key is not originally inside
+    6. Check if the size is equal to the capacity. If so, remove the LRU element from the minF dll and delete its key, decrement the size by 1
+    7. Insert the new element into the freq table of 1, insert into hashmap and increment the size
+4. Time complexity: O(1)
+5. Space Complexity: O(n)
+6. Learnings: Extrapolate from LRU Cache, use a minF variable 
