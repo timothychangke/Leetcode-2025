@@ -98,3 +98,18 @@ LFU Cache
 4. Time complexity: O(1)
 5. Space Complexity: O(n)
 6. Learnings: Extrapolate from LRU Cache, use a minF variable 
+
+
+Merge K sorted List
+
+1. Edge Case: 
+2. Idea: Perform a merge sort like solution, spliting the list into sub portions, merging them then merging their merged list to obtain the final res
+3. Pseudo Code:
+    1. Initalise the merge sort algorithm
+    2. Recursively find the mid point and call mergeSort on the left and right arrays
+    3. Let the terminal condition be having one array left, return null if empty
+    4. Perform a merge on the left and right arrays
+    5. Declare the merge function: same as merge two sorted list problem
+4. Time Complexity: O(nlgn)
+5. Space Complexity: O(1)
+6. Learnings: Merge sort but for lists, Extrapolation of merge two sorted list problem
