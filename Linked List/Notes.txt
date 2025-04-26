@@ -177,7 +177,7 @@ Remove Duplicates from a sorted list
 6. Learnings: Have a prev behind curr so that it can connect to after the duplication section. if , else increment prev then add a increment curr outside of the if else but within the while loop
 
 
-Remove Nth Node form end of the list
+Remove Nth Node from end of the list
 
 1. Edge Case: N > len of list
 2. Idea: Increment a fast pointer n times, then move a slow pointer and the end pointer until the nth pointer is null, then skip the next element
@@ -189,3 +189,18 @@ Remove Nth Node form end of the list
 4. Time Complexity: O(n)
 5. Space Complexity: O(1)
 6. Learnings: Have nth node sliding window and slide it from the start to the end
+
+
+Reorder list 
+
+1. Edge Case: list with less than 3 elements
+2. Idea: Have a fast and slow pointer with the slow pointer starting from head. When the fast pointer is null, the slow pointer will be at the middle of the array
+From there, reverse the array then join it back alternatly
+3. Pseudo Code: 
+    1. While fast and fast.next, slow = slow.next and fast = fast.next.next
+    2. Slow is now one node before the mid point
+    3. Reverse each node
+    4. Merge the nodes alternately until start is null
+4. Time Complexity: O(n)
+5. Space Complexity: O(1)
+6. Learnings: use a fast slow to find the mid point
