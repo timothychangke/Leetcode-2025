@@ -1,0 +1,13 @@
+Find the Town Judge
+
+1. Edge Case: There is no town judge
+2. Idea: For each trust connection, increment the second element. And decrement the trustee as the judge cannot trust others. Then check if there is an element with n - 1 elements
+3. Pseudo Code:
+    1. Initialise a arry of n 0s
+    2. For each tuple in the trust array, decrement the truster and increment the trustee'
+    3. Loop through the array and if there is an element that has a count of n - 1, return true, else return false
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Solve with simple counting and not graphs
+
+
