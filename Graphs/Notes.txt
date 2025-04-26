@@ -59,3 +59,26 @@ from every building. set the value by the depth and push it back into the queue 
 5. Space Complexity: O(nm)
 6. Learnings: Local_min variable, empty variable, create a new grid to keep track of the distances
 
+
+Word ladder
+
+1. Edge Case
+
+
+Surrounding Regions
+
+1. Edge Case: No Os, All Os, 
+2. Idea: Initialise a dfs that changes Os to Ts. Perform this for all Os on the boundary. Change the remaining Os to Xs and then the Ts back to Os
+3. Pseudo Code:
+    1. Initialise a dfs function that sets the value to T, the traverses the neighbouring nodes and for those in range and are Os, change them to Ts
+    2. Perform this dfs for the four boundaries
+    3. Change the remaining Os to Xs and then the Ts back to Os
+4. Time Complexity: O(n^2)
+5. Space Complexity: O(1)
+6. Learnings: Think of the problem inversely to no check for cells surrounded but for cells that are not surrounded. Change values to alternative temperory value
+
+
+Walls and Gates
+
+1. Edge Cases: No Gates
+2. Idea: Get the r, c of each gate and create a deque with them. Do a bfs with these starting cells and set the values in each cell to be the 
