@@ -1,6 +1,6 @@
-Arrays: 83 problems, 41 unique
-  - Total: 40 Easy, 32 Medium, 7 Hard
-  - Unique: 18 Easy, 18 Medium, 5 Hard
+Arrays: 85 problems, 42 unique
+  - Total: 40 Easy, 33 Medium, 7 Hard
+  - Unique: 18 Easy, 19 Medium, 5 Hard
 
 Binary Search: 50 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
@@ -38,9 +38,9 @@ Two Pointers: 44 problems, 19 unique
   - Total: 0 Easy, 7 Medium, 1 Hard
   - Unique: 0 Easy, 7 Medium, 1 Hard
 
-Backtracking: 3 problems, 2 unique
-  - Total: 0 Easy, 3 Medium, 0 Hard
-  - Unique: 0 Easy, 2 Medium, 0 Hard
+Backtracking: 4 problems, 3 unique
+  - Total: 0 Easy, 4 Medium, 0 Hard
+  - Unique: 0 Easy, 3 Medium, 0 Hard
 
 Math: 5 problems, 3 unique
   - Total: 1 Easy, 2 Medium, 0 Hard
@@ -51,10 +51,10 @@ Bit Manipulation: 1 problems, 1 unique
   - Unique: 1 Easy, 0 Medium, 0 Hard
 
 
-Total number of problems: 448
-Total unique problems: 200
+Total number of problems: 451
+Total unique problems: 202
 
 Total by difficulty:
   - Easy: 141 problems, 59 unique
-  - Medium: 233 problems, 116 unique
+  - Medium: 235 problems, 118 unique
   - Hard: 52 problems, 25 unique
