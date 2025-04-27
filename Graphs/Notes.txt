@@ -62,7 +62,15 @@ from every building. set the value by the depth and push it back into the queue 
 
 Word ladder
 
-1. Edge Case
+1. Edge Case: Unable to create sequence, Ending word not in list
+2. Idea: Create a dictionary with words where one of its letters is a *, then append all possible words formed with that word with *. Do a bfs starting from the begin word with its neighbours being the begin word but with *
+3. Pseudo Code:
+    1. Create a default dictionary of lists where the keys are * words and values are the list of normal words that can form it
+    2. Do a bfs starting from the begin word and traversing to all its * words. Have a visited set to make sure that the same word is not traversed to twice
+    3. If the word == endWord, return the depth
+4. Time Complexity: O(10w)
+5. Space Complexity: O(w)
+6. Learnings: Have * be used to represent the intermediate states. Use a set to ensure words are not visited twice`
 
 
 Redundant Connections
