@@ -308,4 +308,9 @@ Surrounding Regions
 Walls and Gates
 
 1. Edge Cases: No Gates
-2. Idea: Get the r, c of each gate and create a deque with them. Do a bfs with these starting cells and set the values in each cell to be the 
+2. Idea: Get the r, c of each gate and create a deque with them. Do a bfs with these starting cells and set the values in each cell to be the distance. 
+3. Pseudo Code:
+    1. Initialise a deque with Gates
+    2. Do a bfs from these starting cells, appending to each empty cell the current distance + 1 and adding it back to the queue
+6. Learnings: Because each empty cell is inf and when it is first traversed the distance is set (this distance is also the minimum distance), it will not be touched again. Use the values of 
+grid[r][c] to set grid[nr][nc] = grid[r][c] + 1 so that the distance does not need to be passed in as a param
