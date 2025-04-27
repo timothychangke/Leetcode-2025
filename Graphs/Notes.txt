@@ -92,6 +92,20 @@ emails together. Find the root account of each user index and append to them the
 6. Learnings: Use union find to merge emails with the same user, sorted vs sort
 
 
+Clone graphs
+
+1. Edge Case: Invalid graph
+2. Idea: Do a dfs, mapping the old node to a newly create graph node. Do the dfs again to map the new node to its new neighbours
+3. Pseudo Code:
+    1. Initialise a old to new dictionary and do a dfs on the old graph, mapping each node to a newly created node and storing it in the dictionary. 
+    2. Do the dfs again and map the old neighbours to the new neighbouts in the new node
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Use a oldToNew dictionary for mapping, alternatively, initialise the neighbours in one pass by doing oldToNew[node].neighbours.append(dfs(nei)), then have the dfs return the new node
+
+
+
+
 
 Redundant Connections
 
