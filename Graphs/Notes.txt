@@ -162,6 +162,20 @@ Graph Valid tree
 6. Learnings: Pass in the previous node so as to not backtrack and create a cycle in a bidirectional graph
 
 
+Max Area of Island
+
+1. Edge Case: No Island, Entire piece is an island
+2. Idea: Do a dfs at every island, calculate its total area and mark it so taht it isnt visited again
+3. Pseudo Code:
+    1. For each cell, check if it is an island, if it is, perform dfs on it
+    2. Dfs():
+        - Mark island as 0, res = 1 for its adjacent cells, if they are valid and value is 1, add it to res and return res
+    3. Set the max area of the islands and return it
+4. Time Complexity: O(nm)
+5. Space Complexity: O(1)
+6. Learnings: Mark visted cells so that visited set is no longer needed
+
+
 Redundant Connections
 
 1. Edge Case: Multiple edges that can be removed
