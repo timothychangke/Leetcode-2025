@@ -147,6 +147,21 @@ Evaluate Division
 6. Learnings: Add both the the values and the inverse of the values as the opposite edge
 
 
+Graph Valid tree
+
+1. Edge Case: self loops or repeated edges
+2. Idea: A valid tree has no cycles, so check that a node does not visit a node that has previously already been visited but make sure it is not the direct node it came from
+3. Pseudo Code:
+    1. Create a bidirectional graph where an edge can go both ways. Perform a dfs, checking if the node has already been visited before (via a set)
+    2. Make sure that the node in question is not the direct previous node by passing it as a parameter in the queue
+    The dfs: If node is in visited: return false
+    Add node to visited set 
+    for each neighbouring node that is not the previous node, perform dfs on that node
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Pass in the previous node so as to not backtrack and create a cycle in a bidirectional graph
+
+
 Redundant Connections
 
 1. Edge Case: Multiple edges that can be removed
