@@ -104,6 +104,21 @@ Clone graphs
 6. Learnings: Use a oldToNew dictionary for mapping, alternatively, initialise the neighbours in one pass by doing oldToNew[node].neighbours.append(dfs(nei)), then have the dfs return the new node
 
 
+Course Schedule
+
+1. Edge Case: No course with no prerequisites
+2. Idea: Initialise a graph with a -> b meaning that a has to be taken before b. Find the courses with no prerequisites using a degree array. Do a bfs starting with these courses, each time decrementing the degree array when a 
+course is visited. Return if the count of courses visited == the number of courses out there
+3. Pseudo Code:
+    1. Initialise a graph, a defaultdict of lists and a degree array. For each prerequisites, make the connection in the graph and increment the degree array 
+    2. Append all courses with a degree of 0 (no prerequisites) into the deque and perform bfs
+    3. Increment the courses count and for each neighbouring courses visited, decrement the degree array by 1. If it reaches zero, append to the deque
+    4. Return if the count of courses visited == the number of courses
+4. Time Complexity: O(n)
+5. Space Complexity: O(n)
+6. Learnings: Use a degree array to count prerequisites
+
+
 
 
 
