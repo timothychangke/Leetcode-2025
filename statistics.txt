@@ -1,22 +1,22 @@
-Arrays: 81 problems, 40 unique
-  - Total: 40 Easy, 31 Medium, 7 Hard
-  - Unique: 18 Easy, 17 Medium, 5 Hard
+Arrays: 83 problems, 41 unique
+  - Total: 40 Easy, 32 Medium, 7 Hard
+  - Unique: 18 Easy, 18 Medium, 5 Hard
 
 Binary Search: 50 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
   - Unique: 4 Easy, 9 Medium, 3 Hard
 
-Graphs: 47 problems, 26 unique
-  - Total: 4 Easy, 38 Medium, 5 Hard
-  - Unique: 2 Easy, 21 Medium, 3 Hard
+Graphs: 48 problems, 25 unique
+  - Total: 4 Easy, 37 Medium, 5 Hard
+  - Unique: 2 Easy, 20 Medium, 3 Hard
 
 Heap: 26 problems, 11 unique
   - Total: 4 Easy, 15 Medium, 4 Hard
   - Unique: 2 Easy, 7 Medium, 2 Hard
 
-Linked List: 34 problems, 18 unique
+Linked List: 34 problems, 17 unique
   - Total: 8 Easy, 20 Medium, 5 Hard
-  - Unique: 4 Easy, 11 Medium, 3 Hard
+  - Unique: 4 Easy, 10 Medium, 3 Hard
 
 Sliding Window: 30 problems, 10 unique
   - Total: 7 Easy, 16 Medium, 6 Hard
@@ -26,9 +26,9 @@ Stack: 50 problems, 19 unique
   - Total: 12 Easy, 31 Medium, 6 Hard
   - Unique: 5 Easy, 12 Medium, 2 Hard
 
-Trees: 65 problems, 28 unique
-  - Total: 33 Easy, 26 Medium, 5 Hard
-  - Unique: 12 Easy, 13 Medium, 3 Hard
+Trees: 66 problems, 29 unique
+  - Total: 33 Easy, 27 Medium, 5 Hard
+  - Unique: 12 Easy, 14 Medium, 3 Hard
 
 Two Pointers: 44 problems, 19 unique
   - Total: 19 Easy, 20 Medium, 4 Hard
@@ -42,19 +42,19 @@ Backtracking: 3 problems, 2 unique
   - Total: 0 Easy, 3 Medium, 0 Hard
   - Unique: 0 Easy, 2 Medium, 0 Hard
 
-Math: 3 problems, 1 unique
-  - Total: 0 Easy, 1 Medium, 0 Hard
-  - Unique: 0 Easy, 1 Medium, 0 Hard
+Math: 5 problems, 3 unique
+  - Total: 1 Easy, 2 Medium, 0 Hard
+  - Unique: 1 Easy, 2 Medium, 0 Hard
 
 Bit Manipulation: 1 problems, 1 unique
   - Total: 1 Easy, 0 Medium, 0 Hard
   - Unique: 1 Easy, 0 Medium, 0 Hard
 
 
-Total number of problems: 442
-Total unique problems: 198
+Total number of problems: 448
+Total unique problems: 200
 
 Total by difficulty:
-  - Easy: 140 problems, 58 unique
-  - Medium: 231 problems, 115 unique
+  - Easy: 141 problems, 59 unique
+  - Medium: 233 problems, 116 unique
   - Hard: 52 problems, 25 unique
