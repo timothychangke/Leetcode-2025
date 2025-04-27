@@ -106,7 +106,7 @@ Clone graphs
 
 Course Schedule
 
-1. Edge Case: No course with no prerequisites
+1. Edge Case: No course with no prerequisites, circular prerequisites
 2. Idea: Initialise a graph with a -> b meaning that a has to be taken before b. Find the courses with no prerequisites using a degree array. Do a bfs starting with these courses, each time decrementing the degree array when a 
 course is visited. Return if the count of courses visited == the number of courses out there
 3. Pseudo Code:
@@ -119,7 +119,18 @@ course is visited. Return if the count of courses visited == the number of cours
 6. Learnings: Use a degree array to count prerequisites
 
 
+Course Schedule 2
 
+1. Edge Case: No course with no prerequisites, circular prerequisites
+2. Idea: Initialise a graph with a -> b meaning that a has to be taken before b. Find the courses with no prerequisites with a degree array. Do bfs starting with these courses. Have a res array that saves what courses has be done
+3. Pseudo Code:
+   1. Initialise a graph with a default dict list and a degree array. For each prerequisites, make the edge in the graph and increment the degree array of the course that needs the prerequisites
+   2. Append all course with a degree of 0 into the deque and preform bfs
+   3. Save the courses visited into a res array. Decrement the degree array by 1 and if it reaches zero, append the course to the deque to be visited
+   4. Return the res array
+4. Time Complexity: O(n) 
+5. Space Complexity: O(n)
+6. Learnings: Append to res array upon visit
 
 
 Redundant Connections
