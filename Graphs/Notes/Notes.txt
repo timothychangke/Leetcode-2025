@@ -99,8 +99,8 @@ Clone graphs
 3. Pseudo Code:
     1. Initialise a old to new dictionary and do a dfs on the old graph, mapping each node to a newly created node and storing it in the dictionary. 
     2. Do the dfs again and map the old neighbours to the new neighbouts in the new node
-4. Time Complexity: O(n)
-5. Space Complexity: O(n)
+4. Time Complexity: O(V + E)
+5. Space Complexity: O(V)
 6. Learnings: Use a oldToNew dictionary for mapping, alternatively, initialise the neighbours in one pass by doing oldToNew[node].neighbours.append(dfs(nei)), then have the dfs return the new node
 
 
@@ -114,8 +114,8 @@ course is visited. Return if the count of courses visited == the number of cours
     2. Append all courses with a degree of 0 (no prerequisites) into the deque and perform bfs
     3. Increment the courses count and for each neighbouring courses visited, decrement the degree array by 1. If it reaches zero, append to the deque
     4. Return if the count of courses visited == the number of courses
-4. Time Complexity: O(n)
-5. Space Complexity: O(n)
+4. Time Complexity: O(V + E)
+5. Space Complexity: O(V)
 6. Learnings: Use a degree array to count prerequisites
 
 
@@ -128,8 +128,8 @@ Course Schedule 2
    2. Append all course with a degree of 0 into the deque and preform bfs
    3. Save the courses visited into a res array. Decrement the degree array by 1 and if it reaches zero, append the course to the deque to be visited
    4. Return the res array
-4. Time Complexity: O(n) 
-5. Space Complexity: O(n)
+4. Time Complexity: O(V + E) 
+5. Space Complexity: O(V)
 6. Learnings: Append to res array upon visit
 
 
@@ -142,8 +142,8 @@ Evaluate Division
     2. Perform a bfs taking in a node and the current value
     3. Traverse to other nodes each time and update the value accordingly. Maintain a visited set to make sure that the same node is not traversed to again
     4. Return the outputs of each query
-4. Time Complexity: O(nq)
-5. Space Complexity: O(nq)
+4. Time Complexity: O((V + E)q)
+5. Space Complexity: O((V + E)q)
 6. Learnings: Add both the the values and the inverse of the values as the opposite edge
 
 
@@ -157,7 +157,7 @@ Graph Valid tree
     The dfs: If node is in visited: return false
     Add node to visited set 
     for each neighbouring node that is not the previous node, perform dfs on that node
-4. Time Complexity: O(n)
+4. Time Complexity: O(V + E)
 5. Space Complexity: O(n)
 6. Learnings: Pass in the previous node so as to not backtrack and create a cycle in a bidirectional graph
 
@@ -174,6 +174,37 @@ Max Area of Island
 4. Time Complexity: O(nm)
 5. Space Complexity: O(1)
 6. Learnings: Mark visted cells so that visited set is no longer needed
+
+Minimum height trees
+
+1. Edge Case: Multiple MST roots
+2. Idea: Start from the outside leaf nodes and traverse inwards until a root is reached. 
+3. Pseudo Code:
+    1. Initialise a bidirectional graph for each edge
+    2. Add all leaf nodes (only have one linked node in their graph) into the deque
+    3. Perform bfs starting with these nodes and traverse inward, decrementing n by one for each node visited. 
+    4. Remove the element from the neighbouring array and only add to the deque when that particular node becomes a leaf node
+    5. The last remaining node is the MST
+4. Time Complexity: O(V + E)
+5. Space Complexity: O(V)
+6. Learnings: Traverse from the leaf nodes in
+
+
+Number of Connected Components in an Undirected Graph
+
+1. Edge Case: All components are connected, All graphs are not connected
+2. Idea: Do a union find, where at each successful union, decrement the total number of components by 1
+3. Pseudo Code:
+    1. Initialise a Union Find structure with n
+        class UnionFind:
+            def __init__(self, n):
+                self.par
+                self.rank
+    2. For each edge, union them, if successful, decrement the number of components by 1
+4. Time Complexity: O(nE)
+5. Space Complexity: O(n)
+6. Learnings: Use a union find structure and return 1 or 0 based on how to decrement n
+
 
 
 Redundant Connections

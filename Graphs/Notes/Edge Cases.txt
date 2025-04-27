@@ -1,0 +1,85 @@
+Empty graph
+
+    No nodes, no edges.
+
+Single node
+
+    Graph with one node and no edges.
+
+    Graph with one node and a self-loop.
+
+Disconnected graph
+
+    Multiple nodes but not all reachable from each other.
+
+Self-loops
+
+    A node has an edge to itself. (e.g., node A connects to A).
+
+Duplicate edges
+
+    Same edge listed multiple times.
+
+        For directed graphs: (u ➔ v) and (u ➔ v) again.
+
+        For undirected graphs: (u, v) and (v, u) might both appear.
+
+    Should you treat duplicates specially or just ignore them?
+
+Multiple components
+
+    The graph may have multiple connected components.
+
+Cycles
+
+    Graph could have cycles. Important for:
+
+        Directed Graphs (need cycle detection sometimes).
+
+        Undirected Graphs (DFS/Union-Find issues).
+
+Weighted edges
+
+    Clarify if the graph has weights.
+
+    Are weights positive? Zero? Negative? (especially important for shortest path problems.)
+
+Directed vs Undirected
+
+    Confirm which type it is.
+
+    Sometimes it’s "mixed" — super rare but worth asking.
+
+Large graphs
+
+    Very high number of nodes (like 10⁵).
+
+    Need to optimize for time and space (maybe BFS over DFS, adjacency list over matrix).
+
+Sparse vs Dense
+
+    Sparse graph: few edges relative to number of nodes.
+
+    Dense graph: lots of edges (almost fully connected).
+
+Invalid inputs
+
+    Edges to non-existent nodes.
+
+    Negative node values.
+
+    Input types: are nodes strings, integers, or something else?
+
+Special properties
+
+    Tree (connected, no cycles).
+
+    DAG (Directed Acyclic Graph).
+
+    Bipartite graph.
+
+    Fully connected graph.
+
+Unreachable nodes
+
+    Can you assume everything is reachable from a starting point?
