@@ -224,6 +224,28 @@ Number of provinces
 
 Just a normal union find
 
+
+Open the lock
+
+1. Edge Case: 
+2. Idea: Perform a bfs function from 0000 to the target combination. Have a function that caculates the neighbours of each combination. Initialise deadlocks also as a set
+3. Pseudo Code:
+    1. Perform a bfs with '0000' as the starting value. Have a set to prevent exploring already explored combinations and track the depth to be returned as the answer
+    2. At each loop, popleft the item in the queue and check if its the target combination
+    3. For each of its neighbours, add to the visited set and append to the queue
+    4. Initialise a calc neighbours function
+        - For each digit, increment and decrement them by one, remember to mod 10 so that it does not overflow
+        - If this combination is not visited and not in the deadlock set, append it to the array and return the res
+4. Time Complexity: O(1)
+5. Space Complexity: O(1)
+6. Learnings: Use mod to prevent overflow
+
+
+Pacific Atlantic Water Flow
+
+
+
+
 Redundant Connections
 
 1. Edge Case: Multiple edges that can be removed
