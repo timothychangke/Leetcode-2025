@@ -243,6 +243,16 @@ Open the lock
 
 Pacific Atlantic Water Flow
 
+1. Edge Case: 
+2. Idea: Instead of seeing whether a cell can reach the ocean, start from the ocean and see if it can reach the cell
+3. Pseudo Code:
+    1. Perform a dfs from each costal cell, taking in the current height and only travelling to cells of a greater height (opposite to when water flows down)
+    2. For each cell that can be visited, add it to the appropreiate ocean set. Remember to have a visited set to prevent backtracking
+    3. Perform this for the row and col of pacific as well as the row and col or atlantic
+    4. Return the intersection of these two sets
+4. Time Complexity: O(nm). Each cell should be traversed once from each ocean
+5. Space Complexity: O(nm)
+6. Learnings: Reframe the question by seeing how many inner cells can be reached via the waters
 
 
 
