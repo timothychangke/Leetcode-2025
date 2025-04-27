@@ -133,6 +133,20 @@ Course Schedule 2
 6. Learnings: Append to res array upon visit
 
 
+Evaluate Division
+
+1. Edge Case: Unanswerable query
+2. Idea: Initialise a graph with the edges and the reverse edges with the values and the inverse of those values. Perform bfs to find the target node, and if found, return the resultant value
+3. Pseudo Code: 
+    1. Initialise a graph with a defaultdict list, where the key is the curr node and the values are the list of its neighbours with edges, values
+    2. Perform a bfs taking in a node and the current value
+    3. Traverse to other nodes each time and update the value accordingly. Maintain a visited set to make sure that the same node is not traversed to again
+    4. Return the outputs of each query
+4. Time Complexity: O(nq)
+5. Space Complexity: O(nq)
+6. Learnings: Add both the the values and the inverse of the values as the opposite edge
+
+
 Redundant Connections
 
 1. Edge Case: Multiple edges that can be removed
