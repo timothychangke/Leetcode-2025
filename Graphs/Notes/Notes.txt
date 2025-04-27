@@ -206,6 +206,18 @@ Number of Connected Components in an Undirected Graph
 6. Learnings: Use a union find structure and return 1 or 0 based on how to decrement n
 
 
+Number of Islands
+
+1. Edge Case: Whole grid is one island, no islands
+2. Idea: Do a dfs a mark each visited island so that they are not visited again
+3. Pseudo Code:
+    1. Intialise a dfs
+        - Mark the visited islands as 0
+        - Traverse to neighbouring islands and perform dfs on them
+    2. Perform dfs for all cells that are islands, increment res by one each time
+4. Time Complexity: O(nm)
+5. Space Complexity: O(1)
+
 
 Redundant Connections
 
