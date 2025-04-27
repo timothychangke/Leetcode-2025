@@ -217,7 +217,12 @@ Number of Islands
     2. Perform dfs for all cells that are islands, increment res by one each time
 4. Time Complexity: O(nm)
 5. Space Complexity: O(1)
+6. Learnings: Note the data type the cells are marked in. This case they are in strings
 
+
+Number of provinces
+
+Just a normal union find
 
 Redundant Connections
 
