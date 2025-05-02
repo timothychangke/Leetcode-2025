@@ -1,6 +1,6 @@
-Arrays: 85 problems, 42 unique
-  - Total: 40 Easy, 33 Medium, 7 Hard
-  - Unique: 18 Easy, 19 Medium, 5 Hard
+Arrays: 86 problems, 43 unique
+  - Total: 41 Easy, 33 Medium, 7 Hard
+  - Unique: 19 Easy, 19 Medium, 5 Hard
 
 Binary Search: 50 problems, 16 unique
   - Total: 12 Easy, 23 Medium, 9 Hard
@@ -50,11 +50,15 @@ Bit Manipulation: 1 problems, 1 unique
   - Total: 1 Easy, 0 Medium, 0 Hard
   - Unique: 1 Easy, 0 Medium, 0 Hard
 
+Tries`git : 0 problems, 0 unique
+  - Total: 0 Easy, 0 Medium, 0 Hard
+  - Unique: 0 Easy, 0 Medium, 0 Hard
 
-Total number of problems: 451
-Total unique problems: 202
+
+Total number of problems: 452
+Total unique problems: 203
 
 Total by difficulty:
-  - Easy: 141 problems, 59 unique
+  - Easy: 142 problems, 60 unique
   - Medium: 235 problems, 118 unique
   - Hard: 52 problems, 25 unique
